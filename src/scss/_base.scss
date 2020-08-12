@@ -1,0 +1,15 @@
+
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: $font;
+    background-color: $black-background-color;
+    text-align: center;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 895px;
+    // border: 1px solid red;
+    height: auto;
+}

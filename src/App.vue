@@ -5,18 +5,49 @@
       <router-link to="/about">About</router-link>
     </div>
     <router-view />
+    <Sim />
+    <Countries />
+    <Footer />
   </div>
 </template>
 
+<script>
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Countries from './components/Countries'
+import Sim from './components/Sim'
+
+export default {
+  components: {
+    Sim,
+    Countries,
+    Footer
+  }
+}
+</script>
+
 <style lang="scss">
 @import './scss/_variables.scss';
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import './scss/_base.scss';
+
+@font-face {
+    font-family: "Pf_Beau";
+    src: local("PF_Beau"),
+     url(./fonts/PFBeauSansPro-Regular.ttf) format("truetype");
+  }
+
+  .btn__primary {
+    background: $red;
+    color: $white;
+    font-size: 20px;
+    font-weight: 300;
+    border: none;
+    border-radius: 35px;
+    padding: 15px 0;
+    width: 250px;
+
 }
+
 #nav {
   padding: 30px;
   a {
