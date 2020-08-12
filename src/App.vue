@@ -5,6 +5,7 @@
       <router-link to="/about">About</router-link>
     </div>
     <router-view />
+    <Tariffs />
     <Sim />
     <Countries />
     <Footer />
@@ -16,9 +17,11 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Countries from './components/Countries'
 import Sim from './components/Sim'
+import Tariffs from './components/Tariffs'
 
 export default {
   components: {
+    Tariffs,
     Sim,
     Countries,
     Footer
