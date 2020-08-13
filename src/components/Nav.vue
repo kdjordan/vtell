@@ -16,7 +16,7 @@
                 </nav>
                 <nav class="nav-second-row">
                     <li><span class="first">About Us</span></li>
-                    <li><span class="all">Taariffs</span></li>
+                    <li><span class="all">Tariffs</span></li>
                     <li><span class="all">Subscribers</span></li>
                     <li><span class="all">Partnerships</span></li>
                     <li><span class="last">Contacts</span></li>
