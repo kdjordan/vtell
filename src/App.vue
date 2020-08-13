@@ -5,6 +5,7 @@
       <router-link to="/about">About</router-link>
     </div>
     <router-view />
+    <Privilege />
     <Advantages />
     <About />
     <Tariffs />
@@ -22,9 +23,11 @@ import Sim from './components/Sim'
 import Tariffs from './components/Tariffs'
 import About from './components/About'
 import Advantages from './components/Advantages'
+import Privilege from './components/Privilege'
 
 export default {
   components: {
+    Privilege,
     Advantages,
     About,
     Tariffs,
@@ -63,8 +66,12 @@ export default {
     // height: 80px;
     
     &__container {
-         position: relative;
+        position: relative;
         right: 380px;
+
+        &--priv-adjust {
+          right: 255px;
+        }
     }
 
     &__cube {
