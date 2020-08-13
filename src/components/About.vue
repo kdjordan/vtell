@@ -1,6 +1,6 @@
 <template>
   <div>
-      <div class="border">
+      <div class="border mt-3">
           <div class="border__container">
             <img class="border__cube" src="../assets/SVG/cube.svg" alt="">
             <div class="border__title">ABOUT US</div>

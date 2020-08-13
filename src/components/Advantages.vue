@@ -1,6 +1,6 @@
 <template>
   <div>
-      <div class="border">
+      <div class="border mb-3">
           <div class="border__container">
             <img class="border__cube" src="../assets/SVG/cube.svg" alt="">
             <div class="border__title">ADVANTAGES</div>
@@ -8,34 +8,34 @@
       </div>  
       <div class="advantages">
         <!-- <div class="container"> -->
-            <div class="advantages__top">
+            <div class="advantages__wrap">
                 <div>
                     <img src="../assets/advantages/adv_image1.png" alt="">
-                    <!-- <div class="advantages__desc">One Global Rate</div> -->
+                    <div class="advantages__desc advantages__desc--1">One Global Rate</div>
                 </div>
                 <div>
                     <img src="../assets/advantages/adv_image2.png" alt="">
-                    <!-- <div class="advantages__desc">Excellent Mobile<br />Internet</div> -->
+                    <div class="advantages__desc advantages__desc--2">Excellent Mobile<br />Internet</div>
                 </div>
                 <div>
                     <img src="../assets/advantages/adv_image3.png" alt="">
-                    <!-- <div class="advantages__desc">V-TELL PHONE NUMBERS<br> IN DIFFERENT COUNTRIES<br> ALL ON ONE SIM CARD</div> -->
+                    <div class="advantages__desc advantages__desc--3">V-TELL PHONE NUMBERS<br> IN DIFFERENT COUNTRIES<br> ALL ON ONE SIM CARD</div>
                 </div>
                 <div>
                     <img src="../assets/advantages/adv_image4.png" alt="">
-                    <!-- <div class="advantages__desc">YOU CAN BE REACHED WORLDWIDE WITH NO OVERSEAS CHARGE TO YOUR HOST</div> -->
+                    <div class="advantages__desc advantages__desc--4">YOU CAN BE REACHED<br>WORLDWIDE WITH NO<br>OVERSEAS CHARGE TO<br> YOUR HOST</div>
                 </div>
                 <div>
                     <img src="../assets/advantages/adv_image5.png" alt="">
-                    <!-- <div class="advantages__desc">YOU'RE LOCAL NO MATTER WHERE YOU ARE</div> -->
+                    <div class="advantages__desc advantages__desc--5">YOU'RE LOCAL NO<br>MATTER WHERE YOU ARE</div>
                 </div>
                 <div>
                     <img src="../assets/advantages/adv_image6.png" alt="">
-                    <!-- <div class="advantages__desc">V-TELL DOES NOT UTILIZE IP TELEPHONY</div> -->
+                    <div class="advantages__desc advantages__desc--6">V-TELL DOES NOT UTILIZE<br>IP TELEPHONY</div>
                 </div>
                 <div>
                     <img src="../assets/advantages/adv_image7.png" alt="">
-                    <!-- <div class="advantages__desc">AUTOMATIC SWITCH OF V-TELL PHONE NUMBERS</div> -->
+                    <div class="advantages__desc advantages__desc--6">AUTOMATIC SWITCH OF V-TELL PHONE NUMBERS</div>
                 </div>
 
             </div>
@@ -59,38 +59,67 @@ export default {
 .advantages {
     max-width: 895px;
     margin: 0 auto;
+
     &__desc {
         color: white;
-        font-size: 14px;
+        font-size: 16px;
         word-wrap: wrap;
         position: relative;
-        bottom: 80px;
         text-transform: uppercase;
-        width: 70%;
         margin: 0 auto;
+
+        &--1 {
+            width: 80%;
+            bottom: 60px;
+        }
+
+        &--2 {
+            width: 80%;
+            bottom: 60px;
+        }
+
+        &--3 {
+            font-size: 14px;
+            width: 90%;
+            bottom: 70px;
+        }
+
+        &--4 {
+            font-size: 16px;
+            width: 100%;
+            bottom: 85px;
+        }
+
+        &--5 {
+            font-size: 16px;
+            width: 80%;
+            bottom: 65px;
+        }
+
+        &--6 {
+            font-size: 16px;
+            width: 100%;
+            bottom: 60px;
+        }
+
+        &--7 {
+            font-size: 16px;
+            width: 100%;
+            bottom: 60px;
+        }
 
     }
 
-    &__top {
+    &__wrap {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         width: 100%;
 
         & > div {
-            margin: 0 .3rem;
-        }
-    }
-    
-    &__bottom {
-        margin-top: -4rem;
-        display: flex;;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-
-        & > div {
-            margin: 0 .3rem;
+            margin: .5rem .3rem;
+            max-height: 212px;
+            max-width: 212px;
         }
     }
 }
