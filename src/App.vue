@@ -1,10 +1,12 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <Nav />
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    </div> -->
+    <!-- <router-view /> -->
+    <Hero />
     <Privilege />
     <Advantages />
     <About />
@@ -16,7 +18,7 @@
 </template>
 
 <script>
-import Header from './components/Header'
+import Nav from './components/Nav'
 import Footer from './components/Footer'
 import Countries from './components/Countries'
 import Sim from './components/Sim'
@@ -24,9 +26,12 @@ import Tariffs from './components/Tariffs'
 import About from './components/About'
 import Advantages from './components/Advantages'
 import Privilege from './components/Privilege'
+import Hero from './components/Hero'
 
 export default {
   components: {
+    Nav,
+    Hero,
     Privilege,
     Advantages,
     About,

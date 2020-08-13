@@ -10,9 +10,7 @@
           <div class="container">
               <div class="privileges__container">
                 <font-awesome-icon icon="angle-left" class="arrow" />
-                
                     <img src="../assets/privilege/hp-top-img.jpg" alt="">
-
                 <font-awesome-icon icon="angle-right" class="arrow" />
               </div>
           </div>

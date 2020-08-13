@@ -1,6 +1,6 @@
 <template>
-    <div>
-      <h1>Hero</h1>
+    <div class="hero">
+      <!-- <img src="../assets/hero/hero_1.jpg" alt=""> -->
   </div>  
 </template>
 
@@ -11,5 +11,13 @@ export default {
 </script>
 
 <style lang="scss">
+
+.hero {
+  width: 100%;
+  background-image: url('../assets/hero/hero_1.jpg');
+  background-size: cover;
+  height: 30rem;
+
+}
 
 </style>
