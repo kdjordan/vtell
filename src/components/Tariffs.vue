@@ -80,8 +80,8 @@
 
              <div class="card">
                 <div class="card__header">
-                    <img src="../assets/cards/photo_tarif_03.jpg" alt="">
-                    <div class="card__header--type">V-1</div>
+                    <img src="../assets/cards/photo_tarif_04.jpg" alt="">
+                    <div class="card__header--type">V-2</div>
                 </div>
                 <table class="card__content--table">
                     <tbody>
@@ -120,8 +120,8 @@
 
             <div class="card">
                 <div class="card__header">
-                    <img src="../assets/cards/photo_tarif_03.jpg" alt="">
-                    <div class="card__header--type">V-1</div>
+                    <img src="../assets/cards/photo_tarif_05.jpg" alt="">
+                    <div class="card__header--type">V-3</div>
                 </div>
                 <table class="card__content--table">
                     <tbody>
@@ -335,33 +335,6 @@ export default {
     }
 }
 
-.border {
-    display: block;
-    background-image: url('../assets/img/border.png');
-    background-position: center;
-    // height: 80px;
-    
-    &__container {
-         position: relative;
-        right: 380px;
-    }
-
-    &__cube {
-       
-        margin-top: 10px;
-        height: 50px;
-    }
-
-    &__title {
-        font-size: 25px;
-        display: inline-block;
-        color: white;
-        position: relative;
-        bottom: 20px;
-        left: 70px;
-        
-    }
-}
 
 
 </style>

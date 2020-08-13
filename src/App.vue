@@ -5,6 +5,8 @@
       <router-link to="/about">About</router-link>
     </div>
     <router-view />
+    <Advantages />
+    <About />
     <Tariffs />
     <Sim />
     <Countries />
@@ -18,9 +20,13 @@ import Footer from './components/Footer'
 import Countries from './components/Countries'
 import Sim from './components/Sim'
 import Tariffs from './components/Tariffs'
+import About from './components/About'
+import Advantages from './components/Advantages'
 
 export default {
   components: {
+    Advantages,
+    About,
     Tariffs,
     Sim,
     Countries,
@@ -49,6 +55,35 @@ export default {
     padding: 15px 0;
     width: 250px;
 }
+
+.border {
+    display: block;
+    background-image: url('./assets/img/border.png');
+    background-position: center;
+    // height: 80px;
+    
+    &__container {
+         position: relative;
+        right: 380px;
+    }
+
+    &__cube {
+       
+        margin-top: 10px;
+        height: 50px;
+    }
+
+    &__title {
+        font-size: 25px;
+        display: inline-block;
+        color: white;
+        position: relative;
+        bottom: 20px;
+        left: 70px;
+        
+    }
+}
+
 
 #nav {
   padding: 30px;
