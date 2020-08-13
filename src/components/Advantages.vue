@@ -11,15 +11,15 @@
             <div class="advantages__top">
                 <div>
                     <img src="../assets/advantages/adv_image1.png" alt="">
-                    <div class="advantages__desc">One Global Rate</div>
+                    <!-- <div class="advantages__desc">One Global Rate</div> -->
                 </div>
                 <div>
                     <img src="../assets/advantages/adv_image2.png" alt="">
-                    <div class="advantages__desc">Excellent Mobile<br />Internet</div>
+                    <!-- <div class="advantages__desc">Excellent Mobile<br />Internet</div> -->
                 </div>
                 <div>
                     <img src="../assets/advantages/adv_image3.png" alt="">
-                    <div class="advantages__desc">V-TELL PHONE NUMBERS<br> IN DIFFERENT COUNTRIES<br> ALL ON ONE SIM CARD</div>
+                    <!-- <div class="advantages__desc">V-TELL PHONE NUMBERS<br> IN DIFFERENT COUNTRIES<br> ALL ON ONE SIM CARD</div> -->
                 </div>
                 <div>
                     <img src="../assets/advantages/adv_image4.png" alt="">
