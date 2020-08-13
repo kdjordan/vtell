@@ -48,7 +48,6 @@ export default {
     border-radius: 35px;
     padding: 15px 0;
     width: 250px;
-
 }
 
 #nav {

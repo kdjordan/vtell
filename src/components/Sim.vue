@@ -3,7 +3,7 @@
      <div class="container">
          <div class="sim__block">
              <div class="sim__title mb-2">
-                 HOW TO BUY A SIM CARD
+                 <strong>HOW TO BUY A SIM CARD</strong>
              </div>
              <div class="sim__button-container">
                  <div class="sim__button-container--left">
