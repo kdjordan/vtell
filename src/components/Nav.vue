@@ -68,13 +68,13 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
-    height: 5.5%;
+    height: 4.5%;
     background: #0d0d0d;
 
     &::after {
         position: fixed;
-        top: 5.5%;
-        height: 5.5%;
+        top: 4.5%;
+        height: 4.5%;
         content: "";
         background: rgba(0, 0, 0, 0.5);
         display: block;
@@ -129,8 +129,14 @@ export default {
         display: flex;
         // justify-content: ;
         align-items: center;
-        &:hover {
-            background: red;
+
+        &--text {
+            transition: all .4s;
+        }
+
+        &:hover &--text, &:hover &.icon {
+            color: grey;
+            border-bottom: 1px solid grey;
         }
 
         &--container {
@@ -142,8 +148,7 @@ export default {
     }
 
     &__lower {
-        // width: 100%;
-        // height: 100%;
+        padding: 10px 10px;
 
         &:hover {
             background: red;
@@ -165,7 +170,7 @@ export default {
     }
 
     &__upper {
-        padding-top: 1%;
+        // padding-top: 1%;
         width: 100%;
         display: flex;
         
@@ -176,7 +181,7 @@ export default {
 
     &__lower {
         width: 100%;
-        padding-top: 2%;
+        padding-top: 2.5%;
         // border: 1px solid yellow;
         display: flex;
         justify-content: space-evenly;
