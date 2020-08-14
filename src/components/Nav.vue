@@ -1,28 +1,54 @@
 <template>
-    <div class="menu-top">
-        <div class="row-bg"></div>
-        <div class="nav">
-            <div class="logo">
+    <div class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
                 <a href="/">
-                    <img class="logo__img" src="../assets/nav/logo.svg" alt="">
+                    <img class="nav-logo__svg" src="../assets/nav/logo.svg" alt="">
                 </a>
             </div>
-            <div class="items">
-                <nav class="nav-first-row">
-                    <li class="search"><span>Search</span></li>
-                    <li class="payments"><span>Add Funds</span></li>
-                    <li class="account"><span>Account</span></li>
-                    <li class="cart"><span>Cart</span></li>
+            <div class="nav-menu__container">
+                <nav class="nav-menu__upper">
+                        <router-link class="nav-link nav-link__upper" to="/search">
+                            <span class="nav-link__upper--container">
+                                <div class="nav-link__upper--text">Search</div>  
+                                <img class="icon" src="../assets/nav/search.svg" alt="">
+                            </span>
+                        </router-link>
+                        <router-link class="nav-link nav-link__upper" to="/payments">
+                        <span class="nav-link__upper--container">
+                            <div class="nav-link__upper--text">Payments</div>  
+                            <img class="icon" src="../assets/nav/payments.svg" alt="">
+                        </span>
+                        </router-link>
+                        <router-link class="nav-link nav-link__upper" to="/account">
+                        <span class="nav-link__upper--container">
+                            <div class="nav-link__upper--text">Account</div>  
+                            <img class="icon" src="../assets/nav/account.svg" alt="">
+                        </span>
+                        </router-link>
+                        <router-link class="nav-link nav-link__upper" to="/cart">
+                        <span class="nav-link__upper--container">
+                            <div class="nav-link__upper--text">Cart</div>  
+                            <img class="icon" src="../assets/nav/cart.svg" alt="">
+                        </span>    
+                        </router-link>
                 </nav>
-                <nav class="nav-second-row">
-                    <li><span class="first">About Us</span></li>
-                    <li><span class="all">Tariffs</span></li>
-                    <li><span class="all">Subscribers</span></li>
-                    <li><span class="all">Partnerships</span></li>
-                    <li><span class="last">Contacts</span></li>
+                <nav class="nav-menu__lower">
+                    <span class="vert-border ghost"></span>
+                    <router-link class="nav-link nav-link__lower" to="/about">About</router-link>
+                    <span class="vert-border"></span>
+                    <router-link class="nav-link nav-link__lower" to="/tariffs">Tariffs</router-link>
+                    <span class="vert-border"></span>
+                    <router-link class="nav-link nav-link__lower" to="/subscribers">Subscribers</router-link>
+                    <span class="vert-border"></span>
+                    <router-link class="nav-link nav-link__lower" to="/partnerships">Partnerships</router-link>
+                    <span class="vert-border"></span>
+                    <router-link class="nav-link nav-link__lower" to="/contacts">Contact</router-link>
+                    <span class="vert-border ghost"></span>
                 </nav>
             </div>
         </div>
+        
     
   </div>
 </template>
@@ -36,122 +62,134 @@ export default {
 <style lang="scss">
 @import '../scss/_variables.scss';
 
-
-.nav-second-row {
-    width: 830px;
-    padding: 0;
-    list-style: none;
-    overflow: visible;
-    position: relative;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-
-    & .all {
-        padding: 2px 0 0 32px;
-        border-left: 1px solid #e63739;
-        border-right: 1px solid #e63739;
-    }
-
-    & .first {
-        padding: 2px 0 0 32px;
-        border-left: 1px solid $red;
-    }
-
-    & .last {
-        padding: 2px 0 0 32px;
-        border-right: 1px solid $red;
-    }
-}
-
 .nav {
-    width: 960px;
-    display: inline-block;
-    position: relative;
-    z-index: 2;
-}
-
-li {
-    list-style-type: none;
-    display: inline-block;
-    background-size: 30px 30px;
-    background-repeat: no-repeat;
-    background-position: right center;
-    text-align: left;
-    text-transform: uppercase;
-    height: 50px;
-
-    & > span {
-        font-size: 14px;
-        position: relative;
-        top: 17px;
-    }
-}
-
-ul {
-    margin: 0 auto;
-    width: 100%;
-    overflow: hidden;
-}
-
-.menu-top {
-    height: auto;
-    margin: auto;
-    min-width: 1024px;
     position: fixed;
-    top: 0;
     width: 100%;
-    z-index: 1;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 0;
-}
-.row-bg {
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 56px;
-    display: block;
+    height: 5.5%;
     background: #0d0d0d;
-    z-index: -1;
+
+    &::after {
+        position: fixed;
+        top: 5.5%;
+        height: 5.5%;
+        content: "";
+        background: rgba(0, 0, 0, 0.5);
+        display: block;
+        width: 100%;
+        z-index: -1;
+    }
 }
 
-.logo__img{
-    width: 118px;
-    float: left;
-    margin-top: 10px;
-    z-index: 5;
+.nav-container {
+    max-width: 1024px;
+    display: flex;
+    z-index: 2;
+    margin: 1rem auto;
+
+    // border: 1px solid red;
 }
 
-.items {
-    color: white;
-    width: 830px;
-    float: left;
+.nav-logo {
+    width: 16%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+    transition: all .4s;
+
+    &__svg {
+        width: 80%;
+    }
+
+    :hover {
+        filter: opacity(80%);
+    }
 }
 
-.search {
-    background-image: url('../assets/nav/search.svg');
-    margin-left: 33px;
-    width: 105px;
-}
-.payments {
-    background-image: url('../assets/nav/payments.svg');
-    margin-left: 95px;
-    width: 135px;
-}
-.account {
-    background-image: url('../assets/nav/account.svg');
-    margin-left: 109px;
-    width: 122px;
+.vert-border {
+    display: inline-block;
+    background: red;
+    width: 1px;
+    height: 50%;
+    transform: translateY(40%);
 }
 
-.cart {
-    background-image: url('../assets/nav/cart.svg');
-    margin-left: 125px;
-    width: 106px;
+.nav-link {
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+
+    &__upper {
+        width: 100%;
+        // border: 1px solid yellow;
+        list-style-type: none;
+        display: flex;
+        // justify-content: ;
+        align-items: center;
+        &:hover {
+            background: red;
+        }
+
+        &--container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__lower {
+        // width: 100%;
+        // height: 100%;
+
+        &:hover {
+            background: red;
+        }
+    }
 }
 
+.nav-menu {
+    position: fixed;
+    width: 80%;
+    
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        width: 830px;
+    }
 
+    &__upper {
+        padding-top: 1%;
+        width: 100%;
+        display: flex;
+        
+        // align-items: center;
+        // justify-content: center;
+        
+    }
 
+    &__lower {
+        width: 100%;
+        padding-top: 2%;
+        // border: 1px solid yellow;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+}
+
+.ghost {
+    background: transparent;
+}
+
+.icon {
+    width: 15%;
+    margin-left: 5%;
+}
 </style>
