@@ -89,19 +89,8 @@ export default {
 .nav-menu {
     font-size: 14px;
     line-height: 30px;
-    
-    // &__container {
-    //     display: flex;
-    //     flex-direction: column;
-    //     align-items: center;
-    //     justify-content: center;
-    //     color: white;
-    //     width: 830px;
-    // }
 
     &__upper {
-        // margin-top: -3rem;
-        // border: 1px solid green;
         position: absolute;
         top: 9%;
         left: 24%;
@@ -147,9 +136,7 @@ export default {
 .vert-border {
     width: 1px;
     height: 30px;
-    background: red
-    // height: 50%;
-    // transform: translateY(40%);
+    background: $red;
 }
 
 .nav-link {
@@ -159,10 +146,8 @@ export default {
 
     &__upper {
         width: 100%;
-        // border: 1px solid yellow;
         list-style-type: none;
         display: flex;
-        // justify-content: ;
         align-items: center;
 
         &--text {
