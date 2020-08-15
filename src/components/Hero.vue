@@ -17,6 +17,7 @@ export default {
   background-image: url('../assets/hero/hero_1.jpg');
   background-size: cover;
   height: 30rem;
+  margin-top: -3.2rem;
 
 }
 
