@@ -1,10 +1,12 @@
 <template>
+<div>
     <div class="nav">
         <div class="top-bar"></div>
         <div class="bot-bar"></div>
         <div class="nav-logo">
             <a href="/"><img class="nav-logo__svg" src="../assets/nav/logo.svg" alt=""></a>
         </div>
+        
         <nav class="nav-menu nav-menu__upper">
             <router-link class="nav-link nav-link__upper" to="/search">
                 <span class="nav-link__container">
@@ -129,13 +131,66 @@
             </span>
         </nav>
     </div>
+    <nav class="mobile-nav">
+        <div class="mobile-nav-header__left">
+            <a href="/"><img class="mobile-nav__left--svg" src="../assets/nav/logo.svg" alt=""></a>
+        </div>
+        <div class="mobile-nav-header__right">
+            <div class="mobile-burger" @click.prevent="mobileOpen = !mobileOpen">
+                <span :class="{burgerOpenTop : !mobileOpen}"></span>
+                <span :class="{burgerOpenMid : !mobileOpen}"></span>
+                <span :class="{burgerOpenBot : !mobileOpen}"></span>
+            </div>
+        </div>
+        <div class="mobile__overlay" :class="{slideOpen : mobileOpen}">
+            <div class="mobile__overlay--inner">
+                <router-link class="nav-link mobile__link" to="/search">
+                    <span class="mobile__link--text">About Us</span>
+                    <font-awesome-icon icon="angle-right" class="mobile-arrow"/>
+                </router-link>
+                <router-link class="nav-link mobile__link" to="/search">
+                    <span class="mobile__link--text">Tariffs</span>
+                    <font-awesome-icon icon="angle-right" class="mobile-arrow"/>
+                </router-link>
+                <router-link class="nav-link mobile__link" to="/search">
+                    <span class="mobile__link--text">Subscribers</span>
+                    <font-awesome-icon icon="angle-right" class="mobile-arrow"/>
+                </router-link>
+                <router-link class="nav-link mobile__link" to="/search">
+                    <span class="mobile__link--text">Partnerships</span>
+                </router-link>
+                <router-link class="nav-link mobile__link" to="/search">
+                    <span class="mobile__link--text">Contacts</span>
+                    <font-awesome-icon icon="angle-right" class="mobile-arrow"/>
+                </router-link>
+                <router-link class="nav-link mobile__link" to="/search">
+                    <span class="mobile__link--text">Search</span>
+                    <img class="mobile-icon" src="../assets/nav/search.svg" alt="">
+                </router-link>
+                <router-link class="nav-link mobile__link" to="/search">
+                    <span class="mobile__link--text">Add Funds</span>
+                    <img class="mobile-icon" src="../assets/nav/payments.svg" alt="">
+                </router-link>
+                <router-link class="nav-link mobile__link" to="/search">
+                    <span class="mobile__link--text">My V-Tell</span>
+                    <img class="mobile-icon" src="../assets/nav/account.svg" alt="">
+                </router-link>
+                <router-link class="nav-link mobile__link" to="/search">
+                    <span class="mobile__link--text">Cart</span>
+                    <img class="mobile-icon" src="../assets/nav/cart.svg" alt="">
+                </router-link>
+            </div>
+            <p>{{mobileOpen}}</p> 
+        </div>
+    </nav>
+</div>
 </template>
 
 <script>
 export default {
     data() {
         return {
-            hover: false
+            mobileOpen: true
         }
     }
 }
@@ -144,14 +199,149 @@ export default {
 <style lang="scss">
 @import '../scss/_variables.scss';
 
+.mobile-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,.9);
+    padding: .4rem .7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 70px;
+
+    &__left {
+        &--svg {
+            width: 5.5rem;
+        }
+    }
+}
+
+.mobile-arrow {
+    color: $red;
+    font-size: 1.8rem;
+    margin-left: 8px;
+}
+
+.mobile-burger {
+    z-index: 1;
+    width: 40px;
+    height: 20px;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+
+    & span {
+        display: block;
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        background: white;
+        border-radius: 9px;
+        opacity: 1;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+    }
+
+    & span:nth-child(1) {
+        top: 0px;
+        transform-origin: left center;
+    }
+
+    & span:nth-child(2) {
+        top: 10px;
+        transform-origin: left center;
+    }
+
+    & span:nth-child(3) {
+        top: 20px;
+        transform-origin: left center;
+    }
+
+}
+
+.slideOpen {
+    left: -40rem !important;
+}
+.burgerOpen {
+    &Top {
+        top: -8px !important;
+        right: 0px !important;
+        transform: rotate(45deg) !important;
+    }
+    &Mid {
+        width: 0% !important;
+        opacity: 0 !important;
+    }
+    &Bot {
+        
+        transform: rotate(-45deg) !important;
+    }
+}
+
+
+.mobile {
+    &-icon {
+        width: 1.6rem;
+        margin-left: .5rem;
+    }
+
+    &__overlay {
+        position: absolute;
+        top: 4.6rem;
+        left: 0rem;
+        z-index: 20;
+        background: rgba(0,0,0, .8);
+        // border: 1px solid red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        transition: all .4s;
+
+        &--inner {
+            position: absolute;
+            top: .5rem;
+            margin: 0 auto;
+            // border: 1px solid red;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all .4s;
+        }
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+        font-size: 14px;
+        margin: .3rem 0;
+
+        &--text {
+            padding-top: 3px;
+
+            &--no-arrow  {
+                margin: .4rem 0;
+            }
+        }
+    }
+}
+
+
+//****************************END MOBILE****************************
+
 .nav {
     position: sticky;
     top: 0;
     right: 0;
+    display: none;
 }
 
 .top-bar {
-    
     background-color: #0d0d0d;
     height: 3.5rem;
     display: block;
@@ -165,6 +355,7 @@ export default {
 }
 
 .nav-menu {
+    
     font-size: 14px;
     line-height: 16px;
     width: 100%;
@@ -175,13 +366,16 @@ export default {
     justify-content: space-evenly;
 
     &__upper {
+        // display: none;
         position: absolute;
         top: 10%;
-        left: 22%;
-        width: 63%;
+        left: 24%;
+        width: 59%;
     }
 
     &__lower {
+        // display: none;
+        max-width: 895px;
         position: absolute;
         top: 54%;
         left: 26%;
@@ -191,9 +385,9 @@ export default {
 
 .nav-logo {
     position: absolute;
-    top: 12%;
-    left: 16%;
-    width: 10%;    
+    top: 11%;
+    left: 17%;
+    width: 9rem;    
     transition: all .4s;
 
     &__svg {
@@ -204,17 +398,6 @@ export default {
     :hover {
         filter: opacity(80%);
     }
-}
-
-.vert-border {
-    width: 1px;
-    height: 30px;
-    background: $red;
-}
-
-.icon {
-    width: 12%;
-    margin-left: 10%;
 }
 
 .nav-link {
@@ -242,7 +425,6 @@ export default {
         }
 
         &__root-container {
-            // border: 1px solid green;
             padding: 16px 0;
             width: 95%;
             position: relative;
@@ -256,12 +438,9 @@ export default {
 
             &:hover > .drop-down {
                 // background: rgba(0,0,0, .3);
-                color: red;
+                color: $red;
                 display: block;
                 z-index: 2;
-            }
-            &:hover .nav-link__root {
-                z-index: 9;
             }
         }  
 
@@ -289,17 +468,23 @@ export default {
 .drop-down {
     z-index: -1;
     width: 100%;
-    // border: 1px solid green;
-    
     background: rgba(0,0,0, .8);
-    
     position: absolute;
     top: 3rem;
     left: 0;
-    
-    
     display: none;
         
+}
+
+.vert-border {
+    width: 1px;
+    height: 30px;
+    background: $red;
+}
+
+.icon {
+    width: 12%;
+    margin-left: 10%;
 }
 
 .dot {
@@ -309,7 +494,6 @@ export default {
     background: $red;
     border-radius: 50%;
     margin-right: 5px;
-    // z-index: 5;
 }
 
 </style>
