@@ -3,133 +3,135 @@
     <div class="nav">
         <div class="top-bar"></div>
         <div class="bot-bar"></div>
-        <div class="nav-logo">
-            <a href="/"><img class="nav-logo__svg" src="../assets/nav/logo.svg" alt=""></a>
-        </div>
-        
-        <nav class="nav-menu nav-menu__upper">
-            <router-link class="nav-link nav-link__upper" to="/search">
+        <div class="menu__container">
+            <div class="nav-logo">
+                <a href="/"><img class="nav-logo__svg" src="../assets/nav/logo.svg" alt=""></a>
+            </div>
+            
+            <nav class="nav-menu nav-menu__upper">
+                <router-link class="nav-link nav-link__upper" to="/search">
+                    <span class="nav-link__container">
+                        <div class="nav-link__container--text">Search</div>  
+                        <img class="icon" src="../assets/nav/search.svg" alt="">
+                    </span>
+                </router-link>
+                <router-link class="nav-link nav-link__upper" to="/payments">
                 <span class="nav-link__container">
-                    <div class="nav-link__container--text">Search</div>  
-                    <img class="icon" src="../assets/nav/search.svg" alt="">
+                    <div class="nav-link__container--text">Add Funds</div>  
+                    <img class="icon" src="../assets/nav/payments.svg" alt="">
                 </span>
-            </router-link>
-            <router-link class="nav-link nav-link__upper" to="/payments">
-            <span class="nav-link__container">
-                <div class="nav-link__container--text">Add Funds</div>  
-                <img class="icon" src="../assets/nav/payments.svg" alt="">
-            </span>
-            </router-link>
-            <router-link class="nav-link nav-link__upper" to="/account">
-            <span class="nav-link__container">
-                <div class="nav-link__container--text">My V-tell</div>  
-                <img class="icon" src="../assets/nav/account.svg" alt="">
-            </span>
-            </router-link>
-            <router-link class="nav-link nav-link__upper" to="/cart">
-            <span class="nav-link__container">
-                <div class="nav-link__container--text">Cart</div>  
-                <img class="icon" src="../assets/nav/cart.svg" alt="">
-            </span>    
-            </router-link>
-        </nav>
-        <nav class="nav-menu nav-menu__lower">
-            <span class="nav-link__root-container">
-                <router-link class="nav-link nav-link__root" to="/about">About</router-link>
-                <div class="drop-down">
-                    <div class="drop-down__inner">
-                        <span class="nav-link__container">
-                            <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>About V-Tell</router-link>
-                        </span>
-                        <span class="nav-link__container">
-                            <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>News</router-link>
-                        </span>
-                        <span class="nav-link__container">
-                            <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Press Center</router-link>
-                        </span>
+                </router-link>
+                <router-link class="nav-link nav-link__upper" to="/account">
+                <span class="nav-link__container">
+                    <div class="nav-link__container--text">My V-tell</div>  
+                    <img class="icon" src="../assets/nav/account.svg" alt="">
+                </span>
+                </router-link>
+                <router-link class="nav-link nav-link__upper" to="/cart">
+                <span class="nav-link__container">
+                    <div class="nav-link__container--text">Cart</div>  
+                    <img class="icon" src="../assets/nav/cart.svg" alt="">
+                </span>    
+                </router-link>
+            </nav>
+            <nav class="nav-menu nav-menu__lower">
+                <span class="nav-link__root-container">
+                    <router-link class="nav-link nav-link__root" to="/about">About</router-link>
+                    <div class="drop-down">
+                        <div class="drop-down__inner">
+                            <span class="nav-link__container">
+                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>About V-Tell</router-link>
+                            </span>
+                            <span class="nav-link__container">
+                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>News</router-link>
+                            </span>
+                            <span class="nav-link__container">
+                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Press Center</router-link>
+                            </span>
+                        </div>
                     </div>
-                </div>
-            </span>
+                </span>
 
-            <div class="vert-border"></div>
+                <div class="vert-border"></div>
 
-            <span class="nav-link__root-container">
-                <router-link class="nav-link nav-link__root"  to="/tariffs">Tariffs</router-link>
-                <div class="drop-down">
-                    <div class="drop-down__inner">
-                        <span class="nav-link__container">
-                            <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>All Tariffs</router-link>
-                        </span>
-                        <span class="nav-link__container">
-                            <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>V-1</router-link>
-                        </span>
-                        <span class="nav-link__container">
-                            <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>V-2</router-link>
-                        </span>
-                        <span class="nav-link__container">
-                            <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>V-3</router-link>
-                        </span>
-                        <span class="nav-link__container">
-                            <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>V-Max</router-link>
-                        </span>
-                        <span class="nav-link__container">
-                            <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Archive Tariffs</router-link>
-                        </span>
+                <span class="nav-link__root-container">
+                    <router-link class="nav-link nav-link__root"  to="/tariffs">Tariffs</router-link>
+                    <div class="drop-down">
+                        <div class="drop-down__inner">
+                            <span class="nav-link__container">
+                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>All Tariffs</router-link>
+                            </span>
+                            <span class="nav-link__container">
+                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>V-1</router-link>
+                            </span>
+                            <span class="nav-link__container">
+                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>V-2</router-link>
+                            </span>
+                            <span class="nav-link__container">
+                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>V-3</router-link>
+                            </span>
+                            <span class="nav-link__container">
+                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>V-Max</router-link>
+                            </span>
+                            <span class="nav-link__container">
+                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Archive Tariffs</router-link>
+                            </span>
+                        </div>
                     </div>
-                </div>
-            </span>
+                </span>
 
-            <div class="vert-border"></div>
+                <div class="vert-border"></div>
 
-            <span class="nav-link__root-container ">
-                <router-link class="nav-link nav-link__root"  to="/tariffs">Subscribers</router-link>
-                <div class="drop-down">
-                    <div class="drop-down__inner">
-                        <span class="nav-link__container">
-                            <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Advantages of V-tell</router-link>
-                        </span>
-                        <span class="nav-link__container">
-                            <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Coverage Map</router-link>
-                        </span>
-                        <span class="nav-link__container">
-                            <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Settings</router-link>
-                        </span>
-                        <span class="nav-link__container">
-                            <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>FAQ</router-link>
-                        </span>
-                        <span class="nav-link__container">
-                            <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Advantages List</router-link>
-                        </span>
-                        <span class="nav-link__container">
-                            <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Corporate Services</router-link>
-                        </span>
+                <span class="nav-link__root-container ">
+                    <router-link class="nav-link nav-link__root"  to="/tariffs">Subscribers</router-link>
+                    <div class="drop-down">
+                        <div class="drop-down__inner">
+                            <span class="nav-link__container">
+                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Advantages of V-tell</router-link>
+                            </span>
+                            <span class="nav-link__container">
+                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Coverage Map</router-link>
+                            </span>
+                            <span class="nav-link__container">
+                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Settings</router-link>
+                            </span>
+                            <span class="nav-link__container">
+                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>FAQ</router-link>
+                            </span>
+                            <span class="nav-link__container">
+                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Advantages List</router-link>
+                            </span>
+                            <span class="nav-link__container">
+                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Corporate Services</router-link>
+                            </span>
+                        </div>
                     </div>
-                </div>
-            </span>
+                </span>
 
-            <div class="vert-border"></div>
+                <div class="vert-border"></div>
 
-            <span class="nav-link__root-container ">
-                <router-link class="nav-link nav-link__root" to="/partnerships">Partnerships</router-link>
-            </span>
+                <span class="nav-link__root-container ">
+                    <router-link class="nav-link nav-link__root" to="/partnerships">Partnerships</router-link>
+                </span>
 
-            <div class="vert-border"></div>
+                <div class="vert-border"></div>
 
-            <span class="nav-link__root-container">
-                <router-link class="nav-link nav-link__root" to="/about">About</router-link>
-                <div class="drop-down">
-                    <div class="drop-down__inner">
-                        <span class="nav-link__container">
-                            <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Office</router-link>
-                        </span>
-                        <span class="nav-link__container">
-                            <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Customer Care Service</router-link>
-                        </span>
+                <span class="nav-link__root-container">
+                    <router-link class="nav-link nav-link__root" to="/about">About</router-link>
+                    <div class="drop-down">
+                        <div class="drop-down__inner">
+                            <span class="nav-link__container">
+                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Office</router-link>
+                            </span>
+                            <span class="nav-link__container">
+                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Customer Care Service</router-link>
+                            </span>
+                        </div>
                     </div>
-                </div>
-        
-            </span>
-        </nav>
+            
+                </span>
+            </nav>
+        </div>
     </div>
     <nav class="mobile-nav">
         <div class="mobile-nav-header__left">
@@ -180,7 +182,6 @@
                     <img class="mobile-icon" src="../assets/nav/cart.svg" alt="">
                 </router-link>
             </div>
-            <p>{{mobileOpen}}</p> 
         </div>
     </nav>
 </div>
@@ -211,6 +212,10 @@ export default {
     align-items: center;
     min-height: 70px;
 
+    @media(min-width: 735px) {
+           display: none;
+        }
+
     &__left {
         &--svg {
             width: 5.5rem;
@@ -231,6 +236,7 @@ export default {
     transform: rotate(0deg);
     transition: .5s ease-in-out;
     cursor: pointer;
+
 
     & span {
         display: block;
@@ -293,7 +299,6 @@ export default {
         left: 0rem;
         z-index: 20;
         background: rgba(0,0,0, .8);
-        // border: 1px solid red;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -305,7 +310,6 @@ export default {
             position: absolute;
             top: .5rem;
             margin: 0 auto;
-            // border: 1px solid red;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -334,11 +338,22 @@ export default {
 
 //****************************END MOBILE****************************
 
+.menu__container {
+    border: 1px solid  red;
+}
+
 .nav {
-    position: sticky;
+    position: fixed;
     top: 0;
     right: 0;
-    display: none;
+    height: auto;
+    width: auto;
+    width: 100%;
+    text-align: center;
+    
+    @media(max-width: 735px) {
+           display: none;
+        }
 }
 
 .top-bar {
@@ -366,7 +381,6 @@ export default {
     justify-content: space-evenly;
 
     &__upper {
-        // display: none;
         position: absolute;
         top: 10%;
         left: 24%;
@@ -374,7 +388,6 @@ export default {
     }
 
     &__lower {
-        // display: none;
         max-width: 895px;
         position: absolute;
         top: 54%;
@@ -385,7 +398,7 @@ export default {
 
 .nav-logo {
     position: absolute;
-    top: 11%;
+    top: 8%;
     left: 17%;
     width: 9rem;    
     transition: all .4s;
