@@ -4,7 +4,7 @@
         <div class="top-bar"></div>
         <div class="bot-bar"></div>
         <div class="menu__container">
-            <div class="nav-logo">
+            <div class="nav-logo" :style="{left: logoSpacing + '%'}">
                 <a href="/"><img class="nav-logo__svg" src="../assets/nav/logo.svg" alt=""></a>
             </div>
             
@@ -117,7 +117,7 @@
                 <div class="vert-border"></div>
 
                 <span class="nav-link__root-container">
-                    <router-link class="nav-link nav-link__root" to="/about">About</router-link>
+                    <router-link class="nav-link nav-link__root" to="/about">Contacts</router-link>
                     <div class="drop-down">
                         <div class="drop-down__inner">
                             <span class="nav-link__container">
@@ -132,7 +132,9 @@
                 </span>
             </nav>
         </div>
+        <!-- <p>::{{logoSpacing}}</p> -->
     </div>
+        <p>::{{windowWidth}}</p>
     <nav class="mobile-nav">
         <div class="mobile-nav-header__left">
             <a href="/"><img class="mobile-nav__left--svg" src="../assets/nav/logo.svg" alt=""></a>
@@ -191,14 +193,220 @@
 export default {
     data() {
         return {
-            mobileOpen: true
+            mobileOpen: true,
+            windowWidth: 0
         }
-    }
+    },
+    computed: {
+        logoSpacing() {
+            if(this.windowWidth > 1920) {
+                return  13.5;
+            } 
+            if(this.windowWidth > 1824) {
+                return  this.windowWidth/100 - 5.75
+            } 
+            else {
+                return  this.windowWidth/100 * .5
+            }   
+        
+        
+        }
+
+    },
+    methods: {
+        handleResize() {
+            this.windowWidth = window.innerWidth
+        }
+    },
+    created() {
+        window.addEventListener('resize', this.handleResize);
+        this.handleResize();
+    },
+    destroyed() {
+        window.removeEventListener('resize', this.handleResize);
+    },
+
 }
 </script>
 
 <style lang="scss">
 @import '../scss/_variables.scss';
+
+
+
+.nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: auto;
+    width: auto;
+    width: 100%;
+    text-align: center;
+    
+    @media(max-width: 760px) {
+        display: none;
+    }
+}
+
+
+
+.nav-menu {
+    // font-size: 14px;
+    font-size: .9rem;
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+
+    &__upper {
+        justify-content: space-between;
+        width: 71%;
+        top: 9%;
+        left: 19%;
+        // border: 1px solid green;
+        
+    }
+
+    &__lower {
+        justify-content: space-evenly;
+        width: 73%;
+        top: 51%;
+        left: 18%;
+        // border: 1px solid red;
+
+        
+    }
+}
+
+.nav-logo {
+    position: absolute;
+    top: 8%;
+    width: 9rem;    
+    transition: all .4s;
+
+    &__svg {
+        width: 80%;
+        // border: 1px solid red;
+        transition: all .4s;
+    }
+
+    :hover {
+        filter: opacity(80%);
+    }
+}
+
+.nav-link {
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        z-index: 2;
+
+        & .icon {
+            width: 16%;
+            margin-left: 10%;
+        }
+
+
+        &__container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &--text {
+                margin-top: .2rem;
+                border-bottom: 1px solid transparent;
+                transition: all .4s;
+
+                &:hover {
+                    color: grey;
+                    border-bottom: 1px solid grey;
+                }
+            }
+        }
+
+        &__root-container {
+            padding: 16px 0;
+            width: 95%;
+            position: relative;
+            z-index: 0;
+            cursor: pointer;
+
+            &:hover, &:hover .nav-link__root {
+                background: rgba(0,0,0, .8);
+                color: $red;
+            }
+
+            &:hover > .drop-down {
+                // background: rgba(0,0,0, .3);
+                color: $red;
+                display: block;
+                z-index: 2;
+            }
+        }  
+
+        &__drop {
+            width: 100%;
+            height: auto;
+            padding: 9px 0;
+            font-size: 11px;
+            line-height: 16px;
+            text-align: left;
+            padding-left: .4rem;
+
+            &:hover {
+                width: 100%;
+                background: $red;
+            }
+
+            &:hover .dot {
+                // width: 100%;
+                background: black;
+            }
+        }
+}
+
+.drop-down {
+    z-index: -1;
+    width: 100%;
+    background: rgba(0,0,0, .8);
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    display: none;
+        
+}
+
+.top-bar {
+    background-color: #0d0d0d;
+    height: 3.5rem;
+    display: block;
+    width: 100%;
+}
+.bot-bar {
+    background-color: rgba(0,0,0, .5);
+    height: 3rem;
+    display: block;
+    width: 100%;
+}
+
+.vert-border {
+    width: 1px;
+    height: 30px;
+    background: $red;
+}
+
+.dot {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    background: $red;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+//**********************MOBILE STYLES************************/
 
 .mobile-nav {
     position: absolute;
@@ -212,7 +420,7 @@ export default {
     align-items: center;
     min-height: 70px;
 
-    @media(min-width: 735px) {
+    @media(min-width: 760px) {
            display: none;
         }
 
@@ -337,177 +545,6 @@ export default {
 
 
 //****************************END MOBILE****************************
-
-.menu__container {
-    border: 1px solid  red;
-}
-
-.nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: auto;
-    width: auto;
-    width: 100%;
-    text-align: center;
-    
-    @media(max-width: 735px) {
-           display: none;
-        }
-}
-
-.top-bar {
-    background-color: #0d0d0d;
-    height: 3.5rem;
-    display: block;
-    width: 100%;
-}
-.bot-bar {
-    background-color: rgba(0,0,0, .5);
-    height: 3rem;
-    display: block;
-    width: 100%;
-}
-
-.nav-menu {
-    
-    font-size: 14px;
-    line-height: 16px;
-    width: 100%;
-    max-width: 1024px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-
-    &__upper {
-        position: absolute;
-        top: 10%;
-        left: 24%;
-        width: 59%;
-    }
-
-    &__lower {
-        max-width: 895px;
-        position: absolute;
-        top: 54%;
-        left: 26%;
-        width: 55%;
-    }
-}
-
-.nav-logo {
-    position: absolute;
-    top: 8%;
-    left: 17%;
-    width: 9rem;    
-    transition: all .4s;
-
-    &__svg {
-        width: 80%;
-        transition: all .4s;
-    }
-
-    :hover {
-        filter: opacity(80%);
-    }
-}
-
-.nav-link {
-        color: white;
-        text-decoration: none;
-        text-transform: uppercase;
-        z-index: 2;
-
-        &__container {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            &--text {
-                margin-top: .2rem;
-                border-bottom: 1px solid transparent;
-                transition: all .4s;
-
-                &:hover {
-                    color: grey;
-                    border-bottom: 1px solid grey;
-                }
-            }
-        }
-
-        &__root-container {
-            padding: 16px 0;
-            width: 95%;
-            position: relative;
-            z-index: 0;
-            cursor: pointer;
-
-            &:hover, &:hover .nav-link__root {
-                background: rgba(0,0,0, .8);
-                color: $red;
-            }
-
-            &:hover > .drop-down {
-                // background: rgba(0,0,0, .3);
-                color: $red;
-                display: block;
-                z-index: 2;
-            }
-        }  
-
-        &__drop {
-            width: 100%;
-            height: auto;
-            padding: 9px 0;
-            font-size: 11px;
-            line-height: 16px;
-            text-align: left;
-            padding-left: .4rem;
-
-            &:hover {
-                width: 100%;
-                background: $red;
-            }
-
-            &:hover .dot {
-                // width: 100%;
-                background: black;
-            }
-        }
-}
-
-.drop-down {
-    z-index: -1;
-    width: 100%;
-    background: rgba(0,0,0, .8);
-    position: absolute;
-    top: 3rem;
-    left: 0;
-    display: none;
-        
-}
-
-.vert-border {
-    width: 1px;
-    height: 30px;
-    background: $red;
-}
-
-.icon {
-    width: 12%;
-    margin-left: 10%;
-}
-
-.dot {
-    display: inline-block;
-    height: 10px;
-    width: 10px;
-    background: $red;
-    border-radius: 50%;
-    margin-right: 5px;
-}
 
 </style>
 
