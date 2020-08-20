@@ -92,15 +92,4 @@ export default {
     }
 }
 
-
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: $red;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 </style>
