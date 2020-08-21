@@ -1,6 +1,13 @@
 <template>
 <div>
-    <div class="hero__container">
+    <section class="hero">
+      <div v-if="!checkWindowWidth">
+        <img class="hero__img" :src="`${this.images[this.slideIndex].path}`" alt="V-Tell Telecom US">
+      </div>
+      <div v-else >
+        <img class="hero__img" :src="`${this.images[this.slideIndex].pathSm}`" alt="V-Tell Telecom US">
+      </div>
+      <div class="hero__container">
         <div class="dots-container" :style="{top: getContainerOffset + '%'}">
           <span :class="{active : slideIndex == 0  }" class="dots-container--circle"></span>
           <span :class="{active : slideIndex == 1  }" class="dots-container--circle"></span>
@@ -12,12 +19,9 @@
         </div>
         <div class="hero__mssg">{{`${this.images[this.slideIndex].mssg}`}}</div>
     </div>
-    <section class="hero">
-      <img v-if="!checkWindowWidth" class="hero__img" :src="`${this.images[this.slideIndex].path}`" alt="V-Tell Telecom US">
-      <img v-else class="hero__img" :src="`${this.images[this.slideIndex].pathSm}`" alt="V-Tell Telecom US">
     </section>  
-    <p>{{windowHeight}}</p>
-    <p>{{windowWidth}}</p>
+    <!-- <p>{{windowHeight}}</p>
+    <p>{{windowWidth}}</p> -->
 </div>
 </template>
 
@@ -130,19 +134,19 @@ export default {
   margin: 0 auto;
   margin-bottom: -6px;
   margin-top: 56px;
-  width: 100%;
-  height: auto;
+  width: 100vw;
+  height: 45vh;
   max-width: 1920px;
   max-height: 593px;
 
   &__container {
     display: block;
     border: 5px solid red;
-    position: absolute;
-    top: 0%;
+    position: relative;
+    top: 100%;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: -100%;
+    height: 50%;
     max-height: 650px;
   }
 
@@ -153,7 +157,7 @@ export default {
   }
 
   &__mssg {
-    position: absolute;
+    position: relative;
     z-index: 0;
     white-space: pre;
     // font-size: clamp(4rem, 10vw, 2rem);
@@ -162,13 +166,13 @@ export default {
     color: grey;
     text-transform: uppercase;
     top: 40%;
-    left: 18%;
+    left: 0%;
   }
 }
 
 .dots-container {
   // border: 1px solid red;
-  position: absolute;
+  position: relative;
   top: 90%;
   left: 8%;
   display: flex;
