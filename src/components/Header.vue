@@ -193,38 +193,8 @@ export default {
     data() {
         return {
             mobileOpen: true,
-            windowWidth: 0
         }
-    },
-    computed: {
-        logoSpacing() {
-            if(this.windowWidth > 1920) {
-                return  13.5;
-            } 
-            if(this.windowWidth > 1824) {
-                return  this.windowWidth/100 - 5.75
-            } 
-            else {
-                return  this.windowWidth/100 * .5
-            }   
-        
-        
-        }
-
-    },
-    methods: {
-        handleResize() {
-            this.windowWidth = window.innerWidth
-        }
-    },
-    created() {
-        window.addEventListener('resize', this.handleResize);
-        this.handleResize();
-    },
-    destroyed() {
-        window.removeEventListener('resize', this.handleResize);
-    },
-
+    }
 }
 </script>
 
@@ -273,16 +243,14 @@ export default {
 
     &__lower {
         justify-content: space-evenly;
-        margin-top: .5rem;    
+        margin-top: .2rem;    
     }
 }
 
 .nav-logo {
     z-index: 99;
     &__svg {
-        // display: block;
         width: 8rem;
-        // border: 1px solid red;
         transition: all .4s;
     }
 
