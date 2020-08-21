@@ -28,6 +28,7 @@ export default {
 <style lang="scss">
 
 .privileges {
+    position: relative;
     display: flex;
     justify-content: center;
 

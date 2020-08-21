@@ -1,24 +1,24 @@
 <template>
 <div>
-    <section class="hero">
-      <div v-if="!checkWindowWidth">
-        <img class="hero__img" :src="`${this.images[this.slideIndex].path}`" alt="V-Tell Telecom US">
+    <section class="hero" :style="{marginBottom: getBottomMargin + 'px'}">
+      <div class="hero__img">
+        <!-- <img class="hero__img" :src="`${this.images[this.slideIndex].path}`" alt="V-Tell Telecom US"> -->
       </div>
-      <div v-else >
+      <!-- <div v-else >
         <img class="hero__img" :src="`${this.images[this.slideIndex].pathSm}`" alt="V-Tell Telecom US">
+      </div> -->
+      <!-- <div class="hero__controls">
+          <span :class="{active : slideIndex == 0  }" class="hero__controls--circle"></span>
+          <span :class="{active : slideIndex == 1  }" class="hero__controls--circle"></span>
+          <span :class="{active : slideIndex == 2  }" class="hero__controls--circle"></span>
+          <span :class="{active : slideIndex == 3  }" class="hero__controls--circle"></span>
+          <span :class="{active : slideIndex == 4  }" class="hero__controls--circle"></span>
+          <span :class="{active : slideIndex == 5  }" class="hero__controls--circle"></span>
+          <span :class="{active : slideIndex == 6  }" class="hero__controls--circle"></span>
       </div>
-      <div class="hero__container">
-        <div class="dots-container" :style="{top: getContainerOffset + '%'}">
-          <span :class="{active : slideIndex == 0  }" class="dots-container--circle"></span>
-          <span :class="{active : slideIndex == 1  }" class="dots-container--circle"></span>
-          <span :class="{active : slideIndex == 2  }" class="dots-container--circle"></span>
-          <span :class="{active : slideIndex == 3  }" class="dots-container--circle"></span>
-          <span :class="{active : slideIndex == 4  }" class="dots-container--circle"></span>
-          <span :class="{active : slideIndex == 5  }" class="dots-container--circle"></span>
-          <span :class="{active : slideIndex == 6  }" class="dots-container--circle"></span>
-        </div>
-        <div class="hero__mssg">{{`${this.images[this.slideIndex].mssg}`}}</div>
-    </div>
+        <div class="hero__mssg">
+          {{`${this.images[this.slideIndex].mssg}`}}
+        </div> -->
     </section>  
     <!-- <p>{{windowHeight}}</p>
     <p>{{windowWidth}}</p> -->
@@ -94,25 +94,13 @@ export default {
     }
   },
   computed: {
-    getSlide() {
-      return this.images[0].path
-    },
-    getContainerOffset() {
-      if (this.windowHeight > 593 || this.windowHeight < 593) {
-        return 90
-      } 
-      if (this.windowWidth < 1920) {
-        return this.windowWidth * .7
-      }
-     
-    },
-    checkWindowWidth() {
-      if(this.windowWidth <= 760) {
-        return true
+    getBottomMargin() {
+      if(this.windowWidth >= 1920) {
+        return -6
       } else {
-        return false
+        return -10
       }
-    }
+    } 
     },
     created() {
       console.log('creating')
@@ -131,36 +119,58 @@ export default {
 @import '../scss/_variables.scss';
 
 .hero {
+  position:relative;
   margin: 0 auto;
-  margin-bottom: -6px;
+  // margin-bottom: -6px;
   margin-top: 56px;
-  width: 100vw;
-  height: 45vh;
+  width:100%;
   max-width: 1920px;
-  max-height: 593px;
+  
+  height: auto;
+  height: 593px;
+  min-height: auto;
+  border: 1px solid red;
+  margin-bottom: -8rem;
 
-  &__container {
-    display: block;
-    border: 5px solid red;
-    position: relative;
-    top: 100%;
-    left: 0;
-    width: -100%;
-    height: 50%;
-    max-height: 650px;
-  }
 
   &__img {
+    display: block;
+    position:relative;
+    top:0;
+    left:0;
+    background:url('../assets/hero/hero_1.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% auto;
+    // background-size: contain;
+    // padding-bottom: 60%;
     width: 100%;
-    height: auto;
-    // min-height: 30vh;
+    height: 100%;
+        overflow: hidden;
+    // height:0;
+    // height: auto;
+    max-height:100%;
+  }
+
+  &__controls {
+    position: relative;
+    top: 90%;
+    left: 8%;
+    display: flex;
+
+    &--circle {
+      margin: 0 .1rem;
+      height: 15px;
+      width: 15px;
+      display: block;
+      border-radius: 50%;
+      border: 2px solid $red;
+    }
   }
 
   &__mssg {
     position: relative;
-    z-index: 0;
     white-space: pre;
-    // font-size: clamp(4rem, 10vw, 2rem);
+    text-align: center;
     font-size: 4vw;
     line-height: 4vw;
     color: grey;
@@ -168,25 +178,6 @@ export default {
     top: 40%;
     left: 0%;
   }
-}
-
-.dots-container {
-  // border: 1px solid red;
-  position: relative;
-  top: 90%;
-  left: 8%;
-  display: flex;
-
-
-  &--circle {
-    margin: 0 .1rem;
-    height: 15px;
-    width: 15px;
-    display: block;
-    border-radius: 50%;
-    border: 2px solid $red;
-  }
-
 }
 
 .active {
