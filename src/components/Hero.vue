@@ -135,25 +135,25 @@ export default {
   margin-bottom: -6px;
   margin-top: 56px;
   width: 100vw;
-  height: 45vh;
+  height: 100%;
   max-width: 1920px;
   max-height: 593px;
 
   &__container {
     display: block;
     border: 5px solid red;
-    position: relative;
-    top: 100%;
+    position: absolute;
+    top: 56px;
     left: 0;
-    width: -100%;
-    height: 50%;
+    width: 680px;
+    height: 400px;
     max-height: 650px;
   }
 
   &__img {
     width: 100%;
     height: auto;
-    // min-height: 30vh;
+    // min-height: 30vh;750
   }
 
   &__mssg {
