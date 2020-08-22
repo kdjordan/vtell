@@ -1,0 +1,27 @@
+.divider {
+    width: 100%;
+    background-image: url('../assets/img/border.png');
+    background-position: center;
+    
+    
+    &__container {
+        padding: 10px 0;
+        max-width: 950px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    &__cube {
+       
+        height: 50px;
+    }
+
+    &__title {
+        text-transform: uppercase;
+        font-size: 25px;
+        margin-left: 5%;
+        color: white;
+    }
+}

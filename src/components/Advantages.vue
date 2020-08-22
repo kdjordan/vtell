@@ -1,11 +1,11 @@
 <template>
   <div>
-      <div class="border mb-3">
-          <div class="border__container">
-            <img class="border__cube" src="../assets/SVG/cube.svg" alt="">
-            <div class="border__title">ADVANTAGES</div>
+      <div class="divider mb-3">
+          <div class="divider__container">
+            <img class="divider__cube" src="../assets/SVG/cube.svg" alt="">
+            <div class="divider__title">ADVANTAGES</div>
           </div>
-      </div>  
+      </div> 
       <div class="advantages">
         <!-- <div class="container"> -->
             <div class="advantages__wrap">
@@ -53,6 +53,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../scss/_divider.scss';
 @import '../scss/_variables.scss';
 @import '../scss/_base.scss';
 

@@ -1,39 +1,18 @@
 <template>
   <div id="app">
     <Header />
-    <!-- <router-view /> -->
-    <Hero />
-    <Privilege />
-    <Advantages />
-    <About />
-    <Tariffs />
-    <Sim />
-    <Countries />
+    <router-view />
     <Footer />
   </div>
 </template>
 
 <script>
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Countries from './components/Countries'
-import Sim from './components/Sim'
-import Tariffs from './components/Tariffs'
-import About from './components/About'
-import Advantages from './components/Advantages'
-import Privilege from './components/Privilege'
-import Hero from './components/Hero'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export default {
   components: {
     Header,
-    Hero,
-    Privilege,
-    Advantages,
-    About,
-    Tariffs,
-    Sim,
-    Countries,
     Footer
   }
 }

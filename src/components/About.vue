@@ -1,11 +1,11 @@
 <template>
   <div>
-      <div class="border mt-3">
-          <div class="border__container">
-            <img class="border__cube" src="../assets/SVG/cube.svg" alt="">
-            <div class="border__title">ABOUT US</div>
+      <div class="divider mb-3">
+          <div class="divider__container">
+            <img class="divider__cube" src="../assets/SVG/cube.svg" alt="">
+            <div class="divider__title">ABOUT US</div>
           </div>
-      </div>  
+      </div> 
       <div class="about">
         <div class="container">
             <p class="about mt-4">V-Tell is a rapidly growing Telecommunication company acting as an International Mobile Operator, devoted to provide services and innovative technology to customers across the globe.
@@ -31,6 +31,7 @@ export default {
 <style lang="scss">
 @import '../scss/_variables.scss';
 @import '../scss/_base.scss';
+@import '../scss/_divider.scss';
 
 .btn-about {
     color: rgba(242, 242, 242, 0.75);

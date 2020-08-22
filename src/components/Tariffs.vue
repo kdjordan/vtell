@@ -1,11 +1,11 @@
 <template>
     <div>
-      <div class="border">
-          <div class="border__container">
-            <img class="border__cube" src="../assets/SVG/cube.svg" alt="">
-            <div class="border__title">TARIFFS</div>
+      <div class="divider mb-3">
+          <div class="divider__container">
+            <img class="divider__cube" src="../assets/SVG/cube.svg" alt="">
+            <div class="divider__title">Tariffs</div>
           </div>
-      </div>  
+      </div> 
 
       <div class="tariff">
         <div class="container">
@@ -174,6 +174,7 @@ export default {
 <style lang="scss">
 @import '../scss/_variables.scss';
 @import '../scss/_base.scss';
+@import '../scss/_divider.scss';
 
 .container__arrow {
     display: flex;

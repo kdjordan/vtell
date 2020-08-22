@@ -124,7 +124,7 @@
                                 <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Office</router-link>
                             </span>
                             <span class="nav-link__container">
-                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Customer Care Service</router-link>
+                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Customer Service</router-link>
                             </span>
                         </div>
                     </div>

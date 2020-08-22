@@ -1,9 +1,9 @@
 <template>
   <div>
-      <div class="border mb-3">
-          <div class="border__container border__container--priv-adjust">
-            <img class="border__cube" src="../assets/SVG/cube.svg" alt="">
-            <div class="border__title">V-TELL – YOUR GLOBAL PRIVILEGE</div>
+      <div class="divider mb-3">
+          <div class="divider__container">
+            <img class="divider__cube" src="../assets/SVG/cube.svg" alt="">
+            <div class="divider__title">V-TELL – YOUR GLOBAL PRIVILEGE</div>
           </div>
       </div>  
       <div class="privileges">
@@ -26,6 +26,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../scss/_divider.scss';
 
 .privileges {
     // position: relative;

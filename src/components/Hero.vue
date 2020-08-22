@@ -1,6 +1,5 @@
 <template>
 <div class="hero">
-  
       <img v-if="windowWidth > 760" class="hero__img" 
         :src="`${this.images[this.slideIndex].path}`" 
         alt="V-Tell Telecom US"
@@ -11,7 +10,7 @@
         alt="V-Tell Telecom US"
         :class="{noShow: !show}"
       >
-      <div class="hero__controls" :style="{left: getLeftControls + 'px'}" >
+      <div class="hero__controls" >
           <span :class="{active : slideIndex == 0  }" class="hero__controls--circle" @click.prevent="selectSlide(0)"></span>
           <span :class="{active : slideIndex == 1  }" class="hero__controls--circle" @click.prevent="selectSlide(1)"></span>
           <span :class="{active : slideIndex == 2  }" class="hero__controls--circle" @click.prevent="selectSlide(2)"></span>
@@ -20,7 +19,7 @@
           <span :class="{active : slideIndex == 5  }" class="hero__controls--circle" @click.prevent="selectSlide(5)"></span>
           <span :class="{active : slideIndex == 6  }" class="hero__controls--circle" @click.prevent="selectSlide(6)"></span>
       </div>
-      <div class="hero__mssg" 
+      <!-- <div class="hero__mssg" 
       :class="{noShow: !show}" 
       :style="{
         left: getLeftText + 'px', 
@@ -29,8 +28,19 @@
         }"
       >
         {{`${this.images[this.slideIndex].mssg}`}}
+      </div> -->
+      <div class="hero__mssg" 
+      :class="{noShow: !show}" 
+      :style="{
+        left: getLeftOffset + '%', 
+        bottom: getBottomOffset + '%',
+        color: `${this.images[this.slideIndex].color}`,
+        fontSize: `${this.images[this.slideIndex].size}` + 'vw'
+        }"
+      >
+        {{`${this.images[this.slideIndex].mssg}`}}
       </div>
-      <!-- <p>{{this.images[this.slideIndex].xOffset}}</p>  -->
+      <!-- <p style="margin-top: 10rem;">{{this.images[this.slideIndex].path}}</p>  -->
       <!-- <p>{{slideIndex}}</p> -->
       
 </div>
@@ -49,17 +59,17 @@ export default {
           xOffset: 0,
           yOffset: 0,
           color: '#727577',
-          size: 3
+          size: 4
         },
         {
           path: require('../assets/hero/hero_2.jpg'), 
           pathSm: require('../assets/hero/hero_2-sm.jpg'), 
           mssg: `If You Travel
           Around the World`,
-          xOffset: 400,
+          xOffset: 300,
           yOffset: 0,
           color: '#cbbcb8',
-          size: 3
+          size: 4
         },
         {
           path: require('../assets/hero/hero_3.jpg'),
@@ -69,7 +79,7 @@ export default {
           xOffset: 300,
           yOffset: 0,
           color: '#664e42',
-          size: 3
+          size: 4
         },
         {
           path: require('../assets/hero/hero_4.jpg'),
@@ -88,7 +98,7 @@ export default {
           xOffset: 300,
           yOffset: 0,
           color: '#727577',
-          size: 3
+          size: 4
         },
         {
           path: require('../assets/hero/hero_6.jpg'),
@@ -96,7 +106,7 @@ export default {
           mssg: `NO MATTER WHICH COUNTRY
           YOU ARE IN, THAT  COUNTRY\'S LOCAL
           PHONE  NUMBER IS ON YOUR SIM CARD`,
-          xOffset: -100,
+          xOffset: 100,
           yOffset: 0,
           color: '$#727577',
           size: 3
@@ -108,7 +118,7 @@ export default {
           xOffset: -200,
           yOffset: 0,
           color: '#a69891',
-          size: 3
+          size: 4
         },
       ],
       slideIndex: 0,
@@ -125,11 +135,8 @@ export default {
       this.sliderTimer = null
       this.slideIndex = slideNum
     },
-    handleResize() {
-        this.windowWidth = window.innerWidth
-        this.windowHeight = window.innerHeight
-    },
     startSlider() {
+      console.log('starting timer')
       this.sliderTimer = setInterval(()=> {
         this.doFade()
       }, 3000)
@@ -145,32 +152,34 @@ export default {
           this.show = true
         }
       }, 400)
+    },
+    handleResize() {
+        this.windowWidth = window.innerWidth;
+        this.windowHeight = window.innerHeight;
     }
   },
   computed: {
-    getLeftControls() {
-      if(this.windowWidth > 1920){
-        return (this.windowWidth / 4) 
+    getLeftOffset() {
+      if(this.slideIndex == 0 || this.slideIndex == 6) {
+        return 0
+      } if (this.slideIndex == 5) {
+        return 30
       } else {
-        return this.windowWidth / 13 
+        return 40
       }
     },
-    getLeftText() {
-      if(this.windowWidth > 1920){
-        return (this.windowWidth / 4) + this.images[this.slideIndex].xOffset
-      } else {
-        return (this.windowWidth / 5) + this.images[this.slideIndex].xOffset
-      }
+    getBottomOffset() {
+
     }
   },
     created() {
       window.addEventListener('resize', this.handleResize);
-      this.handleResize();
+      this.handleResize()
       this.startSlider()
     },
     destroyed() {
-        window.removeEventListener('resize', this.handleResize);
-        this.sliderTimer = null
+      window.removeEventListener('resize', this.handleResize);
+      this.sliderTimer = null
     }
 
   
@@ -188,7 +197,9 @@ export default {
 
   &__img {
     width: 100%;
+    height: 100%;
     max-width: 1920px;
+    max-height: 593px;
     margin: 0 auto;
     transition:  all .4s ease-in;
     opacity: 1;
@@ -196,9 +207,14 @@ export default {
 
   &__controls {
     position: absolute;
-    bottom: 18%;
+    bottom: calc(100% / 8);
+    left: calc(100% / 8);
     
     display: flex;
+
+    @media(min-width: 2400px) {
+      left: calc(100% / 5);
+    }
 
     &--circle {
       margin: 0 .1rem;
@@ -214,12 +230,10 @@ export default {
     position: absolute;
     white-space: pre;
     text-align: center;
-    font-size: 4vw;
     line-height: 4vw;
-    color: grey;
-    left: -1000px;
+    // left: -1000px;
     text-transform: uppercase;
-    bottom: 25%;
+    bottom: calc(100% / 3);
     transition:  opacity left .7s ease-in;
     opacity: 1;
   }
