@@ -1,15 +1,15 @@
 <template>
 <div class="hero">
   
-        <img v-if="windowWidth > 760" class="hero__img" 
+      <img v-if="windowWidth > 760" class="hero__img" 
         :src="`${this.images[this.slideIndex].path}`" 
         alt="V-Tell Telecom US"
         :class="{noShow: !show}"
         >
       <img v-else class="hero__img no-show" 
-      :src="`${this.images[this.slideIndex].pathSm}`" 
-      alt="V-Tell Telecom US"
-      :class="{noShow: !show}"
+        :src="`${this.images[this.slideIndex].pathSm}`" 
+        alt="V-Tell Telecom US"
+        :class="{noShow: !show}"
       >
       <div class="hero__controls" :style="{left: getLeftControls + 'px'}" >
           <span :class="{active : slideIndex == 0  }" class="hero__controls--circle" @click.prevent="selectSlide(0)"></span>
