@@ -1,27 +1,38 @@
 <template>
-<div>
-    <section class="hero">
-      <div v-if="!checkWindowWidth">
-        <img class="hero__img" :src="`${this.images[this.slideIndex].path}`" alt="V-Tell Telecom US">
+<div class="hero">
+  
+        <img v-if="windowWidth > 760" class="hero__img" 
+        :src="`${this.images[this.slideIndex].path}`" 
+        alt="V-Tell Telecom US"
+        :class="{noShow: !show}"
+        >
+      <img v-else class="hero__img no-show" 
+      :src="`${this.images[this.slideIndex].pathSm}`" 
+      alt="V-Tell Telecom US"
+      :class="{noShow: !show}"
+      >
+      <div class="hero__controls" :style="{left: getLeftControls + 'px'}" >
+          <span :class="{active : slideIndex == 0  }" class="hero__controls--circle" @click.prevent="selectSlide(0)"></span>
+          <span :class="{active : slideIndex == 1  }" class="hero__controls--circle" @click.prevent="selectSlide(1)"></span>
+          <span :class="{active : slideIndex == 2  }" class="hero__controls--circle" @click.prevent="selectSlide(2)"></span>
+          <span :class="{active : slideIndex == 3  }" class="hero__controls--circle" @click.prevent="selectSlide(3)"></span>
+          <span :class="{active : slideIndex == 4  }" class="hero__controls--circle" @click.prevent="selectSlide(4)"></span>
+          <span :class="{active : slideIndex == 5  }" class="hero__controls--circle" @click.prevent="selectSlide(5)"></span>
+          <span :class="{active : slideIndex == 6  }" class="hero__controls--circle" @click.prevent="selectSlide(6)"></span>
       </div>
-      <div v-else >
-        <img class="hero__img" :src="`${this.images[this.slideIndex].pathSm}`" alt="V-Tell Telecom US">
+      <div class="hero__mssg" 
+      :class="{noShow: !show}" 
+      :style="{
+        left: getLeftText + 'px', 
+        color: `${this.images[this.slideIndex].color}`,
+        fontSize: `${this.images[this.slideIndex].size}` + 'vw'
+        }"
+      >
+        {{`${this.images[this.slideIndex].mssg}`}}
       </div>
-      <div class="hero__container">
-        <div class="dots-container" :style="{top: getContainerOffset + '%'}">
-          <span :class="{active : slideIndex == 0  }" class="dots-container--circle"></span>
-          <span :class="{active : slideIndex == 1  }" class="dots-container--circle"></span>
-          <span :class="{active : slideIndex == 2  }" class="dots-container--circle"></span>
-          <span :class="{active : slideIndex == 3  }" class="dots-container--circle"></span>
-          <span :class="{active : slideIndex == 4  }" class="dots-container--circle"></span>
-          <span :class="{active : slideIndex == 5  }" class="dots-container--circle"></span>
-          <span :class="{active : slideIndex == 6  }" class="dots-container--circle"></span>
-        </div>
-        <div class="hero__mssg">{{`${this.images[this.slideIndex].mssg}`}}</div>
-    </div>
-    </section>  
-    <!-- <p>{{windowHeight}}</p>
-    <p>{{windowWidth}}</p> -->
+      <!-- <p>{{this.images[this.slideIndex].xOffset}}</p>  -->
+      <!-- <p>{{slideIndex}}</p> -->
+      
 </div>
 </template>
 
@@ -33,94 +44,133 @@ export default {
         {
           path: require('../assets/hero/hero_1.jpg'), 
           pathSm: require('../assets/hero/hero_1-sm.jpg'), 
-          mssg: 'If You Often\nTravel Abroad',
-          xPosition : 0,
-          yPosition: 0,
-          color: '$grey'
+          mssg: `If You Often
+          Travel Abroad`,
+          xOffset: 0,
+          yOffset: 0,
+          color: '#727577',
+          size: 3
         },
         {
           path: require('../assets/hero/hero_2.jpg'), 
-          mssg: 'If You Travel\nAround the World',
-          xPosition : 0,
-          yPosition: 0,
-          color: '$grey'
+          pathSm: require('../assets/hero/hero_2-sm.jpg'), 
+          mssg: `If You Travel
+          Around the World`,
+          xOffset: 400,
+          yOffset: 0,
+          color: '#cbbcb8',
+          size: 3
         },
         {
-          path: require('../assets/hero/hero_3.jpg'), 
-          mssg: 'If You\nStudy Abroad',
-          xPosition : 0,
-          yPosition: 0,
-          color: '$white'
+          path: require('../assets/hero/hero_3.jpg'),
+          pathSm: require('../assets/hero/hero_3-sm.jpg'),  
+          mssg: `If You
+          Study Abroad`,
+          xOffset: 300,
+          yOffset: 0,
+          color: '#664e42',
+          size: 3
         },
         {
-          path: require('../assets/hero/hero_4.jpg'), 
-          mssg: 'If You Live Outside\nof your Home Country',
-          xPosition : 0,
-          yPosition: 0,
-          color: '$grey'
+          path: require('../assets/hero/hero_4.jpg'),
+          pathSm: require('../assets/hero/hero_4-sm.jpg'),  
+          mssg: `If You Live Outside
+          of your Home Country`,
+          xOffset: 300,
+          yOffset: 0,
+          color: '#f0f1f2',
+          size: 3
         },
         {
-          path: require('../assets/hero/hero_5.jpg'), 
-          mssg: 'V-Tell is for You !',
-          xPosition : 0,
-          yPosition: 0,
-          color: '$grey'
+          path: require('../assets/hero/hero_5.jpg'),
+          pathSm: require('../assets/hero/hero_5-sm.jpg'),  
+          mssg: `V-Tell is for You !`,
+          xOffset: 300,
+          yOffset: 0,
+          color: '#727577',
+          size: 3
         },
         {
-          path: require('../assets/hero/hero_6.jpg'), 
-          mssg: 'NO MATTER WHICH COUNTRY\nYOU ARE IN, THAT  COUNTRY\'S LOCAL\nPHONE  NUMBER IS ON YOUR SIM CARD',
-          xPosition : 0,
-          yPosition: 0,
-          color: '$grey'
+          path: require('../assets/hero/hero_6.jpg'),
+          pathSm: require('../assets/hero/hero_6-sm.jpg'),  
+          mssg: `NO MATTER WHICH COUNTRY
+          YOU ARE IN, THAT  COUNTRY\'S LOCAL
+          PHONE  NUMBER IS ON YOUR SIM CARD`,
+          xOffset: -100,
+          yOffset: 0,
+          color: '$#727577',
+          size: 3
         },
         {
-          path: require('../assets/hero/hero_7.jpg'), 
-          mssg: 'It\'s Just Comfort !',
-          xPosition : 0,
-          yPosition: 0,
-          color: '$grey'
+          path: require('../assets/hero/hero_7.jpg'),
+          pathSm: require('../assets/hero/hero_7-sm.jpg'),  
+          mssg: `It\'s Just Comfort !`,
+          xOffset: -200,
+          yOffset: 0,
+          color: '#a69891',
+          size: 3
         },
       ],
       slideIndex: 0,
       timer: null,
       windowWidth: 0,
-      windowHeight:0
+      windowHeight:0,
+      show: true,
+      sliderTimer: null,
+      fadeTimer: null
     }
   },
   methods: {
+    selectSlide(slideNum) {
+      this.sliderTimer = null
+      this.slideIndex = slideNum
+    },
     handleResize() {
         this.windowWidth = window.innerWidth
         this.windowHeight = window.innerHeight
+    },
+    startSlider() {
+      this.sliderTimer = setInterval(()=> {
+        this.doFade()
+      }, 3000)
+    },
+    doFade(){
+      this.show = false
+      setTimeout(()=> {
+        if(this.slideIndex == 6) {
+          this.slideIndex = 0
+          this.show = true
+        } else {
+          this.slideIndex++
+          this.show = true
+        }
+      }, 400)
     }
   },
   computed: {
-    getSlide() {
-      return this.images[0].path
-    },
-    getContainerOffset() {
-      if (this.windowHeight > 593 || this.windowHeight < 593) {
-        return 90
-      } 
-      if (this.windowWidth < 1920) {
-        return this.windowWidth * .7
-      }
-     
-    },
-    checkWindowWidth() {
-      if(this.windowWidth <= 760) {
-        return true
+    getLeftControls() {
+      if(this.windowWidth > 1920){
+        return (this.windowWidth / 4) 
       } else {
-        return false
+        return this.windowWidth / 13 
+      }
+    },
+    getLeftText() {
+      if(this.windowWidth > 1920){
+        return (this.windowWidth / 4) + this.images[this.slideIndex].xOffset
+      } else {
+        return (this.windowWidth / 5) + this.images[this.slideIndex].xOffset
       }
     }
-    },
+  },
     created() {
-      console.log('creating')
       window.addEventListener('resize', this.handleResize);
       this.handleResize();
+      this.startSlider()
     },
     destroyed() {
         window.removeEventListener('resize', this.handleResize);
+        this.sliderTimer = null
     }
 
   
@@ -129,68 +179,58 @@ export default {
 
 <style lang="scss">
 @import '../scss/_variables.scss';
+@import '../scss/_animations.scss';
 
 .hero {
-  margin: 0 auto;
-  margin-bottom: -6px;
   margin-top: 56px;
-  width: 100vw;
-  height: 100%;
-  max-width: 1920px;
-  max-height: 593px;
-
-  &__container {
-    display: block;
-    border: 5px solid red;
-    position: absolute;
-    top: 56px;
-    left: 0;
-    width: 680px;
-    height: 400px;
-    max-height: 650px;
-  }
+  position: relative;
+  margin-bottom: -7px;
 
   &__img {
     width: 100%;
-    height: auto;
-    // min-height: 30vh;750
+    max-width: 1920px;
+    margin: 0 auto;
+    transition:  all .4s ease-in;
+    opacity: 1;
+  }
+
+  &__controls {
+    position: absolute;
+    bottom: 18%;
+    
+    display: flex;
+
+    &--circle {
+      margin: 0 .1rem;
+      height: 15px;
+      width: 15px;
+      display: block;
+      border-radius: 50%;
+      border: 2px solid $red;
+    }
   }
 
   &__mssg {
-    position: relative;
-    z-index: 0;
+    position: absolute;
     white-space: pre;
-    // font-size: clamp(4rem, 10vw, 2rem);
+    text-align: center;
     font-size: 4vw;
     line-height: 4vw;
     color: grey;
+    left: -1000px;
     text-transform: uppercase;
-    top: 40%;
-    left: 0%;
+    bottom: 25%;
+    transition:  opacity left .7s ease-in;
+    opacity: 1;
   }
-}
-
-.dots-container {
-  // border: 1px solid red;
-  position: relative;
-  top: 90%;
-  left: 8%;
-  display: flex;
-
-
-  &--circle {
-    margin: 0 .1rem;
-    height: 15px;
-    width: 15px;
-    display: block;
-    border-radius: 50%;
-    border: 2px solid $red;
-  }
-
 }
 
 .active {
   background: $red;
 }
 
+.noShow {
+  opacity: 0;
+  transition:  all .4s ease-in;
+}
 </style>
