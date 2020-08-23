@@ -11,6 +11,10 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
+
+        @media(max-width: 958px) {
+            margin: 0 1rem;
+        }
     }
 
     &__cube {
@@ -20,8 +24,15 @@
 
     &__title {
         text-transform: uppercase;
-        font-size: 25px;
+        font-size: 2rem;
         margin-left: 5%;
         color: white;
+
+        @media(max-width: 622px) {
+            font-size: 1.5rem;
+        }
+        @media(max-width: 475px) {
+            font-size: 1rem;
+        }
     }
 }

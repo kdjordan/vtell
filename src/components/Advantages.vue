@@ -7,7 +7,6 @@
           </div>
       </div> 
       <div class="advantages">
-        <!-- <div class="container"> -->
             <div class="advantages__wrap">
                 <div class="advantages__wrap--square">
                     <img src="../assets/advantages/adv_image1.png" alt="">
@@ -39,10 +38,7 @@
                 </div>
 
             </div>
-            
-        <!-- </div> -->
       </div>
-
   </div>
 </template>
 
