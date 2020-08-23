@@ -42,36 +42,4 @@ export default {
     width: 250px;
 }
 
-.border {
-    display: block;
-    background-image: url('./assets/img/border.png');
-    background-position: center;
-    // height: 80px;
-    
-    &__container {
-        position: relative;
-        right: 380px;
-
-        &--priv-adjust {
-          right: 255px;
-        }
-    }
-
-    &__cube {
-       
-        margin-top: 10px;
-        height: 50px;
-    }
-
-    &__title {
-        font-size: 25px;
-        display: inline-block;
-        color: white;
-        position: relative;
-        bottom: 20px;
-        left: 70px;
-        
-    }
-}
-
 </style>

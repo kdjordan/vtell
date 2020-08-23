@@ -9,7 +9,7 @@
       <div class="advantages">
         <!-- <div class="container"> -->
             <div class="advantages__wrap">
-                <div>
+                <div class="advantages__wrap--square">
                     <img src="../assets/advantages/adv_image1.png" alt="">
                     <div class="advantages__desc advantages__desc--1">One Global Rate</div>
                 </div>
@@ -60,6 +60,7 @@ export default {
 .advantages {
     max-width: 895px;
     margin: 0 auto;
+    margin-bottom: 3rem;
 
     &__desc {
         color: white;
@@ -117,10 +118,22 @@ export default {
         justify-content: center;
         width: 100%;
 
+       
+
         & > div {
+            cursor: pointer;
+            transform: scale(1, 1);
             margin: .5rem .3rem;
             max-height: 212px;
             max-width: 212px;
+            transition: all 0.1s linear 0s;
+
+        }
+
+        & > div:hover {
+            transform: scale(1.06, 1.06);
+            
+            position: relative;
         }
     }
 }

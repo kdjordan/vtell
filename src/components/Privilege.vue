@@ -9,9 +9,9 @@
       <div class="privileges">
           <div class="container">
               <div class="privileges__container">
-                <font-awesome-icon icon="angle-left" class="arrow" @click.prevent="slideScrollPrev()"/>
-                    <img :src="`${this.images[this.slideIndex].path}`">
-                <font-awesome-icon icon="angle-right" class="arrow" @click.prevent="slideScrollNext()"/>
+                <img src="../assets/SVG/left-arrow.svg" class="arrow" alt="" @click.prevent="moveSlide(1)">
+                    <img :src="`${this.images[this.slideIndex].path}`" :class="{noShow: !show}">
+                <img src="../assets/SVG/right-arrow.svg" class="arrow" alt="" @click.prevent="moveSlide(0)">
               </div>
           </div>
       </div>
@@ -24,6 +24,7 @@ export default {
     data() {
         return {
             slideIndex: 0,
+            show: true,
             images: [
                 {path: require('../assets/privilege/priv_1.jpg')},
                 {path: require('../assets/privilege/priv_2.jpg')},
@@ -38,20 +39,28 @@ export default {
         }
     },
     methods: {
-        slideScrollNext() {
-            if(this.slideIndex == 8) {
-                this.slideIndex = 0
-            } else {
-                this.slideIndex++
-            }
+        moveSlide(direction){
+            this.show = false
+            setTimeout(()=> {
+                if(direction == 1) {
+                    if(this.slideIndex == 8) {
+                        this.slideIndex = 0
+                        this.show = true
+                    } else {
+                        this.slideIndex++
+                        this.show = true
+                    }
+                } else {
+                    if(this.slideIndex == 0) {
+                        this.slideIndex = 8
+                        this.show = true
+                    } else {
+                        this.slideIndex--
+                        this.show = true
+                    }
+                }
+            }, 400)
         },
-        slideScrollPrev() {
-            if(this.slideIndex == 0) {
-                this.slideIndex = 8
-            } else {
-                this.slideIndex--
-            }
-        }
     }
 
 }
@@ -61,12 +70,15 @@ export default {
 @import '../scss/_divider.scss';
 
 .arrow {
+    height: 4rem;
     cursor: pointer;
     transition: all .4s;
+    
     &:hover {
         filter: opacity(50%);
     }
 }
+
 
 .privileges {
     // position: relative;
@@ -80,9 +92,16 @@ export default {
         margin-bottom: 3rem;
 
         & img {
+            opacity: 1;
             width: 75%;
+            transition:  all .4s ease-in;
         }
     }
+}
+
+.noShow {
+  opacity: 0 !important;
+  transition:  all .4s ease-in;
 }
 
 

@@ -208,7 +208,6 @@ export default {
     position: absolute;
     bottom: calc(100% / 8);
     left: calc(100% / 8);
-    
     display: flex;
 
     @media(min-width: 2400px) {
