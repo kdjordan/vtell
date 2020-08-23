@@ -22,7 +22,9 @@ export default {
 @import './scss/_variables.scss';
 @import './scss/_base.scss';
 
-
+#app {
+  overflow: hidden;
+}
 @font-face {
     font-family: "Pf_Beau";
     src: local("PF_Beau"),
