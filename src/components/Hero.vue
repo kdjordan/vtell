@@ -136,7 +136,6 @@ export default {
       this.slideIndex = slideNum
     },
     startSlider() {
-      console.log('starting timer')
       this.sliderTimer = setInterval(()=> {
         this.doFade()
       }, 3000)

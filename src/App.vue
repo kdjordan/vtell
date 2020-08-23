@@ -22,6 +22,7 @@ export default {
 @import './scss/_variables.scss';
 @import './scss/_base.scss';
 
+
 @font-face {
     font-family: "Pf_Beau";
     src: local("PF_Beau"),
