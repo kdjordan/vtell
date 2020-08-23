@@ -1,5 +1,5 @@
 <template>
- <div class="sim mb-3"> 
+ <div class="sim"> 
      <div class="container">
          <div class="sim__block">
              <div class="sim__title mb-2">
@@ -69,8 +69,6 @@ export default {
 
 }
 
-
-
 .btn-smaller {
     font-size: 16px;
     padding: 15px 35px;
@@ -80,6 +78,7 @@ export default {
     display: flex;
     justify-content: center;
     color: $vwhite;
+    margin-bottom: 3rem;
 
     &__title {
         padding-top: 4rem;
