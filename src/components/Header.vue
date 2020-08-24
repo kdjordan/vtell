@@ -1,6 +1,6 @@
 <template>
 <div>
-    <section class="header">
+    <section class="header" :class="{headerOpaque: addOpaqueBack}">
         <div class="top-bar"></div>
         
         <div class="nav-container">
@@ -193,7 +193,23 @@ export default {
     data() {
         return {
             mobileOpen: true,
+            addOpaqueBack: false
         }
+    },
+    methods: {
+        handleScroll (event) {
+            if(window.scrollY > 10) {
+                this.addOpaqueBack = true
+            } else {
+                this.addOpaqueBack = false
+            }
+        }
+    },
+    created() {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    destroyed() {
+        window.removeEventListener('scroll', this.handleScroll);
     }
 }
 </script>
@@ -217,6 +233,12 @@ export default {
         display: none;
     }
 }
+
+.headerOpaque {
+    background-image: url('../assets/img/border.png');
+    background-position: center;
+}
+
 
 .nav-container {
     // border: 1px solid red;
@@ -351,6 +373,7 @@ export default {
     display: block;
     width: 100%;
 }
+
 
 .vert-border {
     width: 1px;
