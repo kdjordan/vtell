@@ -6,11 +6,11 @@ Vue.use(Router);
 
 export default new Router({
   mode: "history",
-  // base: process.env.BASE_URL,
-  base: 'http://v-tell-static.s3-us-west-2.amazonaws.com/',
+  base: process.env.BASE_URL,
+  // base: 'http://v-tell-static.s3-us-west-2.amazonaws.com/',
   routes: [
     {
-      path: "/index.html",
+      path: "/",
       name: "home",
       component: Home
     },
