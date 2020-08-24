@@ -76,7 +76,7 @@ export default {
     background-position: center;
     width: 100%;
     overflow: hidden;
-    border: 1px solid red;
+    // border: 1px solid red;
     
     min-height: 40rem;
     display: flex;
@@ -121,7 +121,7 @@ export default {
 
 .social {
     display: flex;
-    border: 1px solid  red;
+    // border: 1px solid  red;
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
