@@ -287,7 +287,7 @@ export default {
     }
 
     & .footer__content {
-        width: 36%;
+        width: 100%;
 
         &--entry {
             display: flex;
