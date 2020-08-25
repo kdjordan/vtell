@@ -1,24 +1,25 @@
 <template>
-  <div class="footer">
-      <div class="container">
+<div>
+  <div v-if="windowWidth > 768" class="footer">
+      <div class="container footer__container">
           <button class="btn__primary mt-1 mb-1">Become customer</button>
           <div class="social">
               <div class="social__left">
-                  <img class="social-icon social-icon__active" src="../assets/SVG/footer/footer1.svg" alt="phone numbers icon">
-                  <img class="social-icon" src="../assets/SVG/footer/footer2.svg" alt="mail icon">
-                  <img class="social-icon" src="../assets/SVG/footer/footer3.svg" alt="location icon">
+                  <img class="icon social-icon social-icon__active" src="../assets/SVG/footer/footer1.svg" alt="phone numbers icon">
+                  <img class="icon social-icon" src="../assets/SVG/footer/footer2.svg" alt="mail icon">
+                  <img class="icon social-icon" src="../assets/SVG/footer/footer3.svg" alt="location icon">
               </div>
               <div class="social__middle">
-                  <img class="social-icon" src="../assets/SVG/footer/footerFB.svg" alt="facebook icon">
-                  <img class="social-icon" src="../assets/SVG/footer/footerIG.svg" alt="instagram icon">
-                  <img class="social-icon" src="../assets/SVG/footer/footerLI.svg" alt="linkedin icon">
-                  <img class="social-icon" src="../assets/SVG/footer/footerTWIT.svg" alt="twitter icon">
-                  <img class="social-icon" src="../assets/SVG/footer/footerTELEGRAM.svg" alt="telegram icon">
-                  <img class="social-icon" src="../assets/SVG/footer/footerYT.svg" alt="youtube icon">
+                  <img class="icon social-icon" src="../assets/SVG/footer/footerFB.svg" alt="facebook icon">
+                  <img class="icon social-icon" src="../assets/SVG/footer/footerIG.svg" alt="instagram icon">
+                  <img class="icon social-icon" src="../assets/SVG/footer/footerLI.svg" alt="linkedin icon">
+                  <img class="icon social-icon" src="../assets/SVG/footer/footerTWIT.svg" alt="twitter icon">
+                  <img class="icon social-icon" src="../assets/SVG/footer/footerTELEGRAM.svg" alt="telegram icon">
+                  <img class="icon social-icon" src="../assets/SVG/footer/footerYT.svg" alt="youtube icon">
               </div>
               <div class="social__right">
-                  <img class="social-icon" src="../assets/SVG/footer/headphones.svg" alt="phone numbers icon">
-                  <img class="social-icon" src="../assets/SVG/footer/footerMSG.svg" alt="mail icon">
+                  <img class="icon social-icon" src="../assets/SVG/footer/headphones.svg" alt="phone numbers icon">
+                  <img class="icon social-icon" src="../assets/SVG/footer/footerMSG.svg" alt="mail icon">
               </div>
           </div>
           <div class="footer__content mt-1">
@@ -51,13 +52,82 @@
                     &reg;&nbsp;All rights reserved.  
               </div>
           </div>
+      </div>  
+  </div>
+  <div v-else class="footer-sm">
+        <button class="btn__primary mt-1 mb-1">Become customer</button>
+        <div class="social__top mb-1">
+            <img class="icon social-icon social-icon__active" src="../assets/SVG/footer/footer1.svg" alt="phone numbers icon">
+            <img class="icon social-icon" src="../assets/SVG/footer/footer2.svg" alt="mail icon">
+            <img class="icon social-icon" src="../assets/SVG/footer/footer3.svg" alt="location icon">
+        </div>
+        <div class="footer__content mt-1">
+            <div class="footer__content--entry">
+            <div class="city"><strong>Hong Kong</strong></div>
+            <div class="number">+ 852 (57) 04-4299</div>
+            </div>
+            <div class="footer__content--entry">
+            <div class="city">Europe</div>
+            <div class="number">+31 (85) 208-5874 </div>
+            </div>
+            <div class="footer__content--entry">
+            <div class="city">USA</div>
+            <div class="number">+1 (866) 503-0729</div>
+            </div>
+            <div class="footer__content--entry">
+            <div class="city">UAE</div>
+            <div class="number">+971 (50) 601-6016</div>
+            </div>
+            <div class="footer__content--entry">
+            <div class="city">Switzerland</div>
+            <div class="number">+41 (43) 550-7169</div>
+            </div>
+        </div>
+        <div class="social__middle">
+            <img class="icon social-icon" src="../assets/SVG/footer/headphones.svg" alt="phone numbers icon">
+            <img class="icon social-icon" src="../assets/SVG/footer/footerMSG.svg" alt="mail icon">
+        </div>
+        <div class="footer__copyright">
+            <div class="footer__copyright--top">
+                &copy;&nbsp;2020 Globex Telecom Group Limited: V-Tell Group of Companies
+            </div>
+            <div class="footer__copyright--bottom">
+                &reg;&nbsp;All rights reserved.  
+            </div>
+        </div>
+        <div class="social__bottom">
+            <img class="icon social-icon" src="../assets/SVG/footer/footerFB.svg" alt="facebook icon">
+            <img class="icon social-icon" src="../assets/SVG/footer/footerIG.svg" alt="instagram icon">
+            <img class="icon social-icon" src="../assets/SVG/footer/footerLI.svg" alt="linkedin icon">
+            <img class="icon social-icon" src="../assets/SVG/footer/footerTWIT.svg" alt="twitter icon">
+            <img class="icon social-icon" src="../assets/SVG/footer/footerTELEGRAM.svg" alt="telegram icon">
+            <img class="icon social-icon" src="../assets/SVG/footer/footerYT.svg" alt="youtube icon">
+        </div>
       </div>
-      
   </div>
 </template>
 
 <script>
 export default {
+    data() {
+        return {
+            windowWidth: 0
+        }
+    },
+    methods: {
+        handleResize() {
+            this.windowWidth = window.innerWidth;
+        }
+    },
+     created() {
+      window.addEventListener('resize', this.handleResize);
+      this.handleResize()
+      this.startSlider()
+    },
+    destroyed() {
+      window.removeEventListener('resize', this.handleResize);
+      this.sliderTimer = null
+    }
 
 }
 </script>
@@ -70,6 +140,14 @@ export default {
 .footer-active {
     color: $red;
 }
+
+.icon {
+    cursor: pointer;
+    &:hover {
+        filter: opacity(50%);
+    }
+}
+
 .footer {
     background-image: url("../assets/img/footer.jpg");
     background-size: cover;
@@ -82,8 +160,12 @@ export default {
     display: flex;
     justify-content: center;
 
-    @media(max-width: 906px) {
-        margin: 0 1rem;
+
+    &__container {
+        @media(max-width: 900px) {
+            margin: 0 4rem;
+        }
+        
     }
 
     &__content {
@@ -121,12 +203,10 @@ export default {
 
 .social {
     display: flex;
-    // border: 1px solid  red;
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
     max-width: 960px;
-    // margin: 0 auto;
 
     &-icon__active {
         color: $red;
@@ -163,7 +243,68 @@ export default {
 }
 
 
+.footer-sm {
+    background-image: url("../assets/img/footer.jpg");
+    background-size: cover;
+    background-position: 50% 0%;
+    width: 100%;
+    overflow: hidden;
+    min-height: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
 
+
+    & .social{
+        &__top {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & .social-icon {
+                width: 12%;
+                margin: 0 .7rem;
+            }
+        }
+        &__middle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2.75rem;
+
+            & .social-icon {
+                width: 20%;
+                margin: 0 .7rem;
+            }
+        }
+        &__bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 60%;
+        }
+    }
+
+    & .footer__content {
+        width: 36%;
+
+        &--entry {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        & .city {
+            margin-right: 1rem;
+            font-weight: bold;
+        }
+    }
+
+    & .footer__copyright {
+        margin-bottom: 1rem;
+    }
+}
 
 
 
