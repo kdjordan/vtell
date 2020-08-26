@@ -2,23 +2,36 @@
  <div class="sim"> 
      <div class="container">
          <div class="sim__block">
-             <div class="sim__title mb-2">
+             <div class="sim__title mt-1 pt-2 pb-2">
                  <strong>HOW TO BUY A SIM CARD</strong>
              </div>
-             <div class="sim__button-container">
+             <div class="sim__button-container pb-2">
                  <div class="sim__button-container--left">
-                     <button class="btn__primary btn-smaller">Online</button>
+                     <button class="btn__sim" 
+                        @click.prevent="stage = 1"
+                        :class="{btn__simActive: stage == 1}">Online
+                        </button>
                  </div>
                  <div class="sim__button-container--center">
-                     <button class="btn__primary btn-smaller">Via Mobile App</button>
+                     <button class="btn__sim" 
+                        @click.prevent="stage = 2"
+                        :class="{btn__simActive: stage == 2}">Via Mobile App
+                        </button>
                  </div>
                  <div class="sim__button-container--right">
-                     <button class="btn__primary btn-smaller">In Sales Office</button>
+                     <button class="btn__sim" 
+                        @click.prevent="stage = 3"
+                        :class="{btn__simActive: stage == 3}">In Sales Office
+                        </button>
                  </div>
              </div>
-             <div class="sim__steps-container">
+             <div v-if="stage == 3">
+                 <div class="sim__steps-container--desc-large">V-Tell SIM card can be purchased at V-Tell sales offices and from V-Tell partners in Russia and abroad.</div>
+             </div>
+             <div v-else class="sim__steps-container pt-2">
                  <div class="sim__steps-container--left flex-column">
-                     <img src="../assets/SVG/steps/step1.svg" alt="">
+                     <img v-if="stage == 2" src="../assets/SVG/steps/phone-step.svg" alt="">
+                     <img v-else src="../assets/SVG/steps/step1.svg" alt="">
                      <div class="sim__steps-container--step mb-1">STEP 1</div>
                      <div class="sim__steps-container--step mb-2"><strong>ORDER ONLINE</strong></div>
                  </div>
@@ -29,11 +42,11 @@
                  </div>
                  <div class="sim__steps-container--right flex-column">
                      <img src="../assets/SVG/steps/step3.svg" alt="">
-                     <div class="sim__steps-container--step mb-1">STEP - 3</div>
+                     <div class="sim__steps-container--step mb-1">STEP 3</div>
                      <div class="sim__steps-container--step mb-2 bold"><strong>SIM REGISTRATION</strong></div>
                  </div>
              </div>
-            <div class="sim__desc-container">
+            <div v-if="stage == 1 || stage == 2" class="sim__desc-container">
                 <div class="sim__desc-container--left">
                     <div class="sim__steps-container--desc">Choose a tariff, pick a number combination and place an order.</div>
                 </div>
@@ -44,7 +57,9 @@
                     <div class="sim__steps-container--desc">Fill in required form fields to proceed with SIM card registration.</div>
                 </div>
             </div>
-            <button class="btn__primary btn-smaller mt-3 mb-4">Buy now</button>
+            <div class="lower-btn__container">
+                <button class="btn__sim btn__sim--red mt-3 mb-3">Buy now</button>
+            </div>
          </div>
      </div> 
  </div>
@@ -54,6 +69,11 @@
 
 <script>
 export default {
+    data() {
+        return {
+            stage: 1
+        }
+    }
 }
 </script>
 
@@ -61,6 +81,40 @@ export default {
 <style scoped lang="scss">
 @import '../scss/_variables.scss';
 @import '../scss/_base.scss';
+@import '../scss/_utilities.scss';
+
+.btn__sim {
+    cursor: pointer;
+    background: $white;
+    color: $grey;
+    font-size: 16px;
+    border: none;
+    border-radius: 35px;
+    padding: 12px 35px;
+    width: 100%;
+    min-width: 210px;
+    transition: all .4s;
+
+    @media(max-width: 623px) {
+        max-width: 210px;
+        padding: 5px;
+    }
+
+    &:hover {
+      background: $red;
+      color: $white;
+    }
+
+    &Active {
+        background: $red;
+        color: $white;
+    }
+
+    &--red {
+        background: $red;
+        color: $white;
+    }
+}
 
 .flex-column {
     display: flex;
@@ -69,11 +123,6 @@ export default {
 
 }
 
-.btn-smaller {
-    font-size: 16px;
-    padding: 15px 35px;
-    width: 210px;
-}
 .sim {
     display: flex;
     justify-content: center;
@@ -81,7 +130,6 @@ export default {
     margin-bottom: 3rem;
 
     &__title {
-        padding-top: 4rem;
         font-size: 24px;
     }
 
@@ -93,13 +141,32 @@ export default {
     &__button-container {
         display: flex;
         justify-content: space-between;
-        padding: 0 5rem;
+        align-content: center;
+        width: 100%;
+        max-width: 750px;
+        margin: 0 auto;
+
+        & > div {
+            @media(max-width: 623px) {
+                margin: .5rem 0;
+            }
+        }
+
+        @media(max-width: 623px) {
+            flex-direction: column;
+        }
     }
 
     &__steps-container {
         display: flex;
         justify-content: space-between;
-        padding: 67px 100px 10px 100px;
+        align-content: center;
+        max-width: 690px;
+        margin: 0 auto;
+
+        @media(max-width: 800px) {
+           
+        }
 
         & img {
             margin-bottom: 3rem;
@@ -109,7 +176,11 @@ export default {
         &--desc {
             font-size: 13px;
             // line-height: 2px;
-            text-align: justify;
+            text-align: center;
+
+            &-large {
+                font-size: 16px;
+            }
         }
     }
 
@@ -123,6 +194,13 @@ export default {
         }
     }
 
+}
+
+.lower-btn{
+    &__container {
+        width: 25%;
+        margin: 0 auto;
+    }
 }
 
 </style>

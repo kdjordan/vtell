@@ -386,7 +386,7 @@ export default {
     & .footer__content {
         width: 100%;
         text-align: center;
-        min-height: 40vh;
+        min-height: calc(100% / 3);
 
         &--entry {
             display: flex;
