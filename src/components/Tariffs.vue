@@ -11,32 +11,20 @@
         <div class="container">
           <div class="tariff__top-bar">
               <div class="tariff__top-bar--left">
-                  <div style="letter-spacing: 6px;">LIMITED TIME OFFER</div>
-                  for V-1, V-2, V-3 plan Subcribers
-              </div>
-              <div class="tariff__top-bar--middle">
-                  20 hours of voice calls<br />
-                  <div style="letter-spacing: 8px;">20 GB of data</div>
+                <div class="tariff__top-bar--title">LIMITED TIME OFFER for V-1, V-2, V-3 plan Subcribers</div>
+                <div class="tariff__top-bar--desc">20 hours of voice calls :: 20 GB of data</div>
+                
               </div>
               <div class="tariff__top-bar--right">
-                  <div class="tariff__top-bar--right-one">
-                      <div style="letter-spacing: 6px;">within</div>
-                      Russian<br />
-                      Federation
-                  </div>
-                  <div class="tariff__top-bar--right-two">
-                    <img class="tariff-svg" src="../assets/SVG/tariffs/euro.svg" alt="">
-                    <div class="price">40</div>
-                    <img class="tariff-svg" src="../assets/SVG/tariffs/dollar.svg" alt="">
-                    <div class="price">32</div>
-                  </div>
+                <img class="tariff-svg" src="../assets/SVG/tariffs/dollar.svg" alt="">
+                <div class="price">32</div>
               </div>
           </div>
          </div>
       </div>
       
         <div class="container__arrow">
-            <font-awesome-icon icon="angle-left" class="arrow"/>
+            <img src="../assets/SVG/left-arrow.svg" class="arrow" alt="">
             
             <div class="card">
                 <div class="card__header">
@@ -158,7 +146,7 @@
         
             </div>
 
-            <font-awesome-icon icon="angle-right" class="arrow" />
+            <img src="../assets/SVG/right-arrow.svg" class="arrow" alt="">
         </div>
     </div>
       
@@ -175,19 +163,15 @@ export default {
 @import '../scss/_variables.scss';
 @import '../scss/_base.scss';
 @import '../scss/_divider.scss';
+@import '../scss/_utilities.scss';
 
 .container__arrow {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 1055px;
+    max-width: 965px;
     margin: 0 auto;
     margin-bottom: 2rem;
-
-    // & > * {
-    //     width: 30%;
-    //     margin: 0 1rem;
-    // }
 }
 
 .btn-pricing {
@@ -201,6 +185,7 @@ export default {
     background: transparent;
     border: 1px solid white;
     color: white;
+    margin-bottom: 1rem;
 
 }
 
@@ -213,6 +198,7 @@ export default {
     flex-direction: column;
     color: $white;
     background: $greydim;
+    min-width: 270px;
     width:  100%;
     margin: 0 1rem;
 
@@ -262,7 +248,7 @@ export default {
         &--table {
             margin: 0 auto;
             margin-top: -3rem;
-            margin-bottom: 4rem;
+            margin-bottom: 1rem;
         }
 
         &--small-font {
@@ -283,11 +269,6 @@ export default {
     }
 }
 
-.price {
-    font-size: 28px;
-    margin-top: 8%;
-}
-
 .arrow {
     font-size: 8rem;
     color: $red;
@@ -303,34 +284,36 @@ export default {
     }
     
     &__top-bar {
-        padding: 1rem 2rem;
+        padding: 1rem;
         text-align: left;
         color: white;
         display: flex;
         justify-content: space-between;
-        margin: 2rem 0;
+        align-items: center;
+        margin: 1rem 0;
         background: $red;
         font-size: 22px;
 
         &--left {
-            width: 40%;
-        }
-
-        &--middle {
-            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            width: 80%;
         }
 
         &--right {
-            width: 30%;
-            font-size: 16px;
             display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20%;
 
-            &-two {
-                display: flex;
-                justify-content: space-between;
-                margin-left: 3%;
-
+            & .price {
+                font-size: 40px;
+                margin-left: 1rem;
+                margin-top: .5rem;
             }
+            
         }
         
     }
