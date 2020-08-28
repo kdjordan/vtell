@@ -5,7 +5,7 @@
         
         <div class="nav-container">
             <div class="nav-logo" >
-                <a href="/"><img class="nav-logo__svg" src="../assets/nav/logoSvg.svg" alt=""></a>
+                <router-link to="/"><img class="nav-logo__svg" src="../assets/nav/logoSvg.svg" alt=""></router-link>
             </div>
             <div class="menu-container">
             <nav class="nav-menu nav-menu__upper">
@@ -43,10 +43,10 @@
                                 <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>About V-Tell</router-link>
                             </span>
                             <span class="nav-link__container">
-                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>News</router-link>
+                                <router-link class="nav-link nav-link__drop" to="/news"><span class="dot"></span>News</router-link>
                             </span>
                             <span class="nav-link__container">
-                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Press Center</router-link>
+                                <router-link class="nav-link nav-link__drop" to="/press-center"><span class="dot"></span>Press Center</router-link>
                             </span>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                 <div class="vert-border"></div>
 
                 <span class="nav-link__root-container">
-                    <router-link class="nav-link nav-link__root"  to="/tariffs">Tariffs</router-link>
+                    <router-link class="nav-link nav-link__root"  to="/plans">Plans</router-link>
                     <div class="drop-down">
                         <div class="drop-down__inner">
                             <span class="nav-link__container">

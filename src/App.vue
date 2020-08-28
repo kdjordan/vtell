@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <Header />
+    <transition name="fade" mode="out-in">
     <router-view />
+    </transition>
     <Footer />
   </div>
 </template>
@@ -21,6 +23,7 @@ export default {
 <style lang="scss">
 @import './scss/_variables.scss';
 @import './scss/_base.scss';
+@import './scss/_animations.scss';
 
 #app {
   overflow: hidden;

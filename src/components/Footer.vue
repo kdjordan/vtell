@@ -237,9 +237,6 @@ export default {
     max-width: 1920px;
     margin: 0 auto;
     overflow: hidden;
-    // border: 1px solid red;
-    
-    // min-height: 40rem;
     height: 100%;
     display: flex;
     justify-content: center;
