@@ -6,7 +6,7 @@
             <div class="divider__title">Tariffs</div>
           </div>
       </div> 
-
+        <!-- <p>{{getIndex(0)}}</p>  -->
       <div class="tariff">
         <div class="container">
           <div class="tariff__top-bar">
@@ -26,40 +26,40 @@
       </div>
       
         <div class="container__arrow">
-            <img src="../assets/SVG/left-arrow.svg" class="arrow" alt="">
+            <img @click.prevent="moveLeft()" src="../assets/SVG/left-arrow.svg" class="arrow" alt="">
             
             <div class="card">
                 <div class="card__header">
-                    <img src="../assets/cards/photo_tarif_03.jpg" alt="">
-                    <div class="card__header--type">V-1</div>
+                    <img :src=theCards[indicies.first].imgPath alt="">
+                    <div class="card__header--type">{{theCards[indicies.first].plan}}</div>
                 </div>
                 <table class="card__content--table">
                     <tbody>
                         <tr>
                             <th class="card__content--small-font">VOICE</th>
                             <th class="card__svg inline"><img src="../assets/SVG/card/phone.svg" alt=""></th>
-                            <th class="card__content--large-font">500 <span style="font-size: 16px;">min</span></th>
+                            <th class="card__content--large-font">{{theCards[indicies.first].min}} <span style="font-size: 16px;">min</span></th>
                         </tr>
                         <tr>
                             <th class="card__content--small-font">SMS</th>
                             <th class="card__svg inline"><img src="../assets/SVG/card/mssg.svg" alt=""></th>
-                            <th class="card__content--large-font" style="font-size: 16px; vertical-align: middle;">UNLIMITED</th>
+                            <th class="card__content--large-font" style="font-size: 16px; vertical-align: middle;">{{theCards[indicies.first].sms}}</th>
                         </tr>
                         <tr>
                             <th class="card__content--small-font">DATA</th>
                             <th class="card__svg inline"><img src="../assets/SVG/card/wifi.svg" alt=""></th>
-                            <th class="card__content--large-font">5 <span style="font-size: 16px;">GB</span></th>
+                            <th class="card__content--large-font">{{theCards[indicies.first].data}} <span style="font-size: 16px;">GB</span></th>
                         </tr>
                     </tbody>
                 </table>
                 <div class="card__cost">
                     <div>
                         <div class="card__svg inline"><font-awesome-icon icon="euro-sign" /></div>
-                        <div class="inline">&nbsp;&nbsp;90</div>
+                        <div class="inline">&nbsp;&nbsp;{{theCards[indicies.first].euroPrice}}</div>
                     </div>
                     <div>
                         <div class="card__svg inline"><font-awesome-icon icon="dollar-sign" /></div>
-                        <div class="inline">&nbsp;&nbsp;98</div>
+                        <div class="inline">&nbsp;&nbsp;{{theCards[indicies.first].dollarPrice}}</div>
                     </div>
 
                 </div>
@@ -70,36 +70,36 @@
 
              <div class="card">
                 <div class="card__header">
-                    <img src="../assets/cards/photo_tarif_04.jpg" alt="">
-                    <div class="card__header--type">V-2</div>
+                    <img :src=theCards[indicies.second].imgPath alt="">
+                    <div class="card__header--type">{{theCards[indicies.second].plan}}</div>
                 </div>
                 <table class="card__content--table">
                     <tbody>
                         <tr>
                             <th class="card__content--small-font">VOICE</th>
                             <th class="card__svg inline"><img src="../assets/SVG/card/phone.svg" alt=""></th>
-                            <th class="card__content--large-font">700 <span style="font-size: 16px;">min</span></th>
+                            <th class="card__content--large-font">{{theCards[indicies.second].min}} <span style="font-size: 16px;">min</span></th>
                         </tr>
                         <tr>
                             <th class="card__content--small-font">SMS</th>
                             <th class="card__svg inline"><img src="../assets/SVG/card/mssg.svg" alt=""></th>
-                            <th class="card__content--large-font" style="font-size: 16px; vertical-align: middle;">UNLIMITED</th>
+                            <th class="card__content--large-font" style="font-size: 16px; vertical-align: middle;">{{theCards[indicies.second].sms}}</th>
                         </tr>
                         <tr>
                             <th class="card__content--small-font">DATA</th>
                             <th class="card__svg inline"><img src="../assets/SVG/card/wifi.svg" alt=""></th>
-                            <th class="card__content--large-font">10 <span style="font-size: 16px;">GB</span></th>
+                            <th class="card__content--large-font">{{theCards[indicies.second].data}} <span style="font-size: 16px;">GB</span></th>
                         </tr>
                     </tbody>
                 </table>
                 <div class="card__cost">
                     <div>
                         <div class="card__svg inline"><font-awesome-icon icon="euro-sign" /></div>
-                        <div class="inline">&nbsp;&nbsp;140</div>
+                        <div class="inline">&nbsp;&nbsp;{{theCards[indicies.second].euroPrice}}</div>
                     </div>
                     <div>
                         <div class="card__svg inline"><font-awesome-icon icon="dollar-sign" /></div>
-                        <div class="inline">&nbsp;&nbsp;160</div>
+                        <div class="inline">&nbsp;&nbsp;{{theCards[indicies.second].dollarPrice}}</div>
                     </div>
 
                 </div>
@@ -110,36 +110,36 @@
 
             <div class="card">
                 <div class="card__header">
-                    <img src="../assets/cards/photo_tarif_05.jpg" alt="">
-                    <div class="card__header--type">V-3</div>
+                    <img :src=theCards[indicies.third].imgPath alt="">
+                    <div class="card__header--type">{{theCards[indicies.third].plan}}</div>
                 </div>
                 <table class="card__content--table">
                     <tbody>
                         <tr>
                             <th class="card__content--small-font">VOICE</th>
                             <th class="card__svg inline"><img src="../assets/SVG/card/phone.svg" alt=""></th>
-                            <th class="card__content--large-font">1000 <span style="font-size: 16px;">min</span></th>
+                            <th class="card__content--large-font">{{theCards[indicies.third].min}} <span style="font-size: 16px;">min</span></th>
                         </tr>
                         <tr>
                             <th class="card__content--small-font">SMS</th>
                             <th class="card__svg inline"><img src="../assets/SVG/card/mssg.svg" alt=""></th>
-                            <th class="card__content--large-font" style="font-size: 16px; vertical-align: middle;">UNLIMITED</th>
+                            <th class="card__content--large-font" style="font-size: 16px; vertical-align: middle;">{{theCards[indicies.third].sms}}</th>
                         </tr>
                         <tr>
                             <th class="card__content--small-font">DATA</th>
                             <th class="card__svg inline"><img src="../assets/SVG/card/wifi.svg" alt=""></th>
-                            <th class="card__content--large-font">15 <span style="font-size: 16px;">GB</span></th>
+                            <th class="card__content--large-font">{{theCards[indicies.third].data}} <span style="font-size: 16px;">GB</span></th>
                         </tr>
                     </tbody>
                 </table>
                 <div class="card__cost">
                     <div>
                         <div class="card__svg inline"><font-awesome-icon icon="euro-sign" /></div>
-                        <div class="inline">&nbsp;&nbsp;190</div>
+                        <div class="inline">&nbsp;&nbsp;{{theCards[indicies.third].euroPrice}}</div>
                     </div>
                     <div>
                         <div class="card__svg inline"><font-awesome-icon icon="dollar-sign" /></div>
-                        <div class="inline">&nbsp;&nbsp;219</div>
+                        <div class="inline">&nbsp;&nbsp;{{theCards[indicies.third].dollarPrice}}</div>
                     </div>
 
                 </div>
@@ -148,7 +148,47 @@
         
             </div>
 
-            <img src="../assets/SVG/right-arrow.svg" class="arrow" alt="">
+            <div class="card" style="display:none;">
+                <div class="card__header">
+                    <img :src=theCards[indicies.fourth].imgPath alt="">
+                    <div class="card__header--type">{{theCards[indicies.fourth].plan}}</div>
+                </div>
+                <table class="card__content--table">
+                    <tbody>
+                        <tr>
+                            <th class="card__content--small-font">VOICE</th>
+                            <th class="card__svg inline"><img src="../assets/SVG/card/phone.svg" alt=""></th>
+                            <th class="card__content--large-font">{{theCards[indicies.fourth].min}} <span style="font-size: 16px;">min</span></th>
+                        </tr>
+                        <tr>
+                            <th class="card__content--small-font">SMS</th>
+                            <th class="card__svg inline"><img src="../assets/SVG/card/mssg.svg" alt=""></th>
+                            <th class="card__content--large-font" style="font-size: 16px; vertical-align: middle;">{{theCards[indicies.fourth].sms}}</th>
+                        </tr>
+                        <tr>
+                            <th class="card__content--small-font">DATA</th>
+                            <th class="card__svg inline"><img src="../assets/SVG/card/wifi.svg" alt=""></th>
+                            <th class="card__content--large-font">{{theCards[indicies.fourth].data}} <span style="font-size: 16px;">GB</span></th>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="card__cost">
+                    <div>
+                        <div class="card__svg inline"><font-awesome-icon icon="euro-sign" /></div>
+                        <div class="inline">&nbsp;&nbsp;{{theCards[indicies.fourth].euroPrice}}</div>
+                    </div>
+                    <div>
+                        <div class="card__svg inline"><font-awesome-icon icon="dollar-sign" /></div>
+                        <div class="inline">&nbsp;&nbsp;{{theCards[indicies.fourth].dollarPrice}}</div>
+                    </div>
+
+                </div>
+                <button class="btn-pricing">BUY NOW</button>
+                <button class="btn-pricing btn-ghost">READ MORE</button>
+        
+            </div>
+
+            <img @click.prevent="moveRight()" src="../assets/SVG/right-arrow.svg" class="arrow" alt="">
         </div>
     </div>
       
@@ -157,17 +197,72 @@
 
 <script>
 export default {
+    methods: {
+        moveLeft() {
+            
+            for (const index in this.indicies) {
+                if (this.indicies[index] == 0) {
+                    this.indicies[index] = 3
+                } else {
+                    this.indicies[index]--
+                }
+            }
+        },
+        moveRight() {
+            for (const index in this.indicies) {
+                if (this.indicies[index] == 3) {
+                    this.indicies[index] = 0
+                } else {
+                    this.indicies[index]++
+                }
+            }
+        }
+    },
     data() {
         return {
+            index: 0,
+            indicies: {
+                first: 0,
+                second: 1,
+                third: 2,
+                fourth: 3
+            },
             theCards: [
                 {
                     plan: 'V-1',
                     imgPath: require('../assets/cards/photo_tarif_03.jpg'),
-                    minutes: 500,
-                    sms: 'unlimited',
+                    min: 500,
+                    sms: 'UNLIMITED',
                     data: 5,
                     euroPrice: 90,
                     dollarPrice: 98
+                },
+                {
+                    plan: 'V-2',
+                    imgPath: require('../assets/cards/photo_tarif_04.jpg'),
+                    min: 700,
+                    sms: 'UNLIMITED',
+                    data: 10,
+                    euroPrice: 140,
+                    dollarPrice: 160
+                },
+                {
+                    plan: 'V-3',
+                    imgPath: require('../assets/cards/photo_tarif_05.jpg'),
+                    min: 1000,
+                    sms: 'UNLIMITED',
+                    data: 15,
+                    euroPrice: 190,
+                    dollarPrice: 219
+                },
+                {
+                    plan: 'V-MAXX',
+                    imgPath: require('../assets/cards/photo_tarif_06.jpg'),
+                    min: 'UNLIMITED',
+                    sms: 'UNLIMITED',
+                    data: 'UNLIMITED',
+                    euroPrice: 500,
+                    dollarPrice: 570
                 },
             ]
         }
@@ -192,10 +287,12 @@ export default {
 }
 
 .btn-pricing {
+    border: 1px solid transparent;
     width: 90%;
     margin: .2rem auto;
     padding: 8px 0;
-    color: $red
+    color: white;
+    background: $red;
 }
 
 .btn-ghost {
@@ -317,6 +414,7 @@ export default {
 
         &--title {
             text-align: center;
+            line-height: 35px;
         }
 
         &--left {

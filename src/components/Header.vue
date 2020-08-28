@@ -55,7 +55,7 @@
                 <div class="vert-border"></div>
 
                 <span class="nav-link__root-container">
-                    <router-link class="nav-link nav-link__root"  to="/plans">Plans</router-link>
+                    <router-link class="nav-link nav-link__root"  to="/plans">Tariffs</router-link>
                     <div class="drop-down">
                         <div class="drop-down__inner">
                             <span class="nav-link__container">
