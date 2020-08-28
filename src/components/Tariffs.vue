@@ -11,11 +11,13 @@
         <div class="container">
           <div class="tariff__top-bar">
               <div class="tariff__top-bar--left">
-                <div class="tariff__top-bar--title">LIMITED TIME OFFER for V-1, V-2, V-3 plan Subcribers</div>
-                <div class="tariff__top-bar--desc">20 hours of voice calls :: 20 GB of data</div>
+                <div class="tariff__top-bar--title">LIMITED TIME OFFER for V-1, V-2, V-3 plan Subcribers<br>20 hours of voice calls :: 20 GB of data</div>
+                <!-- <div class="tariff__top-bar--desc">20 hours of voice calls :: 20 GB of data</div> -->
                 
               </div>
               <div class="tariff__top-bar--right">
+                <img class="tariff-svg" src="../assets/SVG/tariffs/euro.svg" alt="">
+                <div class="price">40</div>
                 <img class="tariff-svg" src="../assets/SVG/tariffs/dollar.svg" alt="">
                 <div class="price">32</div>
               </div>
@@ -155,6 +157,21 @@
 
 <script>
 export default {
+    data() {
+        return {
+            theCards: [
+                {
+                    plan: 'V-1',
+                    imgPath: require('../assets/cards/photo_tarif_03.jpg'),
+                    minutes: 500,
+                    sms: 'unlimited',
+                    data: 5,
+                    euroPrice: 90,
+                    dollarPrice: 98
+                },
+            ]
+        }
+    }
 
 }
 </script>
@@ -280,7 +297,7 @@ export default {
     width: 100%;
 
     &-svg {
-        width: 20%;
+        width: 15%;
     }
     
     &__top-bar {
@@ -294,6 +311,14 @@ export default {
         background: $red;
         font-size: 22px;
 
+        @media(max-width: 840px) {
+            flex-direction: column;
+        }
+
+        &--title {
+            text-align: center;
+        }
+
         &--left {
             display: flex;
             flex-direction: column;
@@ -305,12 +330,12 @@ export default {
         &--right {
             display: flex;
             align-items: center;
-            justify-content: center;
-            width: 20%;
+            justify-content: space-evenly;
+            width: 40%;
 
+    
             & .price {
                 font-size: 40px;
-                margin-left: 1rem;
                 margin-top: .5rem;
             }
             
