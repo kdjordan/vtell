@@ -6,7 +6,6 @@
             <div class="divider__title">Tariffs</div>
           </div>
       </div> 
-        <!-- <p>{{getIndex(0)}}</p>  -->
       <div class="tariff">
         <div class="container">
           <div class="tariff__top-bar">
@@ -26,12 +25,12 @@
       </div>
       
         <div class="container__arrow">
-            <img @click.prevent="moveLeft()" src="../assets/SVG/left-arrow.svg" class="arrow" alt="">
+                <img @click.prevent="moveLeft()" src="../assets/SVG/left-arrow.svg" class="arrow" alt="">
+            <div class="container__arrow--inner">
             
-            <div class="card">
+            <div class="card" :class="{slideLeft: doSlideLeft, slideRight: doSlideRight, slide: !doSlideRight && !doSlideLeft}">
                 <div class="card__header">
                     <img :src=theCards[indicies.first].imgPath alt="">
-                    <div class="card__header--type">{{theCards[indicies.first].plan}}</div>
                 </div>
                 <table class="card__content--table">
                     <tbody>
@@ -68,10 +67,9 @@
         
             </div>
 
-             <div class="card">
+             <div class="card" :class="{slideLeft: doSlideLeft, slideRight: doSlideRight, slide: !doSlideRight && !doSlideLeft}">
                 <div class="card__header">
                     <img :src=theCards[indicies.second].imgPath alt="">
-                    <div class="card__header--type">{{theCards[indicies.second].plan}}</div>
                 </div>
                 <table class="card__content--table">
                     <tbody>
@@ -108,10 +106,9 @@
         
             </div>
 
-            <div class="card">
+            <div class="card" :class="{slideLeft: doSlideLeft, slideRight: doSlideRight, slide: !doSlideRight && !doSlideLeft}">
                 <div class="card__header">
                     <img :src=theCards[indicies.third].imgPath alt="">
-                    <div class="card__header--type">{{theCards[indicies.third].plan}}</div>
                 </div>
                 <table class="card__content--table">
                     <tbody>
@@ -148,7 +145,7 @@
         
             </div>
 
-            <div class="card" style="display:none;">
+            <!-- <div class="card"   :class="{slideLeft: doSlideLeft, slideRight: doSlideRight, slide: !doSlideRight && !doSlideLeft}">
                 <div class="card__header">
                     <img :src=theCards[indicies.fourth].imgPath alt="">
                     <div class="card__header--type">{{theCards[indicies.fourth].plan}}</div>
@@ -186,8 +183,8 @@
                 <button class="btn-pricing">BUY NOW</button>
                 <button class="btn-pricing btn-ghost">READ MORE</button>
         
+            </div> -->
             </div>
-
             <img @click.prevent="moveRight()" src="../assets/SVG/right-arrow.svg" class="arrow" alt="">
         </div>
     </div>
@@ -199,7 +196,7 @@
 export default {
     methods: {
         moveLeft() {
-            
+            this.doSlideLeft = true
             for (const index in this.indicies) {
                 if (this.indicies[index] == 0) {
                     this.indicies[index] = 3
@@ -207,8 +204,12 @@ export default {
                     this.indicies[index]--
                 }
             }
+            setTimeout(() => {
+                this.doSlideLeft = false
+            })
         },
         moveRight() {
+            this.doSlideRight = true
             for (const index in this.indicies) {
                 if (this.indicies[index] == 3) {
                     this.indicies[index] = 0
@@ -216,10 +217,17 @@ export default {
                     this.indicies[index]++
                 }
             }
+            
+             setTimeout(() => {
+                this.doSlideRight = false
+            })
+            
         }
     },
     data() {
         return {
+            doSlideRight: false,
+            doSlideLeft: false,
             index: 0,
             indicies: {
                 first: 0,
@@ -230,7 +238,7 @@ export default {
             theCards: [
                 {
                     plan: 'V-1',
-                    imgPath: require('../assets/cards/photo_tarif_03.jpg'),
+                    imgPath: require('../assets/cards/photo_tarif_03.png'),
                     min: 500,
                     sms: 'UNLIMITED',
                     data: 5,
@@ -239,7 +247,7 @@ export default {
                 },
                 {
                     plan: 'V-2',
-                    imgPath: require('../assets/cards/photo_tarif_04.jpg'),
+                    imgPath: require('../assets/cards/photo_tarif_04.png'),
                     min: 700,
                     sms: 'UNLIMITED',
                     data: 10,
@@ -248,7 +256,7 @@ export default {
                 },
                 {
                     plan: 'V-3',
-                    imgPath: require('../assets/cards/photo_tarif_05.jpg'),
+                    imgPath: require('../assets/cards/photo_tarif_05.png'),
                     min: 1000,
                     sms: 'UNLIMITED',
                     data: 15,
@@ -257,7 +265,7 @@ export default {
                 },
                 {
                     plan: 'V-MAXX',
-                    imgPath: require('../assets/cards/photo_tarif_06.jpg'),
+                    imgPath: require('../assets/cards/photo_tarif_06.png'),
                     min: 'UNLIMITED',
                     sms: 'UNLIMITED',
                     data: 'UNLIMITED',
@@ -277,6 +285,20 @@ export default {
 @import '../scss/_divider.scss';
 @import '../scss/_utilities.scss';
 
+.slide {
+    transform: translateX(0);
+    transition: all .4s;
+
+    &Right{
+        transform: translateX(100%);
+    }
+
+    &Left {
+        transform: translateX(-100%);
+    }
+}
+
+
 .container__arrow {
     display: flex;
     align-items: center;
@@ -284,6 +306,14 @@ export default {
     max-width: 965px;
     margin: 0 auto;
     margin-bottom: 2rem;
+
+    &--inner {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
 }
 
 .btn-pricing {
@@ -361,7 +391,6 @@ export default {
 
         &--table {
             margin: 0 auto;
-            margin-top: -3rem;
             margin-bottom: 1rem;
         }
 
