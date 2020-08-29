@@ -37,7 +37,8 @@
                         <tr>
                             <th class="card__content--small-font">VOICE</th>
                             <th class="card__svg inline"><img src="../assets/SVG/card/phone.svg" alt=""></th>
-                            <th class="card__content--large-font">{{theCards[indicies.first].min}} <span style="font-size: 16px;">min</span></th>
+                            <th v-if="indicies.first !== 3" class="card__content--large-font">{{theCards[indicies.first].min}} <span style="font-size: 16px;">min</span></th>
+                            <th v-else class="card__content--font-adjust">{{theCards[indicies.first].min}}</th>
                         </tr>
                         <tr>
                             <th class="card__content--small-font">SMS</th>
@@ -47,7 +48,8 @@
                         <tr>
                             <th class="card__content--small-font">DATA</th>
                             <th class="card__svg inline"><img src="../assets/SVG/card/wifi.svg" alt=""></th>
-                            <th class="card__content--large-font">{{theCards[indicies.first].data}} <span style="font-size: 16px;">GB</span></th>
+                            <th v-if="indicies.first !== 3" class="card__content--large-font">{{theCards[indicies.first].data}} <span style="font-size: 16px;">GB</span></th>
+                            <th v-else class="card__content--font-adjust">{{theCards[indicies.first].min}}</th>
                         </tr>
                     </tbody>
                 </table>
@@ -67,7 +69,7 @@
         
             </div>
 
-             <div class="card" :class="{slideLeft: doSlideLeft, slideRight: doSlideRight, slide: !doSlideRight && !doSlideLeft}">
+             <div class="card card__2" :class="{slideLeft: doSlideLeft, slideRight: doSlideRight, slide: !doSlideRight && !doSlideLeft}">
                 <div class="card__header">
                     <img :src=theCards[indicies.second].imgPath alt="">
                 </div>
@@ -76,7 +78,8 @@
                         <tr>
                             <th class="card__content--small-font">VOICE</th>
                             <th class="card__svg inline"><img src="../assets/SVG/card/phone.svg" alt=""></th>
-                            <th class="card__content--large-font">{{theCards[indicies.second].min}} <span style="font-size: 16px;">min</span></th>
+                            <th v-if="indicies.second !== 3" class="card__content--large-font">{{theCards[indicies.second].min}} <span style="font-size: 16px;">min</span></th>
+                            <th v-else class="card__content--font-adjust">{{theCards[indicies.second].min}}</th>
                         </tr>
                         <tr>
                             <th class="card__content--small-font">SMS</th>
@@ -86,7 +89,8 @@
                         <tr>
                             <th class="card__content--small-font">DATA</th>
                             <th class="card__svg inline"><img src="../assets/SVG/card/wifi.svg" alt=""></th>
-                            <th class="card__content--large-font">{{theCards[indicies.second].data}} <span style="font-size: 16px;">GB</span></th>
+                            <th v-if="indicies.second !== 3" class="card__content--large-font">{{theCards[indicies.second].data}} <span style="font-size: 16px;">GB</span></th>
+                            <th v-else class="card__content--font-adjust">{{theCards[indicies.second].min}}</th>
                         </tr>
                     </tbody>
                 </table>
@@ -106,7 +110,7 @@
         
             </div>
 
-            <div class="card" :class="{slideLeft: doSlideLeft, slideRight: doSlideRight, slide: !doSlideRight && !doSlideLeft}">
+            <div class="card card__3"  :class="{slideLeft: doSlideLeft, slideRight: doSlideRight, slide: !doSlideRight && !doSlideLeft}">
                 <div class="card__header">
                     <img :src=theCards[indicies.third].imgPath alt="">
                 </div>
@@ -115,7 +119,8 @@
                         <tr>
                             <th class="card__content--small-font">VOICE</th>
                             <th class="card__svg inline"><img src="../assets/SVG/card/phone.svg" alt=""></th>
-                            <th class="card__content--large-font">{{theCards[indicies.third].min}} <span style="font-size: 16px;">min</span></th>
+                            <th v-if="indicies.third !== 3" class="card__content--large-font">{{theCards[indicies.third].min}} <span style="font-size: 16px;">min</span></th>
+                            <th v-else class="card__content--font-adjust">{{theCards[indicies.third].min}}</th>
                         </tr>
                         <tr>
                             <th class="card__content--small-font">SMS</th>
@@ -125,7 +130,8 @@
                         <tr>
                             <th class="card__content--small-font">DATA</th>
                             <th class="card__svg inline"><img src="../assets/SVG/card/wifi.svg" alt=""></th>
-                            <th class="card__content--large-font">{{theCards[indicies.third].data}} <span style="font-size: 16px;">GB</span></th>
+                            <th v-if="indicies.third !== 3" class="card__content--large-font">{{theCards[indicies.third].data}} <span style="font-size: 16px;">GB</span></th>
+                            <th v-else class="card__content--font-adjust">{{theCards[indicies.third].data}}</th>
                         </tr>
                     </tbody>
                 </table>
@@ -144,46 +150,6 @@
                 <button class="btn-pricing btn-ghost">READ MORE</button>
         
             </div>
-
-            <!-- <div class="card"   :class="{slideLeft: doSlideLeft, slideRight: doSlideRight, slide: !doSlideRight && !doSlideLeft}">
-                <div class="card__header">
-                    <img :src=theCards[indicies.fourth].imgPath alt="">
-                    <div class="card__header--type">{{theCards[indicies.fourth].plan}}</div>
-                </div>
-                <table class="card__content--table">
-                    <tbody>
-                        <tr>
-                            <th class="card__content--small-font">VOICE</th>
-                            <th class="card__svg inline"><img src="../assets/SVG/card/phone.svg" alt=""></th>
-                            <th class="card__content--large-font">{{theCards[indicies.fourth].min}} <span style="font-size: 16px;">min</span></th>
-                        </tr>
-                        <tr>
-                            <th class="card__content--small-font">SMS</th>
-                            <th class="card__svg inline"><img src="../assets/SVG/card/mssg.svg" alt=""></th>
-                            <th class="card__content--large-font" style="font-size: 16px; vertical-align: middle;">{{theCards[indicies.fourth].sms}}</th>
-                        </tr>
-                        <tr>
-                            <th class="card__content--small-font">DATA</th>
-                            <th class="card__svg inline"><img src="../assets/SVG/card/wifi.svg" alt=""></th>
-                            <th class="card__content--large-font">{{theCards[indicies.fourth].data}} <span style="font-size: 16px;">GB</span></th>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="card__cost">
-                    <div>
-                        <div class="card__svg inline"><font-awesome-icon icon="euro-sign" /></div>
-                        <div class="inline">&nbsp;&nbsp;{{theCards[indicies.fourth].euroPrice}}</div>
-                    </div>
-                    <div>
-                        <div class="card__svg inline"><font-awesome-icon icon="dollar-sign" /></div>
-                        <div class="inline">&nbsp;&nbsp;{{theCards[indicies.fourth].dollarPrice}}</div>
-                    </div>
-
-                </div>
-                <button class="btn-pricing">BUY NOW</button>
-                <button class="btn-pricing btn-ghost">READ MORE</button>
-        
-            </div> -->
             </div>
             <img @click.prevent="moveRight()" src="../assets/SVG/right-arrow.svg" class="arrow" alt="">
         </div>
@@ -247,7 +213,7 @@ export default {
                 },
                 {
                     plan: 'V-2',
-                    imgPath: require('../assets/cards/photo_tarif_04.png'),
+                    imgPath: require('../assets/cards/photo_tarif_05.png'),
                     min: 700,
                     sms: 'UNLIMITED',
                     data: 10,
@@ -256,7 +222,7 @@ export default {
                 },
                 {
                     plan: 'V-3',
-                    imgPath: require('../assets/cards/photo_tarif_05.png'),
+                    imgPath: require('../assets/cards/photo_tarif_04.png'),
                     min: 1000,
                     sms: 'UNLIMITED',
                     data: 15,
@@ -308,11 +274,12 @@ export default {
     margin-bottom: 2rem;
 
     &--inner {
+        border: 1px solid red;
         display: flex;
         width: 100%;
         align-items: center;
         justify-content: center;
-        overflow: hidden;
+        overflow: hidden
     }
 }
 
@@ -345,6 +312,18 @@ export default {
     min-width: 270px;
     width:  100%;
     margin: 0 1rem;
+
+    &__2 {
+        @media(max-width: 570px) {
+            display: none;
+        }
+    }
+
+    &__3 {
+        @media(max-width: 910px) {
+            display: none;
+        }
+    }
 
     &__cost {
         display: flex;
@@ -399,8 +378,6 @@ export default {
             padding-right: 10px;
             text-align: right;
             vertical-align: top;
-            
-            
         }
 
         &--large-font {
@@ -408,6 +385,14 @@ export default {
             padding-left: 10px;
             text-align: left;
             vertical-align: top;
+        }
+
+        &--font-adjust {
+            font-size: 16px; 
+            padding-left: 10px;
+            text-align: left;
+            vertical-align: middle;
+
         }
     }
 }
