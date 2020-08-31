@@ -117,11 +117,11 @@
                 <div class="vert-border"></div>
 
                 <span class="nav-link__root-container">
-                    <router-link class="nav-link nav-link__root" to="/about">Contacts</router-link>
+                    <router-link class="nav-link nav-link__root" to="/contact-us">Contacts</router-link>
                     <div class="drop-down">
                         <div class="drop-down__inner">
                             <span class="nav-link__container">
-                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Office</router-link>
+                                <router-link class="nav-link nav-link__drop" to="/contact-us"><span class="dot"></span>Office</router-link>
                             </span>
                             <span class="nav-link__container">
                                 <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Customer Service</router-link>

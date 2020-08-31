@@ -7,6 +7,7 @@ import PressCenter from "./views/PressCenter.vue";
 import Plans from "./views/Plans.vue";
 import AddFunds from "./views/AddFunds.vue";
 import MyVtell from "./views/MyVtell.vue";
+import Contacts from "./views/Contacts.vue";
 
 Vue.use(Router);
 
@@ -49,6 +50,11 @@ export default new Router({
       path: "/myvtell",
       name: "myvtell",
       component: MyVtell
+    },
+    {
+      path: "/contact-us",
+      name: "contact",
+      component: Contacts
     },
     // {
     //   path: "/about",
