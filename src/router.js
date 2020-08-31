@@ -6,6 +6,7 @@ import News from "./views/News.vue";
 import PressCenter from "./views/PressCenter.vue";
 import Plans from "./views/Plans.vue";
 import AddFunds from "./views/AddFunds.vue";
+import MyVtell from "./views/MyVtell.vue";
 
 Vue.use(Router);
 
@@ -43,6 +44,11 @@ export default new Router({
       path: "/addfunds",
       name: "addfunds",
       component: AddFunds
+    },
+    {
+      path: "/myvtell",
+      name: "myvtell",
+      component: MyVtell
     },
     // {
     //   path: "/about",

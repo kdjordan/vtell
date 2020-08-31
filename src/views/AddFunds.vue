@@ -103,6 +103,7 @@ hr {
     }
 
     &__btn {
+        cursor: pointer;
         width: 50%;
         background: $red;
         border: 1px solid transparent;
@@ -110,6 +111,13 @@ hr {
         padding: 25px 0;
         margin: 1rem  0;
         margin-bottom: 3rem;
+        transition: all .4s;
+
+        &:hover {
+            background: $white;
+            border: 1px solid $red;
+            color: $red;
+        }
 
     }
 

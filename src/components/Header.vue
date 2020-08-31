@@ -15,13 +15,13 @@
                         <img class="icon" src="../assets/nav/search.svg" alt="">
                     </span>
                 </router-link>
-                <router-link class="nav-link nav-link__upper" to="/payments">
+                <router-link class="nav-link nav-link__upper" to="/addfunds">
                 <span class="nav-link__container">
                     <router-link class="nav-link nav-link__container--text" to="/addfunds" >Add Funds</router-link>  
                     <img class="icon" src="../assets/nav/payments.svg" alt="">
                 </span>
                 </router-link>
-                <router-link class="nav-link nav-link__upper" to="/account">
+                <router-link class="nav-link nav-link__upper" to="/myvtell">
                 <span class="nav-link__container">
                     <div class="nav-link__container--text">My V-tell</div>  
                     <img class="icon" src="../assets/nav/account.svg" alt="">
