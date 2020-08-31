@@ -11,8 +11,6 @@
           <div class="tariff__top-bar">
               <div class="tariff__top-bar--left">
                 <div class="tariff__top-bar--title">LIMITED TIME OFFER for V-1, V-2, V-3 plan Subcribers<br>20 hours of voice calls :: 20 GB of data</div>
-                <!-- <div class="tariff__top-bar--desc">20 hours of voice calls :: 20 GB of data</div> -->
-                
               </div>
               <div class="tariff__top-bar--right">
                 <img class="tariff-svg" src="../assets/SVG/tariffs/euro.svg" alt="">
@@ -153,9 +151,7 @@
             </div>
             <img @click.prevent="moveRight()" src="../assets/SVG/right-arrow.svg" class="arrow" alt="">
         </div>
-    </div>
-      
-  
+    </div>  
 </template>
 
 <script>
@@ -274,7 +270,6 @@ export default {
     margin-bottom: 2rem;
 
     &--inner {
-        border: 1px solid red;
         display: flex;
         width: 100%;
         align-items: center;

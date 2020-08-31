@@ -17,7 +17,7 @@
                 </router-link>
                 <router-link class="nav-link nav-link__upper" to="/payments">
                 <span class="nav-link__container">
-                    <div class="nav-link__container--text">Add Funds</div>  
+                    <router-link class="nav-link nav-link__container--text" to="/addfunds" >Add Funds</router-link>  
                     <img class="icon" src="../assets/nav/payments.svg" alt="">
                 </span>
                 </router-link>
