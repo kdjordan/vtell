@@ -9,6 +9,7 @@ import AddFunds from "./views/AddFunds.vue";
 import MyVtell from "./views/MyVtell.vue";
 import Contacts from "./views/Contacts.vue";
 import CustomerService from "./views/CustomerService.vue";
+import Partnership from "./views/Partnership.vue";
 
 Vue.use(Router);
 
@@ -59,8 +60,13 @@ export default new Router({
     },
     {
       path: "/customer-service",
-      name: "cusstomer-service",
+      name: "customer-service",
       component: CustomerService
+    },
+    {
+      path: "/partnerships",
+      name: "partnership",
+      component: Partnership
     },
     // {
     //   path: "/about",

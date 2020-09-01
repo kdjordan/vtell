@@ -52,7 +52,6 @@
 @import '../scss/_divider.scss';
 @import '../scss/_utilities.scss';
 @import '../scss/_page.scss';
-@import '../scss/_form.scss';
 
 .myvtell {
     background: rgba(242, 242, 242, 0.05);
@@ -133,6 +132,15 @@
 
                 & label {
                     margin-bottom: .8rem;
+                }
+
+                & input[type=text], & >input[type=password] {
+                    border-radius: 77px;
+                    padding: 1.5rem;
+                    border: 1px solid rgba(247, 248, 248, 0.13);
+                    background: transparent;
+                    width: 300px;
+                    min-width: 100%;
                 }
 
             }

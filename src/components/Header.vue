@@ -147,11 +147,11 @@
         </div>
         <div class="mobile__overlay" :class="{slideOpen : mobileOpen}">
             <div class="mobile__overlay--inner">
-                <router-link class="nav-link mobile__link" to="/search">
+                <router-link class="nav-link mobile__link" to="/about">
                     <span class="mobile__link--text">About Us</span>
                     <font-awesome-icon icon="angle-right" class="mobile-arrow"/>
                 </router-link>
-                <router-link class="nav-link mobile__link" to="/search">
+                <router-link class="nav-link mobile__link" to="/plans">
                     <span class="mobile__link--text">Tariffs</span>
                     <font-awesome-icon icon="angle-right" class="mobile-arrow"/>
                 </router-link>
@@ -159,10 +159,10 @@
                     <span class="mobile__link--text">Subscribers</span>
                     <font-awesome-icon icon="angle-right" class="mobile-arrow"/>
                 </router-link>
-                <router-link class="nav-link mobile__link" to="/search">
+                <router-link class="nav-link mobile__link" to="/partnerships">
                     <span class="mobile__link--text">Partnerships</span>
                 </router-link>
-                <router-link class="nav-link mobile__link" to="/search">
+                <router-link class="nav-link mobile__link" to="/contact-us">
                     <span class="mobile__link--text">Contacts</span>
                     <font-awesome-icon icon="angle-right" class="mobile-arrow"/>
                 </router-link>
@@ -170,11 +170,11 @@
                     <span class="mobile__link--text">Search</span>
                     <img class="mobile-icon" src="../assets/nav/search.svg" alt="">
                 </router-link>
-                <router-link class="nav-link mobile__link" to="/search">
+                <router-link class="nav-link mobile__link" to="/addfunds">
                     <span class="mobile__link--text">Add Funds</span>
                     <img class="mobile-icon" src="../assets/nav/payments.svg" alt="">
                 </router-link>
-                <router-link class="nav-link mobile__link" to="/search">
+                <router-link class="nav-link mobile__link" to="/myvtell">
                     <span class="mobile__link--text">My V-Tell</span>
                     <img class="mobile-icon" src="../assets/nav/account.svg" alt="">
                 </router-link>
