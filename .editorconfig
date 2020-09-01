@@ -1,0 +1,12 @@
+root = true
+
+
+[*.{js,json,mjs,vue,css,html,md}]
+charset = utf-8
+indent_style = space
+indent_size = 4
+
+
+[{package.json,.travis.yml,docker-compose.yml}]
+indent_style = space
+indent_size = 2

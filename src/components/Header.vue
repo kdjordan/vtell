@@ -5,7 +5,7 @@
         
         <div class="nav-container">
             <div class="nav-logo" >
-                <a href="/"><img class="nav-logo__svg" src="../assets/nav/logoSvg.svg" alt=""></a>
+                <router-link to="/"><img class="nav-logo__svg" src="../assets/nav/logoSvg.svg" alt=""></router-link>
             </div>
             <div class="menu-container">
             <nav class="nav-menu nav-menu__upper">
@@ -15,13 +15,13 @@
                         <img class="icon" src="../assets/nav/search.svg" alt="">
                     </span>
                 </router-link>
-                <router-link class="nav-link nav-link__upper" to="/payments">
+                <router-link class="nav-link nav-link__upper" to="/addfunds">
                 <span class="nav-link__container">
-                    <div class="nav-link__container--text">Add Funds</div>  
+                    <router-link class="nav-link nav-link__container--text" to="/addfunds" >Add Funds</router-link>  
                     <img class="icon" src="../assets/nav/payments.svg" alt="">
                 </span>
                 </router-link>
-                <router-link class="nav-link nav-link__upper" to="/account">
+                <router-link class="nav-link nav-link__upper" to="/myvtell">
                 <span class="nav-link__container">
                     <div class="nav-link__container--text">My V-tell</div>  
                     <img class="icon" src="../assets/nav/account.svg" alt="">
@@ -43,10 +43,10 @@
                                 <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>About V-Tell</router-link>
                             </span>
                             <span class="nav-link__container">
-                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>News</router-link>
+                                <router-link class="nav-link nav-link__drop" to="/news"><span class="dot"></span>News</router-link>
                             </span>
                             <span class="nav-link__container">
-                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Press Center</router-link>
+                                <router-link class="nav-link nav-link__drop" to="/press-center"><span class="dot"></span>Press Center</router-link>
                             </span>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                 <div class="vert-border"></div>
 
                 <span class="nav-link__root-container">
-                    <router-link class="nav-link nav-link__root"  to="/tariffs">Tariffs</router-link>
+                    <router-link class="nav-link nav-link__root"  to="/plans">Tariffs</router-link>
                     <div class="drop-down">
                         <div class="drop-down__inner">
                             <span class="nav-link__container">
@@ -117,14 +117,14 @@
                 <div class="vert-border"></div>
 
                 <span class="nav-link__root-container">
-                    <router-link class="nav-link nav-link__root" to="/about">Contacts</router-link>
+                    <router-link class="nav-link nav-link__root" to="/contact-us">Contacts</router-link>
                     <div class="drop-down">
                         <div class="drop-down__inner">
                             <span class="nav-link__container">
-                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Office</router-link>
+                                <router-link class="nav-link nav-link__drop" to="/contact-us"><span class="dot"></span>Office</router-link>
                             </span>
                             <span class="nav-link__container">
-                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Customer Service</router-link>
+                                <router-link class="nav-link nav-link__drop" to="/customer-service"><span class="dot"></span>Customer Service</router-link>
                             </span>
                         </div>
                     </div>
@@ -147,11 +147,11 @@
         </div>
         <div class="mobile__overlay" :class="{slideOpen : mobileOpen}">
             <div class="mobile__overlay--inner">
-                <router-link class="nav-link mobile__link" to="/search">
+                <router-link class="nav-link mobile__link" to="/about">
                     <span class="mobile__link--text">About Us</span>
                     <font-awesome-icon icon="angle-right" class="mobile-arrow"/>
                 </router-link>
-                <router-link class="nav-link mobile__link" to="/search">
+                <router-link class="nav-link mobile__link" to="/plans">
                     <span class="mobile__link--text">Tariffs</span>
                     <font-awesome-icon icon="angle-right" class="mobile-arrow"/>
                 </router-link>
@@ -159,10 +159,10 @@
                     <span class="mobile__link--text">Subscribers</span>
                     <font-awesome-icon icon="angle-right" class="mobile-arrow"/>
                 </router-link>
-                <router-link class="nav-link mobile__link" to="/search">
+                <router-link class="nav-link mobile__link" to="/partnerships">
                     <span class="mobile__link--text">Partnerships</span>
                 </router-link>
-                <router-link class="nav-link mobile__link" to="/search">
+                <router-link class="nav-link mobile__link" to="/contact-us">
                     <span class="mobile__link--text">Contacts</span>
                     <font-awesome-icon icon="angle-right" class="mobile-arrow"/>
                 </router-link>
@@ -170,11 +170,11 @@
                     <span class="mobile__link--text">Search</span>
                     <img class="mobile-icon" src="../assets/nav/search.svg" alt="">
                 </router-link>
-                <router-link class="nav-link mobile__link" to="/search">
+                <router-link class="nav-link mobile__link" to="/addfunds">
                     <span class="mobile__link--text">Add Funds</span>
                     <img class="mobile-icon" src="../assets/nav/payments.svg" alt="">
                 </router-link>
-                <router-link class="nav-link mobile__link" to="/search">
+                <router-link class="nav-link mobile__link" to="/myvtell">
                     <span class="mobile__link--text">My V-Tell</span>
                     <img class="mobile-icon" src="../assets/nav/account.svg" alt="">
                 </router-link>

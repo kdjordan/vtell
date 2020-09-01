@@ -1,6 +1,15 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
+import About from "./views/About.vue";
+import News from "./views/News.vue";
+import PressCenter from "./views/PressCenter.vue";
+import Plans from "./views/Plans.vue";
+import AddFunds from "./views/AddFunds.vue";
+import MyVtell from "./views/MyVtell.vue";
+import Contacts from "./views/Contacts.vue";
+import CustomerService from "./views/CustomerService.vue";
+import Partnership from "./views/Partnership.vue";
 
 Vue.use(Router);
 
@@ -15,13 +24,58 @@ export default new Router({
       component: Home
     },
     {
+      path: "/news",
+      name: "news",
+      component: News
+    },
+    {
       path: "/about",
       name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
-    }
+      component: About
+    },
+    {
+      path: "/press-center",
+      name: "press-center",
+      component: PressCenter
+    },
+    {
+      path: "/plans",
+      name: "plans",
+      component: Plans
+    },
+    {
+      path: "/addfunds",
+      name: "addfunds",
+      component: AddFunds
+    },
+    {
+      path: "/myvtell",
+      name: "myvtell",
+      component: MyVtell
+    },
+    {
+      path: "/contact-us",
+      name: "contact",
+      component: Contacts
+    },
+    {
+      path: "/customer-service",
+      name: "customer-service",
+      component: CustomerService
+    },
+    {
+      path: "/partnerships",
+      name: "partnership",
+      component: Partnership
+    },
+    // {
+    //   path: "/about",
+    //   name: "about",
+    //   // route level code-splitting
+    //   // this generates a separate chunk (about.[hash].js) for this route
+    //   // which is lazy-loaded when the route is visited.
+    //   component: () =>
+    //     import(/* webpackChunkName: "about" */ "./views/About.vue")
+    // }
   ]
 });
