@@ -83,10 +83,10 @@
             <div class="partner-bottom__title">If you want to become a Partner</div>
             <div class="partner-bottom__list">
                 <ul class="partner__bottom__list--top">
-                    <li>&#183&nbsp;Write to us at : partner@v-tell.com</li>
-                    <li>&#183&nbsp;The manager will contact you</li>
-                    <li>&#183&nbsp;Sign Dealer Agreement</li>
-                    <li>&#183&nbsp;Sell, get rewards and other bonusess !</li>
+                    <li>&#183;&nbsp;Write to us at : partner@v-tell.com</li>
+                    <li>&#183;&nbsp;The manager will contact you</li>
+                    <li>&#183;&nbsp;Sign Dealer Agreement</li>
+                    <li>&#183;&nbsp;Sell, get rewards and other bonusess !</li>
                 </ul>
             </div>
             <div class="partner-bottom__buttons">
