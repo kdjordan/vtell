@@ -11,6 +11,7 @@ import Contacts from "./views/Contacts.vue";
 import CustomerService from "./views/CustomerService.vue";
 import Partnership from "./views/Partnership.vue";
 import Advantages from "./views/Advantages.vue";
+import CorporateServices from "./views/CorporateServices.vue";
 
 Vue.use(Router);
 
@@ -73,6 +74,11 @@ export default new Router({
       path: "/advantages",
       name: "advantages",
       component: Advantages
+    },
+    {
+      path: "/corporate-services",
+      name: "corporate-services",
+      component: CorporateServices
     },
     // {
     //   path: "/about",
