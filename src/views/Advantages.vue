@@ -1,15 +1,15 @@
 <template>
-  <div class="page">
+<div class="page">
     <div class="container">
         <div class="crumbs">
             <img class="crumbs__img" src="../assets/back-button.png" alt="">
-        <div class="crumbs__path">/&nbsp;<a href="/">HOME</a>&nbsp;/&nbsp;ADVANTAGES</div>
+         <div class="crumbs__path">/&nbsp;<a href="/">HOME</a>&nbsp;/&nbsp;ADVANTAGES</div>
         </div>
         <div class="page-divider mb-3">  
-        <img class="page-divider__cube" src="../assets/SVG/cube.svg" alt="">
-        <div class="page-divider__title">ADVANTAGES</div>
+            <img class="page-divider__cube" src="../assets/SVG/cube.svg" alt="">
+            <div class="page-divider__title">ADVANTAGES</div>
         </div> 
-      <div class="advantages">
+        <div class="advantages">
             <div class="advantages__wrap">
                 <div class="advantages__wrap--square">
                     <img src="../assets/advantages/adv_image1.png" alt="">
@@ -39,19 +39,12 @@
                     <img src="../assets/advantages/adv_image7.png" alt="">
                     <div class="advantages__desc advantages__desc--6">AUTOMATIC SWITCH OF V-TELL PHONE NUMBERS</div>
                 </div>
-
             </div>
-      </div>
-     </div>
+        </div>
+    </div>
 </div> 
   
 </template>
-
-<script>
-export default {
-
-}
-</script>
 
 <style lang="scss">
 @import '../scss/_divider.scss';
@@ -119,8 +112,6 @@ export default {
         justify-content: center;
         width: 100%;
 
-       
-
         & > div {
             cursor: pointer;
             transform: scale(1, 1);
@@ -128,7 +119,6 @@ export default {
             max-height: 212px;
             max-width: 212px;
             transition: all 0.1s linear 0s;
-
         }
 
         & > div:hover {

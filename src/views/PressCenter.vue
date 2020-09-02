@@ -3,17 +3,17 @@
     <div class="container">
         <div class="crumbs">
             <img class="crumbs__img" src="../assets/back-button.png" alt="">
-          <div class="crumbs__path">/&nbsp;<a href="/">HOME</a>&nbsp;/&nbsp;Press Centre</div>
+            <div class="crumbs__path">/&nbsp;<a href="/">HOME</a>&nbsp;/&nbsp;Press Centre</div>
         </div>
         <div class="page-divider mb-3">  
-          <img class="page-divider__cube" src="../assets/SVG/cube.svg" alt="">
-          <div class="page-divider__title">Press Center</div>
+            <img class="page-divider__cube" src="../assets/SVG/cube.svg" alt="">
+            <div class="page-divider__title">Press Center</div>
         </div> 
         <div class="press mb-3">
-          <img class="press__img" src="../assets/pages/press-center.jpg" alt="">
-          <div class="press__desc">
-          <p>V-Tell is an International Mobile Operator providing mobile services to customers all around the world*. Through consistent expansion, V-Tell covers an ever-increasing number of locations, using the latest technology and equipment to support its customer offerings.</p>
-        </div>
+            <img class="press__img" src="../assets/pages/press-center.jpg" alt="">
+            <div class="press__desc">
+                <p>V-Tell is an International Mobile Operator providing mobile services to customers all around the world*. Through consistent expansion, V-Tell covers an ever-increasing number of locations, using the latest technology and equipment to support its customer offerings.</p>
+            </div>
       </div>
     </div>
 </div>

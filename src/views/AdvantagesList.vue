@@ -3,46 +3,45 @@
     <div class="container">
         <div class="crumbs">
             <img class="crumbs__img" src="../assets/back-button.png" alt="">
-        <div class="crumbs__path">/&nbsp;<a href="/">HOME</a>&nbsp;/&nbsp;ADVANTAGES LIST</div>
+            <div class="crumbs__path">/&nbsp;<a href="/">HOME</a>&nbsp;/&nbsp;ADVANTAGES LIST</div>
         </div>
         <div class="page-divider mb-3">  
-        <img class="page-divider__cube" src="../assets/SVG/cube.svg" alt="">
-        <div class="page-divider__title">ADVANTAGES LIST</div>
+            <img class="page-divider__cube" src="../assets/SVG/cube.svg" alt="">
+            <div class="page-divider__title">ADVANTAGES LIST</div>
         </div> 
-    <div class="advantages-list">
-        <div class="advantages-list__entry">
-            <div class="advantages-list__title">ONE GLOBAL RATE</div>
-            <img class="advantages-list__img" src="../assets/SVG/cube-lighted.svg" alt="">
+        <div class="advantages-list">
+            <div class="advantages-list__entry">
+                <div class="advantages-list__title">ONE GLOBAL RATE</div>
+                <img class="advantages-list__img" src="../assets/SVG/cube-lighted.svg" alt="">
+            </div>
+            <div class="advantages-list__entry">
+                <div class="advantages-list__title">EXCELLENT MOBILE INTERNET</div>
+                <img class="advantages-list__img" src="../assets/SVG/cube-lighted.svg" alt="">
+            </div>
+            <div class="advantages-list__entry">
+                <div class="advantages-list__title">V-TELL PHONE NUMBERS IN DIFFERENT COUNTRIES ALL ON ONE SIM CARD</div>
+                <img class="advantages-list__img" src="../assets/SVG/cube-lighted.svg" alt="">
+            </div>
+            <div class="advantages-list__entry">
+                <div class="advantages-list__title">YOU CAN BE REACHED WORLDWIDE WITH NO OVERSEAS CHARGE TO YOUR HOST</div>
+                <img class="advantages-list__img" src="../assets/SVG/cube-lighted.svg" alt="">
+            </div>
+            <div class="advantages-list__entry">
+                <div class="advantages-list__title">YOU'RE LOCAL NO MATTER WHERE YOU ARE</div>
+                <img class="advantages-list__img" src="../assets/SVG/cube-lighted.svg" alt="">
+            </div>
+            <div class="advantages-list__entry">
+                <div class="advantages-list__title">V-TELL DOES NOT UTILIZE IP TELEPHONY</div>
+                <img class="advantages-list__img" src="../assets/SVG/cube-lighted.svg" alt="">
+            </div>
+            <div class="advantages-list__entry">
+                <div class="advantages-list__title">AUTOMATIC SWITCH OF V-TELL PHONE NUMBERS</div>
+                <img class="advantages-list__img" src="../assets/SVG/cube-lighted.svg" alt="">
+            </div>
+            <div class="advantages-list__desc">
+                You can add V-Tell phone numbers of any countries3 to your SIM card by yourself via the mobile app or website. These are permanent phone numbers, which will be assigned to you by V-Tell.
+            </div>
         </div>
-        <div class="advantages-list__entry">
-            <div class="advantages-list__title">EXCELLENT MOBILE INTERNET</div>
-            <img class="advantages-list__img" src="../assets/SVG/cube-lighted.svg" alt="">
-        </div>
-        <div class="advantages-list__entry">
-            <div class="advantages-list__title">V-TELL PHONE NUMBERS IN DIFFERENT COUNTRIES ALL ON ONE SIM CARD</div>
-            <img class="advantages-list__img" src="../assets/SVG/cube-lighted.svg" alt="">
-        </div>
-        <div class="advantages-list__entry">
-            <div class="advantages-list__title">YOU CAN BE REACHED WORLDWIDE WITH NO OVERSEAS CHARGE TO YOUR HOST</div>
-            <img class="advantages-list__img" src="../assets/SVG/cube-lighted.svg" alt="">
-        </div>
-        <div class="advantages-list__entry">
-            <div class="advantages-list__title">YOU'RE LOCAL NO MATTER WHERE YOU ARE</div>
-            <img class="advantages-list__img" src="../assets/SVG/cube-lighted.svg" alt="">
-        </div>
-        <div class="advantages-list__entry">
-            <div class="advantages-list__title">V-TELL DOES NOT UTILIZE IP TELEPHONY</div>
-            <img class="advantages-list__img" src="../assets/SVG/cube-lighted.svg" alt="">
-        </div>
-        <div class="advantages-list__entry">
-            <div class="advantages-list__title">AUTOMATIC SWITCH OF V-TELL PHONE NUMBERS</div>
-            <img class="advantages-list__img" src="../assets/SVG/cube-lighted.svg" alt="">
-        </div>
-        <div class="advantages-list__desc">
-            You can add V-Tell phone numbers of any countries3 to your SIM card by yourself via the mobile app or website. These are permanent phone numbers, which will be assigned to you by V-Tell.
-        </div>
-
-    </div>
     </div>
 </div>
 
@@ -89,10 +88,6 @@
         text-align: left;
         font-size: 17px;
         line-height: 27px;
-
-
     }
 }
-
-
 </style>
