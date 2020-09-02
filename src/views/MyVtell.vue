@@ -63,7 +63,7 @@ export default {
         text-transform: uppercase;
         font-size: 21px;
         margin-bottom: 1rem;
-        color: $white;
+        color: white;
     }
 
     &__desc {
@@ -83,7 +83,7 @@ export default {
     &__btn {
         cursor: pointer;
         border: 1px solid transparent;
-        color: $white;
+        color: white;
         background: $red;
         font-size: 1.1rem;
         padding: 1.5rem;
@@ -95,7 +95,7 @@ export default {
         }
 
         &:hover {
-            background: $white;
+            background: white;
             border: 1px solid $red;
             color: $red;
         }
@@ -109,7 +109,7 @@ export default {
 
         &--upper {
             margin-bottom: 5rem;
-            color: $white;
+            color: white;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -165,7 +165,7 @@ export default {
             }
 
             &--col {
-                color: $white;
+                color: white;
                 display: flex;
                 flex-direction: column;
                 font-size: 14px;
@@ -177,7 +177,7 @@ export default {
 
             & .title {
                 font-size: 18px;
-                color: $white;
+                color: white;
                 text-transform: uppercase;
                 margin-top: .5rem;
             }

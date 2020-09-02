@@ -60,7 +60,7 @@ export default {
     margin: 2rem 0;
     background: rgba(252, 252, 252, 0.25);
     box-shadow: 0 0 6em rgba(31, 31, 31, 0.25) inset;
-    color: $white;
+    color: white;
     font-size: 21px;
 
     &__entry {

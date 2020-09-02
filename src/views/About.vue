@@ -58,7 +58,7 @@ export default {
     }
 
   &__companies {
-      color: $white;
+      color: white;
       font-size: 13px;
     }
 

@@ -311,7 +311,7 @@ export default {
     }
 
     &__ul {
-        color: $white;
+        color: white;
         text-align: left;
         margin-left: 2rem;
     }

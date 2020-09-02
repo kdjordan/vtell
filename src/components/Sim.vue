@@ -81,7 +81,6 @@ export default {
 }
 </script>
 
-
 <style scoped lang="scss">
 @import '../scss/_variables.scss';
 @import '../scss/_base.scss';
@@ -89,7 +88,7 @@ export default {
 
 .btn__sim {
     cursor: pointer;
-    background: $white;
+    background: white;
     color: $grey;
     font-size: 16px;
     border: none;
@@ -106,17 +105,17 @@ export default {
 
     &:hover {
       background: $red;
-      color: $white;
+      color: white;
     }
 
     &Active {
         background: $red;
-        color: $white;
+        color: white;
     }
 
     &--red {
         background: $red;
-        color: $white;
+        color: white;
     }
 }
 
