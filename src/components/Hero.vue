@@ -226,7 +226,6 @@ export default {
     white-space: pre;
     text-align: center;
     line-height: 4vw;
-    // left: -1000px;
     text-transform: uppercase;
     bottom: calc(100% / 3);
     transition:  opacity left .7s ease-in;
