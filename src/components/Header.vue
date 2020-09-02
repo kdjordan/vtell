@@ -2,7 +2,6 @@
 <div>
     <section class="header" :class="{headerOpaque: addOpaqueBack}">
         <div class="top-bar"></div>
-        
         <div class="nav-container">
             <div class="nav-logo" >
                 <router-link to="/"><img class="nav-logo__svg" src="../assets/nav/logoSvg.svg" alt=""></router-link>
@@ -16,22 +15,22 @@
                     </span>
                 </router-link>
                 <router-link class="nav-link nav-link__upper" to="/addfunds">
-                <span class="nav-link__container">
-                    <router-link class="nav-link nav-link__container--text" to="/addfunds" >Add Funds</router-link>  
-                    <img class="icon" src="../assets/nav/payments.svg" alt="">
-                </span>
+                    <span class="nav-link__container">
+                        <router-link class="nav-link nav-link__container--text" to="/addfunds" >Add Funds</router-link>  
+                        <img class="icon" src="../assets/nav/payments.svg" alt="">
+                    </span>
                 </router-link>
                 <router-link class="nav-link nav-link__upper" to="/myvtell">
-                <span class="nav-link__container">
-                    <div class="nav-link__container--text">My V-tell</div>  
-                    <img class="icon" src="../assets/nav/account.svg" alt="">
-                </span>
+                    <span class="nav-link__container">
+                        <div class="nav-link__container--text">My V-tell</div>  
+                        <img class="icon" src="../assets/nav/account.svg" alt="">
+                    </span>
                 </router-link>
                 <router-link class="nav-link nav-link__upper" to="/cart">
-                <span class="nav-link__container">
-                    <div class="nav-link__container--text">Cart</div>  
-                    <img class="icon" src="../assets/nav/cart.svg" alt="">
-                </span>    
+                    <span class="nav-link__container">
+                        <div class="nav-link__container--text">Cart</div>  
+                        <img class="icon" src="../assets/nav/cart.svg" alt="">
+                    </span>    
                 </router-link>
             </nav>
             <nav class="nav-menu nav-menu__lower">
@@ -59,7 +58,7 @@
                     <div class="drop-down">
                         <div class="drop-down__inner">
                             <span class="nav-link__container">
-                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>All Tariffs</router-link>
+                                <router-link class="nav-link nav-link__drop" to="/plans"><span class="dot"></span>All Tariffs</router-link>
                             </span>
                             <span class="nav-link__container">
                                 <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>V-1</router-link>
@@ -128,7 +127,6 @@
                             </span>
                         </div>
                     </div>
-            
                 </span>
             </nav>
             </div>
@@ -199,9 +197,9 @@ export default {
     methods: {
         handleScroll (event) {
             if(window.scrollY > 10) {
-                this.addOpaqueBack = true
+                this.addOpaqueBack = true;
             } else {
-                this.addOpaqueBack = false
+                this.addOpaqueBack = false;
             }
         }
     },
@@ -241,7 +239,6 @@ export default {
 
 
 .nav-container {
-    // border: 1px solid red;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -253,11 +250,7 @@ export default {
     max-width: 1024px;
     display: flex;
     align-items: center;
-    // border: 1px solid red;
     padding-top: .5rem;
-    
-    // position: absolute;
-
     
     &__upper {
         justify-content: space-between; 
@@ -292,7 +285,6 @@ export default {
             margin-left: 10%;
         }
 
-
         &__container {
             width: 100%;
             display: flex;
@@ -324,7 +316,6 @@ export default {
             }
 
             &:hover > .drop-down {
-                // background: rgba(0,0,0, .3);
                 color: $red;
                 display: block;
                 z-index: 2;
@@ -346,7 +337,6 @@ export default {
             }
 
             &:hover .dot {
-                // width: 100%;
                 background: black;
             }
         }
@@ -474,7 +464,6 @@ export default {
         opacity: 0 !important;
     }
     &Bot {
-        
         transform: rotate(-45deg) !important;
     }
 }
@@ -527,9 +516,6 @@ export default {
         }
     }
 }
-
-//:style="{left: logoSpacing + '%'}"
 //****************************END MOBILE****************************
-
 </style>
 

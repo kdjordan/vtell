@@ -3,33 +3,26 @@
     <div class="container">
         <div class="crumbs">
             <img class="crumbs__img" src="../assets/back-button.png" alt="">
-        <div class="crumbs__path">/&nbsp;<a href="/">HOME</a>&nbsp;/&nbsp;PARTNER PROGRAM</div>
+            <div class="crumbs__path">/&nbsp;<a href="/">HOME</a>&nbsp;/&nbsp;PARTNER PROGRAM</div>
         </div>
         <div class="page-divider mb-3">  
-        <img class="page-divider__cube" src="../assets/SVG/cube.svg" alt="">
-        <div class="page-divider__title">PARTNER PROGRAM</div>
+            <img class="page-divider__cube" src="../assets/SVG/cube.svg" alt="">
+            <div class="page-divider__title">PARTNER PROGRAM</div>
         </div> 
         <img class="partnership__img mb-1"  src="../assets/pages/partnership.jpg" alt="">
         <div class="partnership__desc">
-        <p>V-Tell is interested in collaboration with sales agents to promote our mobile services. The Partner’s target is to spread our mobile network services by attracting new Subscribers. V-Tell offers enticing compensation, which is 10% of a monthly subscription fee. The more customers you sign up, the more you earn.</p>
-        <p class="red">Please use a partner compensation calculator to estimate your future earnings</p>
-        <div class="calc__container">
+            <p>V-Tell is interested in collaboration with sales agents to promote our mobile services. The Partner’s target is to spread our mobile network services by attracting new Subscribers. V-Tell offers enticing compensation, which is 10% of a monthly subscription fee. The more customers you sign up, the more you earn.</p>
+            <p class="red">Please use a partner compensation calculator to estimate your future earnings</p>
+            <div class="calc__container">
             <div class="calc__header">
                 <div>Subscriber Count</div>
                 <div>Amount of additional phone Monthly Plan numbers sold (extra phone numbers purchased by a Subscriber)</div>
                 <div>Monthly Plan</div>
-                <!-- <div>&nbsp;</div> -->
             </div>
             <div class="calc__row">
-                <div>
-                    <input class="calc__row--input" type="text" name="" id="">
-                </div>
-                <div>
-                    <input class="calc__row--input" type="text" name="" id="">
-                </div>
-                <div>
-                    <input class="calc__row--input" type="text" name="" id="">
-                </div>
+                <div><input class="calc__row--input" type="text" name="" id=""></div>
+                <div><input class="calc__row--input" type="text" name="" id=""></div>
+                <div><input class="calc__row--input" type="text" name="" id=""></div>
                 <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="25" cy="25" r="23" stroke="#E7383B" stroke-width="3" fill="transparent"></circle>
                     <line x1="14" y1="25" x2="36" y2="25" stroke="#E7383B" stroke-width="3" stroke-linecap="round"></line>
@@ -40,11 +33,8 @@
                 <div class="calc__row--end-curr">Currency</div>
             </div>
             <div class="calc__row calc__row--end">
-                <div>
-                    <input class="calc__row--input" type="text" name="" id="">
-                </div>
+                <div><input class="calc__row--input" type="text" name="" id=""></div>
             </div>
-            
         </div>
         <button class="partnership__btn">Calculate</button>
         </div>
@@ -76,7 +66,7 @@
                 <img src="../assets/SVG/up-arrow.svg" alt="">
             </div>
             <div class="partner-desc__content">
-
+                <!-- FUTURE CONTENT HERE -->
             </div>
         </div>
         <div class="partner-bottom">
@@ -90,21 +80,14 @@
                 </ul>
             </div>
             <div class="partner-bottom__buttons">
-                <div>
-                    <button class="partnership__btn">To My Account</button>
-                </div>
-                <div>
-                    <button class="partnership__btn">Ask A Question</button>
-                </div>
+                <div><button class="partnership__btn">To My Account</button></div>
+                <div><button class="partnership__btn">Ask A Question</button></div>
             </div>
         </div>
     </div>
 </div>
 
 </template>
-<script>
-
-</script>
 
 <style lang="scss">
 @import '../scss/_variables.scss';
@@ -173,8 +156,6 @@
     }
 }   
 
-
-
 .partner-boxes {
     display: flex;
     margin-bottom: 2rem;
@@ -214,7 +195,6 @@
             @media(max-width: 768px) {
                 margin-top: 25%;
             }
-
         }
 
         &--1 {
@@ -319,8 +299,6 @@
             color: $red;
         }
       }
-
-
     }
 
     &__btn {
@@ -353,7 +331,6 @@
             text-align: left;
             flex: 0 0 30%;
         }
-
     }
     
     &__row {
@@ -411,7 +388,6 @@
             margin: 0;
         }
     }
-
 }
 
 </style>

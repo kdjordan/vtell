@@ -1,52 +1,46 @@
 <template>
-  <div>
-      <div class="divider mb-3">
-          <div class="divider__container">
+<div>
+    <div class="divider mb-3">
+        <div class="divider__container">
             <img class="divider__cube" src="../assets/SVG/cube.svg" alt="">
             <div class="divider__title">ADVANTAGES</div>
-          </div>
-      </div> 
-      <div class="advantages">
-            <div class="advantages__wrap">
-                <div class="advantages__wrap--square">
-                    <img src="../assets/advantages/adv_image1.png" alt="">
-                    <div class="advantages__desc advantages__desc--1">One Global Rate</div>
-                </div>
-                <div>
-                    <img src="../assets/advantages/adv_image2.png" alt="">
-                    <div class="advantages__desc advantages__desc--2">Excellent Mobile<br />Internet</div>
-                </div>
-                <div>
-                    <img src="../assets/advantages/adv_image3.png" alt="">
-                    <div class="advantages__desc advantages__desc--3">V-TELL PHONE NUMBERS<br> IN DIFFERENT COUNTRIES<br> ALL ON ONE SIM CARD</div>
-                </div>
-                <div>
-                    <img src="../assets/advantages/adv_image4.png" alt="">
-                    <div class="advantages__desc advantages__desc--4">YOU CAN BE REACHED<br>WORLDWIDE WITH NO<br>OVERSEAS CHARGE TO<br> YOUR HOST</div>
-                </div>
-                <div>
-                    <img src="../assets/advantages/adv_image5.png" alt="">
-                    <div class="advantages__desc advantages__desc--5">YOU'RE LOCAL NO<br>MATTER WHERE YOU ARE</div>
-                </div>
-                <div>
-                    <img src="../assets/advantages/adv_image6.png" alt="">
-                    <div class="advantages__desc advantages__desc--6">V-TELL DOES NOT UTILIZE<br>IP TELEPHONY</div>
-                </div>
-                <div>
-                    <img src="../assets/advantages/adv_image7.png" alt="">
-                    <div class="advantages__desc advantages__desc--6">AUTOMATIC SWITCH OF V-TELL PHONE NUMBERS</div>
-                </div>
-
+        </div>
+    </div> 
+    <div class="advantages">
+        <div class="advantages__wrap">
+            <div class="advantages__wrap--square">
+                <img src="../assets/advantages/adv_image1.png" alt="">
+                <div class="advantages__desc advantages__desc--1">One Global Rate</div>
             </div>
-      </div>
-  </div>
+            <div>
+                <img src="../assets/advantages/adv_image2.png" alt="">
+                <div class="advantages__desc advantages__desc--2">Excellent Mobile<br />Internet</div>
+            </div>
+            <div>
+                <img src="../assets/advantages/adv_image3.png" alt="">
+                <div class="advantages__desc advantages__desc--3">V-TELL PHONE NUMBERS<br> IN DIFFERENT COUNTRIES<br> ALL ON ONE SIM CARD</div>
+            </div>
+            <div>
+                <img src="../assets/advantages/adv_image4.png" alt="">
+                <div class="advantages__desc advantages__desc--4">YOU CAN BE REACHED<br>WORLDWIDE WITH NO<br>OVERSEAS CHARGE TO<br> YOUR HOST</div>
+            </div>
+            <div>
+                <img src="../assets/advantages/adv_image5.png" alt="">
+                <div class="advantages__desc advantages__desc--5">YOU'RE LOCAL NO<br>MATTER WHERE YOU ARE</div>
+            </div>
+            <div>
+                <img src="../assets/advantages/adv_image6.png" alt="">
+                <div class="advantages__desc advantages__desc--6">V-TELL DOES NOT UTILIZE<br>IP TELEPHONY</div>
+            </div>
+            <div>
+                <img src="../assets/advantages/adv_image7.png" alt="">
+                <div class="advantages__desc advantages__desc--6">AUTOMATIC SWITCH OF V-TELL PHONE NUMBERS</div>
+            </div>
+
+        </div>
+    </div>
+</div>
 </template>
-
-<script>
-export default {
-
-}
-</script>
 
 <style lang="scss">
 @import '../scss/_divider.scss';

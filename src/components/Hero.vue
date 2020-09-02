@@ -132,23 +132,23 @@ export default {
   },
   methods: {
     selectSlide(slideNum) {
-      this.sliderTimer = null
-      this.slideIndex = slideNum
+      this.sliderTimer = null;
+      this.slideIndex = slideNum;
     },
     startSlider() {
       this.sliderTimer = setInterval(()=> {
-        this.doFade()
+        this.doFade();
       }, 3000)
     },
     doFade(){
-      this.show = false
+      this.show = false;
       setTimeout(()=> {
         if(this.slideIndex == 6) {
-          this.slideIndex = 0
-          this.show = true
+          this.slideIndex = 0;
+          this.show = true;
         } else {
-          this.slideIndex++
-          this.show = true
+          this.slideIndex++;
+          this.show = true;
         }
       }, 400)
     },
@@ -160,11 +160,11 @@ export default {
   computed: {
     getLeftOffset() {
       if(this.slideIndex == 0 || this.slideIndex == 6) {
-        return 0
+        return 0;
       } if (this.slideIndex == 5) {
-        return 30
+        return 30;
       } else {
-        return 40
+        return 40;
       }
     },
     getBottomOffset() {
@@ -173,15 +173,13 @@ export default {
   },
     created() {
       window.addEventListener('resize', this.handleResize);
-      this.handleResize()
-      this.startSlider()
+      this.handleResize();
+      this.startSlider();
     },
     destroyed() {
       window.removeEventListener('resize', this.handleResize);
-      this.sliderTimer = null
+      this.sliderTimer = null;
     }
-
-  
 }
 </script>
 

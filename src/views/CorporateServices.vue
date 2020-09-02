@@ -1,13 +1,13 @@
 <template>
-  <div class="page">
+<div class="page">
     <div class="container">
         <div class="crumbs">
             <img class="crumbs__img" src="../assets/back-button.png" alt="">
         <div class="crumbs__path">/&nbsp;<a href="/">HOME</a>&nbsp;/&nbsp;CORPORATE SERVICES</div>
         </div>
         <div class="page-divider mb-3">  
-        <img class="page-divider__cube" src="../assets/SVG/cube.svg" alt="">
-        <div class="page-divider__title">CORPORATE SERVICES</div>
+            <img class="page-divider__cube" src="../assets/SVG/cube.svg" alt="">
+            <div class="page-divider__title">CORPORATE SERVICES</div>
         </div> 
         <div class="corporate">
             <div class="corporate__desc">
@@ -19,16 +19,10 @@
             </div>
             <img src="../assets/pages/corpoorate.png" alt="">
         </div>
-     </div>
+    </div>
 </div> 
   
 </template>
-
-<script>
-export default {
-
-}
-</script>
 
 <style lang="scss">
 @import '../scss/_divider.scss';
