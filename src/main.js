@@ -11,10 +11,7 @@ library.add(faAngleRight)
 library.add(faDollarSign)
 library.add(faEuroSign)
 
-
 Vue.component('font-awesome-icon', FontAwesomeIcon)
-
-
 
 Vue.config.productionTip = false;
 

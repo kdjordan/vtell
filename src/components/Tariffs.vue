@@ -1,187 +1,187 @@
 <template>
-    <div>
-      <div class="divider mb-3">
-          <div class="divider__container">
+<div>
+    <div class="divider mb-3">
+        <div class="divider__container">
             <img class="divider__cube" src="../assets/SVG/cube.svg" alt="">
             <div class="divider__title">Tariffs</div>
-          </div>
-      </div> 
-      <div class="tariff">
-        <div class="container">
-          <div class="tariff__top-bar">
-              <div class="tariff__top-bar--left">
-                <div class="tariff__top-bar--title">LIMITED TIME OFFER for V-1, V-2, V-3 plan Subcribers<br>20 hours of voice calls :: 20 GB of data</div>
-              </div>
-              <div class="tariff__top-bar--right">
-                <img class="tariff-svg" src="../assets/SVG/tariffs/euro.svg" alt="">
-                <div class="price">40</div>
-                <img class="tariff-svg" src="../assets/SVG/tariffs/dollar.svg" alt="">
-                <div class="price">32</div>
-              </div>
-          </div>
-         </div>
-      </div>
-      
-        <div class="container__arrow">
-                <img @click.prevent="moveLeft()" src="../assets/SVG/left-arrow.svg" class="arrow" alt="">
-            <div class="container__arrow--inner">
-            
-            <div class="card" :class="{slideLeft: doSlideLeft, slideRight: doSlideRight, slide: !doSlideRight && !doSlideLeft}">
-                <div class="card__header">
-                    <img :src=theCards[indicies.first].imgPath alt="">
-                </div>
-                <table class="card__content--table">
-                    <tbody>
-                        <tr>
-                            <th class="card__content--small-font">VOICE</th>
-                            <th class="card__svg inline"><img src="../assets/SVG/card/phone.svg" alt=""></th>
-                            <th v-if="indicies.first !== 3" class="card__content--large-font">{{theCards[indicies.first].min}} <span style="font-size: 16px;">min</span></th>
-                            <th v-else class="card__content--font-adjust">{{theCards[indicies.first].min}}</th>
-                        </tr>
-                        <tr>
-                            <th class="card__content--small-font">SMS</th>
-                            <th class="card__svg inline"><img src="../assets/SVG/card/mssg.svg" alt=""></th>
-                            <th class="card__content--large-font" style="font-size: 16px; vertical-align: middle;">{{theCards[indicies.first].sms}}</th>
-                        </tr>
-                        <tr>
-                            <th class="card__content--small-font">DATA</th>
-                            <th class="card__svg inline"><img src="../assets/SVG/card/wifi.svg" alt=""></th>
-                            <th v-if="indicies.first !== 3" class="card__content--large-font">{{theCards[indicies.first].data}} <span style="font-size: 16px;">GB</span></th>
-                            <th v-else class="card__content--font-adjust">{{theCards[indicies.first].min}}</th>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="card__cost">
-                    <div>
-                        <div class="card__svg inline"><font-awesome-icon icon="euro-sign" /></div>
-                        <div class="inline">&nbsp;&nbsp;{{theCards[indicies.first].euroPrice}}</div>
-                    </div>
-                    <div>
-                        <div class="card__svg inline"><font-awesome-icon icon="dollar-sign" /></div>
-                        <div class="inline">&nbsp;&nbsp;{{theCards[indicies.first].dollarPrice}}</div>
-                    </div>
-
-                </div>
-                <button class="btn-pricing">BUY NOW</button>
-                <button class="btn-pricing btn-ghost">READ MORE</button>
-        
-            </div>
-
-             <div class="card card__2" :class="{slideLeft: doSlideLeft, slideRight: doSlideRight, slide: !doSlideRight && !doSlideLeft}">
-                <div class="card__header">
-                    <img :src=theCards[indicies.second].imgPath alt="">
-                </div>
-                <table class="card__content--table">
-                    <tbody>
-                        <tr>
-                            <th class="card__content--small-font">VOICE</th>
-                            <th class="card__svg inline"><img src="../assets/SVG/card/phone.svg" alt=""></th>
-                            <th v-if="indicies.second !== 3" class="card__content--large-font">{{theCards[indicies.second].min}} <span style="font-size: 16px;">min</span></th>
-                            <th v-else class="card__content--font-adjust">{{theCards[indicies.second].min}}</th>
-                        </tr>
-                        <tr>
-                            <th class="card__content--small-font">SMS</th>
-                            <th class="card__svg inline"><img src="../assets/SVG/card/mssg.svg" alt=""></th>
-                            <th class="card__content--large-font" style="font-size: 16px; vertical-align: middle;">{{theCards[indicies.second].sms}}</th>
-                        </tr>
-                        <tr>
-                            <th class="card__content--small-font">DATA</th>
-                            <th class="card__svg inline"><img src="../assets/SVG/card/wifi.svg" alt=""></th>
-                            <th v-if="indicies.second !== 3" class="card__content--large-font">{{theCards[indicies.second].data}} <span style="font-size: 16px;">GB</span></th>
-                            <th v-else class="card__content--font-adjust">{{theCards[indicies.second].min}}</th>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="card__cost">
-                    <div>
-                        <div class="card__svg inline"><font-awesome-icon icon="euro-sign" /></div>
-                        <div class="inline">&nbsp;&nbsp;{{theCards[indicies.second].euroPrice}}</div>
-                    </div>
-                    <div>
-                        <div class="card__svg inline"><font-awesome-icon icon="dollar-sign" /></div>
-                        <div class="inline">&nbsp;&nbsp;{{theCards[indicies.second].dollarPrice}}</div>
-                    </div>
-
-                </div>
-                <button class="btn-pricing">BUY NOW</button>
-                <button class="btn-pricing btn-ghost">READ MORE</button>
-        
-            </div>
-
-            <div class="card card__3"  :class="{slideLeft: doSlideLeft, slideRight: doSlideRight, slide: !doSlideRight && !doSlideLeft}">
-                <div class="card__header">
-                    <img :src=theCards[indicies.third].imgPath alt="">
-                </div>
-                <table class="card__content--table">
-                    <tbody>
-                        <tr>
-                            <th class="card__content--small-font">VOICE</th>
-                            <th class="card__svg inline"><img src="../assets/SVG/card/phone.svg" alt=""></th>
-                            <th v-if="indicies.third !== 3" class="card__content--large-font">{{theCards[indicies.third].min}} <span style="font-size: 16px;">min</span></th>
-                            <th v-else class="card__content--font-adjust">{{theCards[indicies.third].min}}</th>
-                        </tr>
-                        <tr>
-                            <th class="card__content--small-font">SMS</th>
-                            <th class="card__svg inline"><img src="../assets/SVG/card/mssg.svg" alt=""></th>
-                            <th class="card__content--large-font" style="font-size: 16px; vertical-align: middle;">{{theCards[indicies.third].sms}}</th>
-                        </tr>
-                        <tr>
-                            <th class="card__content--small-font">DATA</th>
-                            <th class="card__svg inline"><img src="../assets/SVG/card/wifi.svg" alt=""></th>
-                            <th v-if="indicies.third !== 3" class="card__content--large-font">{{theCards[indicies.third].data}} <span style="font-size: 16px;">GB</span></th>
-                            <th v-else class="card__content--font-adjust">{{theCards[indicies.third].data}}</th>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="card__cost">
-                    <div>
-                        <div class="card__svg inline"><font-awesome-icon icon="euro-sign" /></div>
-                        <div class="inline">&nbsp;&nbsp;{{theCards[indicies.third].euroPrice}}</div>
-                    </div>
-                    <div>
-                        <div class="card__svg inline"><font-awesome-icon icon="dollar-sign" /></div>
-                        <div class="inline">&nbsp;&nbsp;{{theCards[indicies.third].dollarPrice}}</div>
-                    </div>
-
-                </div>
-                <button class="btn-pricing">BUY NOW</button>
-                <button class="btn-pricing btn-ghost">READ MORE</button>
-        
-            </div>
-            </div>
-            <img @click.prevent="moveRight()" src="../assets/SVG/right-arrow.svg" class="arrow" alt="">
         </div>
-    </div>  
+    </div> 
+    <div class="tariff">
+    <div class="container">
+        <div class="tariff__top-bar">
+            <div class="tariff__top-bar--left">
+            <div class="tariff__top-bar--title">LIMITED TIME OFFER for V-1, V-2, V-3 plan Subcribers<br>20 hours of voice calls :: 20 GB of data</div>
+            </div>
+            <div class="tariff__top-bar--right">
+            <img class="tariff-svg" src="../assets/SVG/tariffs/euro.svg" alt="">
+            <div class="price">40</div>
+            <img class="tariff-svg" src="../assets/SVG/tariffs/dollar.svg" alt="">
+            <div class="price">32</div>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <div class="container__arrow">
+            <img @click.prevent="moveLeft()" src="../assets/SVG/left-arrow.svg" class="arrow" alt="">
+        <div class="container__arrow--inner">
+        
+        <div class="card" :class="{slideLeft: doSlideLeft, slideRight: doSlideRight, slide: !doSlideRight && !doSlideLeft}">
+            <div class="card__header">
+                <img :src=theCards[indicies.first].imgPath alt="">
+            </div>
+            <table class="card__content--table">
+                <tbody>
+                    <tr>
+                        <th class="card__content--small-font">VOICE</th>
+                        <th class="card__svg inline"><img src="../assets/SVG/card/phone.svg" alt=""></th>
+                        <th v-if="indicies.first !== 3" class="card__content--large-font">{{theCards[indicies.first].min}} <span style="font-size: 16px;">min</span></th>
+                        <th v-else class="card__content--font-adjust">{{theCards[indicies.first].min}}</th>
+                    </tr>
+                    <tr>
+                        <th class="card__content--small-font">SMS</th>
+                        <th class="card__svg inline"><img src="../assets/SVG/card/mssg.svg" alt=""></th>
+                        <th class="card__content--large-font" style="font-size: 16px; vertical-align: middle;">{{theCards[indicies.first].sms}}</th>
+                    </tr>
+                    <tr>
+                        <th class="card__content--small-font">DATA</th>
+                        <th class="card__svg inline"><img src="../assets/SVG/card/wifi.svg" alt=""></th>
+                        <th v-if="indicies.first !== 3" class="card__content--large-font">{{theCards[indicies.first].data}} <span style="font-size: 16px;">GB</span></th>
+                        <th v-else class="card__content--font-adjust">{{theCards[indicies.first].min}}</th>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="card__cost">
+                <div>
+                    <div class="card__svg inline"><font-awesome-icon icon="euro-sign" /></div>
+                    <div class="inline">&nbsp;&nbsp;{{theCards[indicies.first].euroPrice}}</div>
+                </div>
+                <div>
+                    <div class="card__svg inline"><font-awesome-icon icon="dollar-sign" /></div>
+                    <div class="inline">&nbsp;&nbsp;{{theCards[indicies.first].dollarPrice}}</div>
+                </div>
+
+            </div>
+            <button class="btn-pricing">BUY NOW</button>
+            <button class="btn-pricing btn-ghost">READ MORE</button>
+    
+        </div>
+
+            <div class="card card__2" :class="{slideLeft: doSlideLeft, slideRight: doSlideRight, slide: !doSlideRight && !doSlideLeft}">
+            <div class="card__header">
+                <img :src=theCards[indicies.second].imgPath alt="">
+            </div>
+            <table class="card__content--table">
+                <tbody>
+                    <tr>
+                        <th class="card__content--small-font">VOICE</th>
+                        <th class="card__svg inline"><img src="../assets/SVG/card/phone.svg" alt=""></th>
+                        <th v-if="indicies.second !== 3" class="card__content--large-font">{{theCards[indicies.second].min}} <span style="font-size: 16px;">min</span></th>
+                        <th v-else class="card__content--font-adjust">{{theCards[indicies.second].min}}</th>
+                    </tr>
+                    <tr>
+                        <th class="card__content--small-font">SMS</th>
+                        <th class="card__svg inline"><img src="../assets/SVG/card/mssg.svg" alt=""></th>
+                        <th class="card__content--large-font" style="font-size: 16px; vertical-align: middle;">{{theCards[indicies.second].sms}}</th>
+                    </tr>
+                    <tr>
+                        <th class="card__content--small-font">DATA</th>
+                        <th class="card__svg inline"><img src="../assets/SVG/card/wifi.svg" alt=""></th>
+                        <th v-if="indicies.second !== 3" class="card__content--large-font">{{theCards[indicies.second].data}} <span style="font-size: 16px;">GB</span></th>
+                        <th v-else class="card__content--font-adjust">{{theCards[indicies.second].min}}</th>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="card__cost">
+                <div>
+                    <div class="card__svg inline"><font-awesome-icon icon="euro-sign" /></div>
+                    <div class="inline">&nbsp;&nbsp;{{theCards[indicies.second].euroPrice}}</div>
+                </div>
+                <div>
+                    <div class="card__svg inline"><font-awesome-icon icon="dollar-sign" /></div>
+                    <div class="inline">&nbsp;&nbsp;{{theCards[indicies.second].dollarPrice}}</div>
+                </div>
+
+            </div>
+            <button class="btn-pricing">BUY NOW</button>
+            <button class="btn-pricing btn-ghost">READ MORE</button>
+    
+        </div>
+
+        <div class="card card__3"  :class="{slideLeft: doSlideLeft, slideRight: doSlideRight, slide: !doSlideRight && !doSlideLeft}">
+            <div class="card__header">
+                <img :src=theCards[indicies.third].imgPath alt="">
+            </div>
+            <table class="card__content--table">
+                <tbody>
+                    <tr>
+                        <th class="card__content--small-font">VOICE</th>
+                        <th class="card__svg inline"><img src="../assets/SVG/card/phone.svg" alt=""></th>
+                        <th v-if="indicies.third !== 3" class="card__content--large-font">{{theCards[indicies.third].min}} <span style="font-size: 16px;">min</span></th>
+                        <th v-else class="card__content--font-adjust">{{theCards[indicies.third].min}}</th>
+                    </tr>
+                    <tr>
+                        <th class="card__content--small-font">SMS</th>
+                        <th class="card__svg inline"><img src="../assets/SVG/card/mssg.svg" alt=""></th>
+                        <th class="card__content--large-font" style="font-size: 16px; vertical-align: middle;">{{theCards[indicies.third].sms}}</th>
+                    </tr>
+                    <tr>
+                        <th class="card__content--small-font">DATA</th>
+                        <th class="card__svg inline"><img src="../assets/SVG/card/wifi.svg" alt=""></th>
+                        <th v-if="indicies.third !== 3" class="card__content--large-font">{{theCards[indicies.third].data}} <span style="font-size: 16px;">GB</span></th>
+                        <th v-else class="card__content--font-adjust">{{theCards[indicies.third].data}}</th>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="card__cost">
+                <div>
+                    <div class="card__svg inline"><font-awesome-icon icon="euro-sign" /></div>
+                    <div class="inline">&nbsp;&nbsp;{{theCards[indicies.third].euroPrice}}</div>
+                </div>
+                <div>
+                    <div class="card__svg inline"><font-awesome-icon icon="dollar-sign" /></div>
+                    <div class="inline">&nbsp;&nbsp;{{theCards[indicies.third].dollarPrice}}</div>
+                </div>
+
+            </div>
+            <button class="btn-pricing">BUY NOW</button>
+            <button class="btn-pricing btn-ghost">READ MORE</button>
+    
+        </div>
+        </div>
+        <img @click.prevent="moveRight()" src="../assets/SVG/right-arrow.svg" class="arrow" alt="">
+    </div>
+</div>  
 </template>
 
 <script>
 export default {
     methods: {
         moveLeft() {
-            this.doSlideLeft = true
+            this.doSlideLeft = true;
             for (const index in this.indicies) {
                 if (this.indicies[index] == 0) {
-                    this.indicies[index] = 3
+                    this.indicies[index] = 3;
                 } else {
-                    this.indicies[index]--
+                    this.indicies[index]--;
                 }
             }
             setTimeout(() => {
-                this.doSlideLeft = false
+                this.doSlideLeft = false;
             })
         },
         moveRight() {
             this.doSlideRight = true
             for (const index in this.indicies) {
                 if (this.indicies[index] == 3) {
-                    this.indicies[index] = 0
+                    this.indicies[index] = 0;
                 } else {
-                    this.indicies[index]++
+                    this.indicies[index]++;
                 }
             }
             
              setTimeout(() => {
-                this.doSlideRight = false
+                this.doSlideRight = false;
             })
             
         }
@@ -251,7 +251,7 @@ export default {
     transform: translateX(0);
     transition: all .4s;
 
-    &Right{
+    &Right {
         transform: translateX(100%);
     }
 

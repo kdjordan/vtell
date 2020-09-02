@@ -12,7 +12,6 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
 import Countries from '@/components/Countries'
 import Sim from '@/components/Sim'
 import Tariffs from '@/components/Tariffs'
@@ -24,7 +23,6 @@ import Hero from '@/components/Hero'
 export default {
   name: "home",
   components: {
-    HelloWorld,
     Hero,
     Privilege,
     Advantages,
