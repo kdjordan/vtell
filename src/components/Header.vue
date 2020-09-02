@@ -102,7 +102,7 @@
                                 <router-link class="nav-link nav-link__drop" to="/advantages"><span class="dot"></span>Advantages List</router-link>
                             </span>
                             <span class="nav-link__container">
-                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Corporate Services</router-link>
+                                <router-link class="nav-link nav-link__drop" to="/corporate-services"><span class="dot"></span>Corporate Services</router-link>
                             </span>
                         </div>
                     </div>
