@@ -61,7 +61,7 @@ export default {
     padding: 56px;
     margin: 28px 0;
     text-align: left;
-    color: $white;
+    color: white;
 
     & > div {
         margin: 1.5rem 0;
@@ -121,7 +121,7 @@ export default {
         }
 
         &--addr {
-            color: $white;
+            color: white;
             margin-top: .8rem;
             text-decoration: none;
             transition: all .4s;

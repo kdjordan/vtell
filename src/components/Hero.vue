@@ -185,7 +185,6 @@ export default {
 
 <style lang="scss">
 @import '../scss/_variables.scss';
-@import '../scss/_animations.scss';
 
 .hero {
   margin-top: 56px;
@@ -243,4 +242,5 @@ export default {
   opacity: 0;
   transition:  all .4s ease-in;
 }
+
 </style>

@@ -71,7 +71,7 @@ hr {
 
     & label {
         text-align: left;
-        color: $white;
+        color: white;
         font-size: 14px;
         margin-bottom: .5rem;
 
@@ -106,14 +106,14 @@ hr {
         width: 50%;
         background: $red;
         border: 1px solid transparent;
-        color: $white;
+        color: white;
         padding: 25px 0;
         margin: 1rem  0;
         margin-bottom: 3rem;
         transition: all .4s;
 
         &:hover {
-            background: $white;
+            background: white;
             border: 1px solid $red;
             color: $red;
         }
@@ -150,7 +150,7 @@ hr {
                 &::before {
                     display: block;
                     content: "\2713";
-                    color: $white;
+                    color: white;
                     font-size: 1.4rem;
                     position: relative;
                     bottom: 3px;
@@ -169,7 +169,7 @@ hr {
     &__payment {
         &--title {
             font-size: 2rem;
-            color: $white;
+            color: white;
             margin-bottom: 1rem;
 
         }

@@ -97,7 +97,7 @@ export default {
 @import '../scss/_page.scss';
 
 .partner-bottom {
-    color: $white;
+    color: white;
 
     &__title {
         text-transform: uppercase;
@@ -305,14 +305,14 @@ export default {
         cursor: pointer;
         width: 100%;
         border: 1px solid transparent;
-        color: $white;
+        color: white;
         background: $red;
         padding: 20px 0;
         font-size: 20px;
         transition: all .4s;
 
         &:hover {
-            background: $white;
+            background: white;
             color: $red;
         }
     }
@@ -327,7 +327,7 @@ export default {
         & > div {
             font-size: 16px;
             line-height: 20px;
-            color: $white;
+            color: white;
             text-align: left;
             flex: 0 0 30%;
         }
@@ -338,7 +338,7 @@ export default {
         width: 100%;
         justify-content: space-between;
         align-items: center;
-        color: $white;
+        color: white;
         margin-bottom: 2rem;
 
         & > div {

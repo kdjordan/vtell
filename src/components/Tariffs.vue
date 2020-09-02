@@ -298,7 +298,7 @@ export default {
 .card {
     display: flex;
     flex-direction: column;
-    color: $white;
+    color: white;
     background: $greydim;
     min-width: 270px;
     width:  100%;
