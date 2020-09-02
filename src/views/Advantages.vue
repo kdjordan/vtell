@@ -1,14 +1,8 @@
 <template>
 <div class="page">
     <div class="container">
-        <div class="crumbs">
-            <img class="crumbs__img" src="../assets/back-button.png" alt="">
-         <div class="crumbs__path">/&nbsp;<a href="/">HOME</a>&nbsp;/&nbsp;ADVANTAGES</div>
-        </div>
-        <div class="page-divider mb-3">  
-            <img class="page-divider__cube" src="../assets/SVG/cube.svg" alt="">
-            <div class="page-divider__title">ADVANTAGES</div>
-        </div> 
+        <PageCrumbs title="ADVANTAGES" />
+        <PageDivider title="ADVANTAGES" />
         <div class="advantages">
             <div class="advantages__wrap">
                 <div class="advantages__wrap--square">
@@ -46,8 +40,15 @@
   
 </template>
 
+<script>
+import PageDivider from '@/components/PageDivider';
+import PageCrumbs from '@/components/PageCrumbs';
+export default {
+    components: {PageDivider,PageCrumbs}
+}
+</script>
+
 <style lang="scss">
-@import '../scss/_divider.scss';
 @import '../scss/_variables.scss';
 @import '../scss/_base.scss';
 

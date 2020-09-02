@@ -1,14 +1,8 @@
 <template>
 <div class="page">
     <div class="container">
-        <div class="crumbs">
-            <img class="crumbs__img" src="../assets/back-button.png" alt="">
-            <div class="crumbs__path">/&nbsp;<a href="/">HOME</a>&nbsp;/&nbsp;Plans</div>
-        </div>
-        <div class="page-divider mb-3">  
-            <img class="page-divider__cube" src="../assets/SVG/cube.svg" alt="">
-            <div class="page-divider__title">Plans</div>
-        </div> 
+        <PageCrumbs path="Tariffs" />
+        <PageDivider title="Tariffs" />
         <div class="plans mb-3">
             <p>V-Tell is a rapidly growing telecommunication company acting as an International Mobile Operator, devoted to provide services and innovative technology to customers across the globe. One V-Tell SIM card allows the subscriber to get unlimited amount of phone numbers with no roaming internet and mobile services.</p>
             <button class="plans__btn mt-2 mb-2"  @click.prevent="toggleButton()" >{{buttonMssg}}&nbsp;&nbsp;&nbsp;&nbsp;<span style="padding-bottom: 8px;">{{buttonMssgExt}}</span></button>
@@ -39,8 +33,7 @@
             <div class="price">32</div>
             </div>
         </div>
-
-        <!-- <div class="container__arrow">
+        <div class="container__arrow">
             <img @click.prevent="moveLeft()" src="../assets/SVG/left-arrow.svg" class="arrow" alt="">
             <div class="container__arrow--inner">
                 <div class="card" :class="{slideLeft: doSlideLeft, slideRight: doSlideRight, slide: !doSlideRight && !doSlideLeft}">
@@ -167,18 +160,68 @@
                 </div>
             </div>
             <img @click.prevent="moveRight()" src="../assets/SVG/right-arrow.svg" class="arrow" alt="">
-        </div> -->
+        </div>
     </div>
 </div>
 
 </template>
 <script>
+import PageDivider from '@/components/PageDivider';
+import PageCrumbs from '@/components/PageCrumbs';
 export default {
+    components: {PageDivider, PageCrumbs},
     data() {
         return {
             buttonMssg: 'SHOW MORE',
             buttonMssgExt: '...',
-            buttonActive: false
+            buttonActive: false,
+            doSlideRight: false,
+            doSlideLeft: false,
+            index: 0,
+            indicies: {
+                first: 0,
+                second: 1,
+                third: 2,
+                fourth: 3
+            },
+            theCards: [
+                {
+                    plan: 'V-1',
+                    imgPath: require('../assets/cards/photo_tarif_03.png'),
+                    min: 500,
+                    sms: 'UNLIMITED',
+                    data: 5,
+                    euroPrice: 90,
+                    dollarPrice: 98
+                },
+                {
+                    plan: 'V-2',
+                    imgPath: require('../assets/cards/photo_tarif_05.png'),
+                    min: 700,
+                    sms: 'UNLIMITED',
+                    data: 10,
+                    euroPrice: 140,
+                    dollarPrice: 160
+                },
+                {
+                    plan: 'V-3',
+                    imgPath: require('../assets/cards/photo_tarif_04.png'),
+                    min: 1000,
+                    sms: 'UNLIMITED',
+                    data: 15,
+                    euroPrice: 190,
+                    dollarPrice: 219
+                },
+                {
+                    plan: 'V-MAXX',
+                    imgPath: require('../assets/cards/photo_tarif_06.png'),
+                    min: 'UNLIMITED',
+                    sms: 'UNLIMITED',
+                    data: 'UNLIMITED',
+                    euroPrice: 500,
+                    dollarPrice: 570
+                },
+            ]
         }
     },
     methods: {
@@ -192,15 +235,41 @@ export default {
                  this.buttonMssg = "HIDE";
                 this.buttonMssgExt = "X";
             }
+        },
+         moveLeft() {
+            this.doSlideLeft = true;
+            for (const index in this.indicies) {
+                if (this.indicies[index] == 0) {
+                    this.indicies[index] = 3;
+                } else {
+                    this.indicies[index]--;
+                }
+            }
+            setTimeout(() => {
+                this.doSlideLeft = false;
+            })
+        },
+        moveRight() {
+            this.doSlideRight = true
+            for (const index in this.indicies) {
+                if (this.indicies[index] == 3) {
+                    this.indicies[index] = 0;
+                } else {
+                    this.indicies[index]++;
+                }
+            }
+            
+             setTimeout(() => {
+                this.doSlideRight = false;
+            })
         }
     }
-
 }
 </script>
+
 <style lang="scss">
 @import '../scss/_variables.scss';
 @import '../scss/_base.scss';
-@import '../scss/_divider.scss';
 @import '../scss/_utilities.scss';
 @import '../scss/_page.scss';
 

@@ -1,10 +1,8 @@
 <template>
 <div class="page">
     <div class="container">
-        <div class="page-divider mb-3">  
-            <img class="page-divider__cube" src="../assets/SVG/cube.svg" alt="">
-            <div class="page-divider__title">My V-Tell</div>
-        </div> 
+        <PageCrumbs path="My V-Tell" />
+        <PageDivider title="My V-Tell" />
         <div class="myvtell">
             <div class="myvtell__title">Enter</div>
             <div class="myvtell__desc">Please authorize to access V-Tell subscriber's self care capabilities</div>
@@ -43,13 +41,16 @@
 
 </template>
 <script>
-
+import PageDivider from '@/components/PageDivider';
+import PageCrumbs from '@/components/PageCrumbs';
+export default {
+    components: {PageDivider, PageCrumbs}
+}
 </script>
 
 <style lang="scss">
 @import '../scss/_variables.scss';
 @import '../scss/_base.scss';
-@import '../scss/_divider.scss';
 @import '../scss/_utilities.scss';
 @import '../scss/_page.scss';
 
