@@ -1,11 +1,6 @@
 <template>
 <div>
-    <div class="divider mb-3">
-        <div class="divider__container">
-            <img class="divider__cube" src="../assets/SVG/cube.svg" alt="">
-            <div class="divider__title">ADVANTAGES</div>
-        </div>
-    </div> 
+    <HPageDivider title="Advantages" />
     <div class="advantages">
         <div class="advantages__wrap">
             <div class="advantages__wrap--square">
@@ -41,9 +36,13 @@
     </div>
 </div>
 </template>
-
+<script>
+import HPageDivider from '@/components/HPageDivider';
+export default {
+    components: {HPageDivider}
+}
+</script>
 <style lang="scss">
-@import '../scss/_divider.scss';
 @import '../scss/_variables.scss';
 @import '../scss/_base.scss';
 

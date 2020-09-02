@@ -1,24 +1,19 @@
 <template>
 <div>
-    <div class="divider mb-3">
-        <div class="divider__container">
-            <img class="divider__cube" src="../assets/SVG/cube.svg" alt="">
-            <div class="divider__title">Tariffs</div>
-        </div>
-    </div> 
+    <HPageDivider title="Tariffs" />
     <div class="tariff">
-    <div class="container">
-        <div class="tariff__top-bar">
-            <div class="tariff__top-bar--left">
-            <div class="tariff__top-bar--title">LIMITED TIME OFFER for V-1, V-2, V-3 plan Subcribers<br>20 hours of voice calls :: 20 GB of data</div>
+        <div class="container">
+            <div class="tariff__top-bar">
+                <div class="tariff__top-bar--left">
+                <div class="tariff__top-bar--title">LIMITED TIME OFFER for V-1, V-2, V-3 plan Subcribers<br>20 hours of voice calls :: 20 GB of data</div>
+                </div>
+                <div class="tariff__top-bar--right">
+                <img class="tariff-svg" src="../assets/SVG/tariffs/euro.svg" alt="">
+                <div class="price">40</div>
+                <img class="tariff-svg" src="../assets/SVG/tariffs/dollar.svg" alt="">
+                <div class="price">32</div>
+                </div>
             </div>
-            <div class="tariff__top-bar--right">
-            <img class="tariff-svg" src="../assets/SVG/tariffs/euro.svg" alt="">
-            <div class="price">40</div>
-            <img class="tariff-svg" src="../assets/SVG/tariffs/dollar.svg" alt="">
-            <div class="price">32</div>
-            </div>
-        </div>
         </div>
     </div>
     
@@ -155,7 +150,9 @@
 </template>
 
 <script>
+import HPageDivider from '@/components/HPageDivider';
 export default {
+    components: {HPageDivider},
     methods: {
         moveLeft() {
             this.doSlideLeft = true;
@@ -244,7 +241,6 @@ export default {
 <style lang="scss">
 @import '../scss/_variables.scss';
 @import '../scss/_base.scss';
-@import '../scss/_divider.scss';
 @import '../scss/_utilities.scss';
 
 .slide {

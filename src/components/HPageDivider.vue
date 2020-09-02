@@ -1,8 +1,24 @@
+<template>
+<div class="divider mb-3">
+    <div class="divider__container">
+        <img class="divider__cube" src="../assets/SVG/cube.svg" alt="">
+        <div class="divider__title">{{title}}</div>
+    </div>
+</div> 
+</template>
+
+<script>
+export default {
+    props: ['title']
+}
+</script>
+
+<style lang="scss">
 .divider {
     width: 100%;
     background-image: url('../assets/img/border.png');
     background-position: center;
-    
+    margin-bottom: 3rem;
     
     &__container {
         padding: 10px 0;
@@ -18,7 +34,6 @@
     }
 
     &__cube {
-       
         height: 50px;
     }
 
@@ -26,6 +41,7 @@
         text-transform: uppercase;
         font-size: 2rem;
         margin-left: 5%;
+        text-align: left;
         color: white;
         width: 100%;
 
@@ -44,3 +60,5 @@
         }
     }
 }
+
+</style>
