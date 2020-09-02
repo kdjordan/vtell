@@ -10,13 +10,14 @@ import MyVtell from "./views/MyVtell.vue";
 import Contacts from "./views/Contacts.vue";
 import CustomerService from "./views/CustomerService.vue";
 import Partnership from "./views/Partnership.vue";
+import Advantages from "./views/Advantages.vue";
 
 Vue.use(Router);
 
 export default new Router({
   mode: "history",
   base: process.env.BASE_URL,
-  // base: 'http://v-tell-static.s3-us-west-2.amazonaws.com/',
+//   base: 'http://v-tell-static.s3-us-west-2.amazonaws.com/',
   routes: [
     {
       path: "/",
@@ -67,6 +68,11 @@ export default new Router({
       path: "/partnerships",
       name: "partnership",
       component: Partnership
+    },
+    {
+      path: "/advantages",
+      name: "advantages",
+      component: Advantages
     },
     // {
     //   path: "/about",

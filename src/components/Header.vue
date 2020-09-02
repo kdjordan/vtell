@@ -87,7 +87,7 @@
                     <div class="drop-down">
                         <div class="drop-down__inner">
                             <span class="nav-link__container">
-                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Advantages of V-tell</router-link>
+                                <router-link class="nav-link nav-link__drop" to="/advantages"><span class="dot"></span>Advantages of V-tell</router-link>
                             </span>
                             <span class="nav-link__container">
                                 <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Coverage Map</router-link>
@@ -99,7 +99,7 @@
                                 <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>FAQ</router-link>
                             </span>
                             <span class="nav-link__container">
-                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Advantages List</router-link>
+                                <router-link class="nav-link nav-link__drop" to="/advantages"><span class="dot"></span>Advantages List</router-link>
                             </span>
                             <span class="nav-link__container">
                                 <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Corporate Services</router-link>
@@ -136,7 +136,7 @@
     </section>
     <nav class="mobile-nav">
         <div class="mobile-nav-header__left">
-            <a href="/"><img class="mobile-nav__left--svg" src="../assets/nav/logo.svg" alt=""></a>
+            <a href="/index.html"><img class="mobile-nav__left--svg" src="../assets/nav/logo.svg" alt=""></a>
         </div>
         <div class="mobile-nav-header__right">
             <div class="mobile-burger" @click.prevent="mobileOpen = !mobileOpen">
