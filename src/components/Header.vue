@@ -70,11 +70,11 @@
                                 <router-link class="nav-link nav-link__drop" to="/plan-v3"><span class="dot"></span>V-3</router-link>
                             </span>
                             <span class="nav-link__container">
-                                <router-link class="nav-link nav-link__drop" to="/plan-v4"><span class="dot"></span>V-Max</router-link>
+                                <router-link class="nav-link nav-link__drop" to="/plan-vmax"><span class="dot"></span>V-Max</router-link>
                             </span>
-                            <span class="nav-link__container">
-                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Archive Tariffs</router-link>
-                            </span>
+                            <!-- <span class="nav-link__container">
+                                <router-link class="nav-link nav-link__drop" to="/"><span class="dot"></span>Archive Tariffs</router-link>
+                            </span> -->
                         </div>
                     </div>
                 </span>
@@ -176,7 +176,7 @@
                     <span class="mobile__link--text">My V-Tell</span>
                     <img class="mobile-icon" src="../assets/nav/account.svg" alt="">
                 </router-link>
-                <router-link class="nav-link mobile__link" to="/search">
+                <router-link class="nav-link mobile__link" to="#">
                     <span class="mobile__link--text">Cart</span>
                     <img class="mobile-icon" src="../assets/nav/cart.svg" alt="">
                 </router-link>
