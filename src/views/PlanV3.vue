@@ -1,8 +1,8 @@
 <template>
 <div class="page">
     <div class="container">
-        <PageCrumbs path="plans / v1" />
-        <PageDivider title="PLan V-1" />
+        <PageCrumbs path="plans / v3" />
+        <PageDivider title="PLan V-3" />
         <div class="plan-page">
             <div class="plan-page__button-container">
                 <button @click.prevent="selectIndex(0)" class="plan-page__btn" :class="{active: index == 0}">More about tariff</button>
@@ -13,7 +13,7 @@
             <div v-if="index == 0" class="plan-page__inner-content">
                 <div class="inner inner__row1">
                     <div class="inner__text1">AMOUNT FEE</div>
-                    <div class="inner__text2"><font-awesome-icon icon="dollar-sign" />98</div>
+                    <div class="inner__text2"><font-awesome-icon icon="dollar-sign" />219</div>
                 </div>
                 <div class="inner inner__row2">
                     <div class="inner__text1">included in package</div>
@@ -24,7 +24,7 @@
                 </div>
                 <div class="flex-row flex-row__short">
                     <div class="inner__text1--small">VOICE</div>
-                    <div class="inner__text1--small">500 min.</div>
+                    <div class="inner__text1--small">1000 min.</div>
                 </div>
                 <div class="flex-row flex-row__short">
                     <div class="inner__text1--small">SMS</div>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="flex-row flex-row__short">
                     <div class="inner__text1--small">DATA</div>
-                    <div class="inner__text1--small">5 GB</div>
+                    <div class="inner__text1--small">15 GB</div>
                 </div>
                 <div class="flex-row flex-row__short">
                     <div class="inner__text1--small">TELEPHONE NUMBER</div>
@@ -42,7 +42,7 @@
                     <div @click.prevent="toggleActive = !toggleActive " class="inner__text1 mt-3"><span>MORE ABOUT TARIFF</span></div>
                 </div>
                 <div v-if="toggleActive" class="toggle">
-                    <p>Monthly subscription fee is €90 / $98 when AutoPay option is activated, or €95 / $105 when AutoPay option is not activated. Subscription fee will be withdrawn monthly from your account on 1st calendar day of each month by one transaction in full (100%).</p>
+                    <p>Monthly subscription fee is €190 / $219 when AutoPay option is activated, or €196 / $226 when AutoPay option is not activated. Subscription fee will be withdrawn monthly from your account on 1st calendar day of each month by one transaction in full (100%).</p>
                     <p>To join V-TELL network or change an actual Tariff, funds equal to the amount of days left in the month should be added to Subscriber’s account, and a fee per day should be calculated proportionally. An amount of services included into the tariff (plan) will be provided proportionally to the number of calendar days left in the month of subscription or Tariff change. If subscriber exceeds the amount of services included into the Tariff earlier than а month ends, service fees will be charged based on the Tariff (link to the Tariff details). In case an access to mobile services is temporarily blocked at the moment of a monthly fee withdrawal, the fee will be charged after an unlocking.</p>
                     <p>When your account balance approaches a switch-off-level zero, a notification will be send to inform you about the account balance and a necessity to add funds. When the funds on account are equal to zero or lower, no tariffed services will be available, except emergency and V-Tell Customer care calls. To avoid the switch-off we recommend you to activate the AutoPay option (link) and stay always connected.</p>
                     <p>Full access to V-Tell services will be restored after adding funds to make an account balance higher than the switch-off-level. You can add funds on our web-site https://pay.v-tell.com/ or using V-Tell App, which is available in Apple Store and Google Play. After adding funds and restoring an assess to the services, full monthly payment for current month will be withdrawn in accordance with conditions of your actual Tariff.</p>
@@ -101,140 +101,3 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import '../scss/_variables.scss';
-@import '../scss/_base.scss';
-@import '../scss/_utilities.scss';
-@import '../scss/_page.scss';
-
-.plan-page {
-    background-color: #404040;
-    padding: 64px 35px 48px;
-    display: inline-block;
-    width: 100%;
-    max-width: 895px;
-    text-align: left;
-    position: relative;
-    font-size: 16px;
-    margin-bottom: 2rem;
-
-    &__button-container {
-        display: flex;
-
-        @media(max-width: 890px) {
-            flex-direction: column;
-        }
-    }
-
-    &__btn {
-        display: block;
-        padding: 20px 26px;
-        background-color: #737370;
-        border: 1px solid transparent;
-        color: white;
-        font-size: 20px;
-        margin: 0 .1rem;
-
-         @media(max-width: 890px) {
-            margin: .1rem 0;
-        }
-
-        &--choose {
-            margin: 0 auto;
-            margin-top: 2rem;
-            background: $red;
-
-        }
-    }
-}
-
-.inner {
-    color: white;
-    text-transform: uppercase;
-
-    &__text1 {
-        font-size: 20px;
-
-        &--small {
-            font-size: 16px;
-            text-align: left;
-        }
-
-        & span {
-            cursor: pointer;
-            text-decoration: underline;
-
-            &:hover {
-                text-decoration: none;
-            }
-        }
-    }
-
-    &__text2 {
-        font-size: 37px;
-    }
-
-    &__row1 {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 2rem;
-        width: 70%;
-    }
-
-    &__row2 {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin: 2rem 0;
-        width: 75%;
-    }
-}
-
-.active {
-    background: $red;
-}
-
-.flex-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: white;
-
-    &__short {
-        display: flex;
-        align-items: center;
-        margin-top: .5rem;
-        width: 75%;
-    }
-
-    & img {
-        margin-right: 1rem;
-    }
-
-    & > div, & > img {
-        cursor: pointer;
-        transition: all .4s;
-    }
-
-    & > div:hover {
-        cursor: pointer;
-        color: $red
-    }
-    & > img:hover {
-        filter: opacity(50%);
-    }
-}
-
-.toggle {
-    & p {
-        margin: 1rem 0;
-        line-height: 26px;
-    }
-}
-
-.hide {
-    display: none;
-}
-
-</style>

@@ -14,6 +14,9 @@ import Advantages from "./views/Advantages.vue";
 import CorporateServices from "./views/CorporateServices.vue";
 import AdvantagesList from "./views/AdvantagesList.vue";
 import PlanV1 from "./views/PlanV1.vue";
+import PlanV2 from "./views/PlanV2.vue";
+import PlanV3 from "./views/PlanV3.vue";
+import PlanVmax from "./views/PlanVmax.vue";
 
 Vue.use(Router);
 
@@ -91,6 +94,21 @@ export default new Router({
       path: "/plan-v1",
       name: "plan-v1",
       component: PlanV1
+    },
+    {
+      path: "/plan-v2",
+      name: "plan-v2",
+      component: PlanV2
+    },
+    {
+      path: "/plan-v3",
+      name: "plan-v3",
+      component: PlanV3
+    },
+    {
+      path: "/plan-vmax",
+      name: "plan-vmax",
+      component: PlanVmax
     },
     // {
     //   path: "/about",
