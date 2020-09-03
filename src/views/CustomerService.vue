@@ -1,14 +1,8 @@
 <template>
 <div class="page">
     <div class="container">
-        <div class="crumbs">
-            <img class="crumbs__img" src="../assets/back-button.png" alt="">
-            <div class="crumbs__path">/&nbsp;<a href="/">HOME</a>&nbsp;/&nbsp;CONTACT US</div>
-        </div>
-        <div class="page-divider mb-3">  
-            <img class="page-divider__cube" src="../assets/SVG/cube.svg" alt="">
-            <div class="page-divider__title">CONTACTS</div>
-        </div> 
+        <PageCrumbs path="Customer Service" />
+        <PageDivider title="Customer Service" />
         <div class="customer">
             <div class="customer__title">V-Tell subscribers can reach us free of charge in any part of the world by dialling 9090</div>
             <div class="customer__numbers">
@@ -48,11 +42,16 @@
 </div>
 
 </template>
-
+<script>
+import PageDivider from '@/components/PageDivider';
+import PageCrumbs from '@/components/PageCrumbs';
+export default {
+    components: {PageDivider, PageCrumbs}
+}
+</script>
 <style lang="scss">
 @import '../scss/_variables.scss';
 @import '../scss/_base.scss';
-@import '../scss/_divider.scss';
 @import '../scss/_utilities.scss';
 @import '../scss/_page.scss';
 
@@ -62,7 +61,7 @@
     padding: 56px;
     margin: 28px 0;
     text-align: left;
-    color: $white;
+    color: white;
 
     & > div {
         margin: 1.5rem 0;
@@ -122,7 +121,7 @@
         }
 
         &--addr {
-            color: $white;
+            color: white;
             margin-top: .8rem;
             text-decoration: none;
             transition: all .4s;

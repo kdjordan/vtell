@@ -1,14 +1,8 @@
 <template>
 <div class="page">
     <div class="container">
-        <div class="crumbs">
-            <img class="crumbs__img" src="../assets/back-button.png" alt="">
-            <div class="crumbs__path">/&nbsp;<a href="/">HOME</a>&nbsp;/&nbsp;CONTACT US</div>
-        </div>
-        <div class="page-divider mb-3">  
-            <img class="page-divider__cube" src="../assets/SVG/cube.svg" alt="">
-            <div class="page-divider__title">CONTACTS</div>
-        </div> 
+        <PageCrumbs path="Contact Us" />
+        <PageDivider title="Contact Us" />
         <div class="contacts">
             <div>
                 <div class="contacts__title">GLOBEX TELEСOM GROUP LIMITED</div>
@@ -32,13 +26,16 @@
 
 </template>
 <script>
-
+import PageDivider from '@/components/PageDivider';
+import PageCrumbs from '@/components/PageCrumbs';
+export default {
+    components: {PageDivider, PageCrumbs}
+}
 </script>
 
 <style lang="scss">
 @import '../scss/_variables.scss';
 @import '../scss/_base.scss';
-@import '../scss/_divider.scss';
 @import '../scss/_utilities.scss';
 @import '../scss/_page.scss';
 
@@ -48,7 +45,7 @@
     padding: 56px;
     margin: 28px 0;
     text-align: left;
-    color: $white;
+    color: white;
 
     & > div {
         margin: 1.5rem 0;

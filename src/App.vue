@@ -23,7 +23,6 @@ export default {
 <style lang="scss">
 @import './scss/_variables.scss';
 @import './scss/_base.scss';
-@import './scss/_animations.scss';
 
 #app {
   overflow: hidden;
@@ -32,24 +31,13 @@ export default {
     font-family: "Pf_Beau";
     src: local("PF_Beau"),
      url(./fonts/PFBeauSansPro-Regular.ttf) format("truetype");
-  }
-
-  .btn__primary {
-    cursor: pointer;
-    background: $red;
-    color: $white;
-    font-size: 20px;
-    font-weight: 300;
-    border: none;
-    border-radius: 35px;
-    padding: 15px 0;
-    width: 250px;
-    transition: all .4s;
-
-    &:hover {
-      background: $white;
-      color: $red;
-    }
 }
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 1s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
 
 </style>

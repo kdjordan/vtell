@@ -13,6 +13,7 @@ import Partnership from "./views/Partnership.vue";
 import Advantages from "./views/Advantages.vue";
 import CorporateServices from "./views/CorporateServices.vue";
 import AdvantagesList from "./views/AdvantagesList.vue";
+import PlanV1 from "./views/PlanV1.vue";
 
 Vue.use(Router);
 
@@ -85,6 +86,11 @@ export default new Router({
       path: "/advantages-list",
       name: "advantages-list",
       component: AdvantagesList
+    },
+    {
+      path: "/plan-v1",
+      name: "plan-v1",
+      component: PlanV1
     },
     // {
     //   path: "/about",

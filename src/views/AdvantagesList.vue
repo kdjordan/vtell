@@ -1,14 +1,9 @@
 <template>
 <div class="page">
     <div class="container">
-        <div class="crumbs">
-            <img class="crumbs__img" src="../assets/back-button.png" alt="">
-            <div class="crumbs__path">/&nbsp;<a href="/">HOME</a>&nbsp;/&nbsp;ADVANTAGES LIST</div>
-        </div>
-        <div class="page-divider mb-3">  
-            <img class="page-divider__cube" src="../assets/SVG/cube.svg" alt="">
-            <div class="page-divider__title">ADVANTAGES LIST</div>
-        </div> 
+        
+        <PageCrumbs path="ADVANTAGES LIST" />
+        <PageDivider title="ADVANTAGES LIST" />
         <div class="advantages-list">
             <div class="advantages-list__entry">
                 <div class="advantages-list__title">ONE GLOBAL RATE</div>
@@ -47,13 +42,16 @@
 
 </template>
 <script>
-
+import PageDivider from '@/components/PageDivider';
+import PageCrumbs from '@/components/PageCrumbs';
+export default {
+    components: {PageDivider, PageCrumbs}
+}
 </script>
 
 <style lang="scss">
 @import '../scss/_variables.scss';
 @import '../scss/_base.scss';
-@import '../scss/_divider.scss';
 @import '../scss/_utilities.scss';
 @import '../scss/_page.scss';
 
@@ -62,7 +60,7 @@
     margin: 2rem 0;
     background: rgba(252, 252, 252, 0.25);
     box-shadow: 0 0 6em rgba(31, 31, 31, 0.25) inset;
-    color: $white;
+    color: white;
     font-size: 21px;
 
     &__entry {

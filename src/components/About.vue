@@ -1,11 +1,6 @@
 <template>
 <div>
-    <div class="divider mb-3">
-        <div class="divider__container">
-            <img class="divider__cube" src="../assets/SVG/cube.svg" alt="">
-            <div class="divider__title">ABOUT US</div>
-        </div>
-    </div> 
+    <HPageDivider title="About" />
     <div class="about mb-3">
         <div class="container">
             <p>V-Tell is a rapidly growing Telecommunication company acting as an International Mobile Operator, devoted to provide services and innovative technology to customers across the globe.
@@ -30,7 +25,9 @@
 </template>
 
 <script>
+import HPageDivider from '@/components/HPageDivider';
 export default {
+    components: {HPageDivider},
     data() {
         return {
             buttonMssg: 'SHOW MORE',
@@ -58,7 +55,6 @@ export default {
 <style lang="scss">
 @import '../scss/_variables.scss';
 @import '../scss/_base.scss';
-@import '../scss/_divider.scss';
 
 .btn-about {
     cursor: pointer;

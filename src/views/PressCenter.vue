@@ -1,14 +1,8 @@
 <template>
 <div class="page">
     <div class="container">
-        <div class="crumbs">
-            <img class="crumbs__img" src="../assets/back-button.png" alt="">
-            <div class="crumbs__path">/&nbsp;<a href="/">HOME</a>&nbsp;/&nbsp;Press Centre</div>
-        </div>
-        <div class="page-divider mb-3">  
-            <img class="page-divider__cube" src="../assets/SVG/cube.svg" alt="">
-            <div class="page-divider__title">Press Center</div>
-        </div> 
+        <PageCrumbs path="Press Center" />
+        <PageDivider title="Press Center" />
         <div class="press mb-3">
             <img class="press__img" src="../assets/pages/press-center.jpg" alt="">
             <div class="press__desc">
@@ -19,11 +13,16 @@
 </div>
 
 </template>
-
+<script>
+import PageDivider from '@/components/PageDivider';
+import PageCrumbs from '@/components/PageCrumbs';
+export default {
+    components: {PageDivider, PageCrumbs},
+}
+</script>
 <style lang="scss">
 @import '../scss/_variables.scss';
 @import '../scss/_base.scss';
-@import '../scss/_divider.scss';
 @import '../scss/_utilities.scss';
 @import '../scss/_page.scss';
 

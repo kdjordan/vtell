@@ -1,11 +1,6 @@
 <template>
 <div>
-    <div class="divider mb-3">
-        <div class="divider__container">
-        <img class="divider__cube" src="../assets/SVG/cube.svg" alt="">
-        <div class="divider__title">V-TELL – YOUR GLOBAL PRIVILEGE</div>
-        </div>
-    </div>  
+    <HPageDivider title="V-Tell Your Global Privelege" />
     <div class="privileges">
         <div class="container">
             <div class="privileges__container">
@@ -20,7 +15,9 @@
 </template>
 
 <script>
+import HPageDivider from '@/components/HPageDivider';
 export default {
+    components: {HPageDivider},
     data() {
         return {
             slideIndex: 0,
@@ -67,8 +64,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../scss/_divider.scss';
-
 .arrow {
     height: 4rem;
     cursor: pointer;

@@ -61,16 +61,16 @@
                                 <router-link class="nav-link nav-link__drop" to="/plans"><span class="dot"></span>All Tariffs</router-link>
                             </span>
                             <span class="nav-link__container">
-                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>V-1</router-link>
+                                <router-link class="nav-link nav-link__drop" to="/plan-v1"><span class="dot"></span>V-1</router-link>
                             </span>
                             <span class="nav-link__container">
-                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>V-2</router-link>
+                                <router-link class="nav-link nav-link__drop" to="/plan-v2"><span class="dot"></span>V-2</router-link>
                             </span>
                             <span class="nav-link__container">
-                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>V-3</router-link>
+                                <router-link class="nav-link nav-link__drop" to="/plan-v3"><span class="dot"></span>V-3</router-link>
                             </span>
                             <span class="nav-link__container">
-                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>V-Max</router-link>
+                                <router-link class="nav-link nav-link__drop" to="/plan-v4"><span class="dot"></span>V-Max</router-link>
                             </span>
                             <span class="nav-link__container">
                                 <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Archive Tariffs</router-link>

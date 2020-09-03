@@ -1,10 +1,8 @@
 <template>
 <div class="page">
     <div class="container">
-        <div class="page-divider mb-3">  
-            <img class="page-divider__cube" src="../assets/SVG/cube.svg" alt="">
-            <div class="page-divider__title">PAYMENT: CREDIT/DEBIT CARDS</div>
-        </div> 
+        <PageCrumbs path="PAYMENT: CREDIT/DEBIT CARDS" />
+        <PageDivider title="PAYMENT: CREDIT/DEBIT CARDS" />
         <div class="addfunds">
             <form class="addfunds__form">
                 <div class="addfunds__form--do">Enter Phone Number</div>
@@ -41,13 +39,16 @@
 
 </template>
 <script>
-
+import PageDivider from '@/components/PageDivider';
+import PageCrumbs from '@/components/PageCrumbs';
+export default {
+    components: {PageDivider, PageCrumbs}
+}
 </script>
 
 <style lang="scss">
 @import '../scss/_variables.scss';
 @import '../scss/_base.scss';
-@import '../scss/_divider.scss';
 @import '../scss/_utilities.scss';
 @import '../scss/_page.scss';
 
@@ -70,7 +71,7 @@ hr {
 
     & label {
         text-align: left;
-        color: $white;
+        color: white;
         font-size: 14px;
         margin-bottom: .5rem;
 
@@ -105,14 +106,14 @@ hr {
         width: 50%;
         background: $red;
         border: 1px solid transparent;
-        color: $white;
+        color: white;
         padding: 25px 0;
         margin: 1rem  0;
         margin-bottom: 3rem;
         transition: all .4s;
 
         &:hover {
-            background: $white;
+            background: white;
             border: 1px solid $red;
             color: $red;
         }
@@ -149,7 +150,7 @@ hr {
                 &::before {
                     display: block;
                     content: "\2713";
-                    color: $white;
+                    color: white;
                     font-size: 1.4rem;
                     position: relative;
                     bottom: 3px;
@@ -168,7 +169,7 @@ hr {
     &__payment {
         &--title {
             font-size: 2rem;
-            color: $white;
+            color: white;
             margin-bottom: 1rem;
 
         }

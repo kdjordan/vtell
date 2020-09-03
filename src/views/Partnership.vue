@@ -1,14 +1,9 @@
 <template>
 <div class="page">
     <div class="container">
-        <div class="crumbs">
-            <img class="crumbs__img" src="../assets/back-button.png" alt="">
-            <div class="crumbs__path">/&nbsp;<a href="/">HOME</a>&nbsp;/&nbsp;PARTNER PROGRAM</div>
-        </div>
-        <div class="page-divider mb-3">  
-            <img class="page-divider__cube" src="../assets/SVG/cube.svg" alt="">
-            <div class="page-divider__title">PARTNER PROGRAM</div>
-        </div> 
+        
+        <PageCrumbs path="Partnerships" />
+        <PageDivider title="Partnerships" />
         <img class="partnership__img mb-1"  src="../assets/pages/partnership.jpg" alt="">
         <div class="partnership__desc">
             <p>V-Tell is interested in collaboration with sales agents to promote our mobile services. The Partner’s target is to spread our mobile network services by attracting new Subscribers. V-Tell offers enticing compensation, which is 10% of a monthly subscription fee. The more customers you sign up, the more you earn.</p>
@@ -88,16 +83,21 @@
 </div>
 
 </template>
-
+<script>
+import PageCrumbs from '@/components/PageCrumbs';
+import PageDivider from '@/components/PageDivider';
+export default {
+    components: {PageDivider, PageCrumbs}
+}
+</script>
 <style lang="scss">
 @import '../scss/_variables.scss';
 @import '../scss/_base.scss';
-@import '../scss/_divider.scss';
 @import '../scss/_utilities.scss';
 @import '../scss/_page.scss';
 
 .partner-bottom {
-    color: $white;
+    color: white;
 
     &__title {
         text-transform: uppercase;
@@ -305,14 +305,14 @@
         cursor: pointer;
         width: 100%;
         border: 1px solid transparent;
-        color: $white;
+        color: white;
         background: $red;
         padding: 20px 0;
         font-size: 20px;
         transition: all .4s;
 
         &:hover {
-            background: $white;
+            background: white;
             color: $red;
         }
     }
@@ -327,7 +327,7 @@
         & > div {
             font-size: 16px;
             line-height: 20px;
-            color: $white;
+            color: white;
             text-align: left;
             flex: 0 0 30%;
         }
@@ -338,7 +338,7 @@
         width: 100%;
         justify-content: space-between;
         align-items: center;
-        color: $white;
+        color: white;
         margin-bottom: 2rem;
 
         & > div {

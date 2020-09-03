@@ -2,7 +2,7 @@
 <div>
     <div v-if="windowWidth > 768" class="footer">
         <div class="container footer__container">
-            <button class="btn__primary mt-1 mb-1">Become customer</button>
+            <button class="footer__btn mt-1 mb-1">Become customer</button>
             <div class="social">
                 <div class="social__left">
                     <svg @click.prevent="footerPanel = 1" class="social-icon icon"  :class="{iconActive: activePanel == 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34" alt="phone numbers icon">
@@ -92,7 +92,7 @@
         </div>  
     </div>
     <div v-else class="footer-sm">
-        <button class="btn__primary mt-1 mb-1">Become customer</button>
+        <button class="footer__btn mt-1 mb-1">Become customer</button>
         <div class="social__top mb-1">
             <svg @click.prevent="footerPanel = 1" class="social-icon icon"  :class="{iconActive: activePanel == 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34" alt="phone numbers icon">
                 <path d="M22.6,6a5,5,0,0,1,1.3,2.5,4.19,4.19,0,0,1-.2,2.7h0a1.17,1.17,0,0,1-1.1.8,1.11,1.11,0,0,1-1.1-1.1,1.07,1.07,0,0,1,.2-.6h0v-.2a2.25,2.25,0,0,0-.1-1.2,2.59,2.59,0,0,0-.7-1.1,2.38,2.38,0,0,0-1.1-.6,1.65,1.65,0,0,0-1.2,0h-.2a1.42,1.42,0,0,1-.6.2,1.11,1.11,0,0,1-1.1-1.1,1.17,1.17,0,0,1,.8-1.1h0a4.94,4.94,0,0,1,2.7-.3A3.19,3.19,0,0,1,22.6,6Z" />
@@ -241,7 +241,6 @@ export default {
     display: flex;
     justify-content: center;
 
-
     &__container {
         
         @media(max-width: 900px) {
@@ -255,7 +254,6 @@ export default {
         color: white;
         min-height: 40vh;
         
-
         @media(max-width: 960px) {
             margin: 0 1rem;
         }
@@ -286,6 +284,18 @@ export default {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    &__btn {
+        background: $red;
+        color: white;
+        border: 1px solid transparent;
+        padding: 15px;  
+        width: 250px;      
+        border-radius: 35px;
+        font-size: 20px;
+        line-height: 20px;
+
     }
 }
 

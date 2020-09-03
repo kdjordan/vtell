@@ -1,14 +1,8 @@
 <template>
 <div class="page">
     <div class="container">
-        <div class="crumbs">
-            <img class="crumbs__img" src="../assets/back-button.png" alt="">
-        <div class="crumbs__path">/&nbsp;<a href="/">HOME</a>&nbsp;/&nbsp;CORPORATE SERVICES</div>
-        </div>
-        <div class="page-divider mb-3">  
-            <img class="page-divider__cube" src="../assets/SVG/cube.svg" alt="">
-            <div class="page-divider__title">CORPORATE SERVICES</div>
-        </div> 
+        <PageCrumbs path="CORPORATE SERVICES" />
+        <PageCrumbs title="CORPORATE SERVICES" />
         <div class="corporate">
             <div class="corporate__desc">
                 <p>If your business reaches way beyond local borders and your clients are located in every part of the world - search no longer. You can always rely on a multi-number contact center provided by V-Tell.</p>
@@ -23,9 +17,14 @@
 </div> 
   
 </template>
-
+<script>
+import PageDivider from '@/components/PageDivider';
+import PageCrumbs from '@/components/PageCrumbs';
+export default {
+    components: {PageDivider, PageCrumbs}
+}
+</script>
 <style lang="scss">
-@import '../scss/_divider.scss';
 @import '../scss/_variables.scss';
 @import '../scss/_base.scss';
 

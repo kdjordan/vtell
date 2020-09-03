@@ -1,10 +1,8 @@
 <template>
 <div class="page">
     <div class="container">
-        <div class="page-divider mb-3">  
-            <img class="page-divider__cube" src="../assets/SVG/cube.svg" alt="">
-            <div class="page-divider__title">My V-Tell</div>
-        </div> 
+        <PageCrumbs path="My V-Tell" />
+        <PageDivider title="My V-Tell" />
         <div class="myvtell">
             <div class="myvtell__title">Enter</div>
             <div class="myvtell__desc">Please authorize to access V-Tell subscriber's self care capabilities</div>
@@ -43,13 +41,16 @@
 
 </template>
 <script>
-
+import PageDivider from '@/components/PageDivider';
+import PageCrumbs from '@/components/PageCrumbs';
+export default {
+    components: {PageDivider, PageCrumbs}
+}
 </script>
 
 <style lang="scss">
 @import '../scss/_variables.scss';
 @import '../scss/_base.scss';
-@import '../scss/_divider.scss';
 @import '../scss/_utilities.scss';
 @import '../scss/_page.scss';
 
@@ -62,7 +63,7 @@
         text-transform: uppercase;
         font-size: 21px;
         margin-bottom: 1rem;
-        color: $white;
+        color: white;
     }
 
     &__desc {
@@ -82,7 +83,7 @@
     &__btn {
         cursor: pointer;
         border: 1px solid transparent;
-        color: $white;
+        color: white;
         background: $red;
         font-size: 1.1rem;
         padding: 1.5rem;
@@ -94,7 +95,7 @@
         }
 
         &:hover {
-            background: $white;
+            background: white;
             border: 1px solid $red;
             color: $red;
         }
@@ -108,7 +109,7 @@
 
         &--upper {
             margin-bottom: 5rem;
-            color: $white;
+            color: white;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -164,7 +165,7 @@
             }
 
             &--col {
-                color: $white;
+                color: white;
                 display: flex;
                 flex-direction: column;
                 font-size: 14px;
@@ -176,7 +177,7 @@
 
             & .title {
                 font-size: 18px;
-                color: $white;
+                color: white;
                 text-transform: uppercase;
                 margin-top: .5rem;
             }
