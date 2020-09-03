@@ -15,14 +15,14 @@ export default {
 .page-crumbs {
     display: flex;
     align-items: center;
-    color: #333333;
+    color: rgb(102, 102, 102);
     width: 100%;
     max-width: 960px;
     margin: 0 auto;
     margin-bottom: 1rem;
   
     & a {
-      color: #333333;
+      color: rgb(102, 102, 102);
       transition: all .4s;
   
       &:hover {
