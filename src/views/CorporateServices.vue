@@ -2,7 +2,7 @@
 <div class="page">
     <div class="container">
         <PageCrumbs path="CORPORATE SERVICES" />
-        <PageCrumbs title="CORPORATE SERVICES" />
+        <PageDivider title="CORPORATE SERVICES" />
         <div class="corporate">
             <div class="corporate__desc">
                 <p>If your business reaches way beyond local borders and your clients are located in every part of the world - search no longer. You can always rely on a multi-number contact center provided by V-Tell.</p>
