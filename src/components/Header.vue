@@ -89,13 +89,13 @@
                                 <router-link class="nav-link nav-link__drop" to="/advantages"><span class="dot"></span>Advantages of V-tell</router-link>
                             </span>
                             <span class="nav-link__container">
-                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Coverage Map</router-link>
+                                <router-link class="nav-link nav-link__drop" to="/coverage-map"><span class="dot"></span>Coverage Map</router-link>
                             </span>
                             <span class="nav-link__container">
-                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>Settings</router-link>
+                                <router-link class="nav-link nav-link__drop" to="/settings"><span class="dot"></span>Settings</router-link>
                             </span>
                             <span class="nav-link__container">
-                                <router-link class="nav-link nav-link__drop" to="/about"><span class="dot"></span>FAQ</router-link>
+                                <router-link class="nav-link nav-link__drop" to="/faq"><span class="dot"></span>FAQ</router-link>
                             </span>
                             <span class="nav-link__container">
                                 <router-link class="nav-link nav-link__drop" to="/advantages-list"><span class="dot"></span>Advantages List</router-link>
