@@ -17,6 +17,9 @@ import PlanV1 from "./views/PlanV1.vue";
 import PlanV2 from "./views/PlanV2.vue";
 import PlanV3 from "./views/PlanV3.vue";
 import PlanVmax from "./views/PlanVmax.vue";
+import CoverageMap from "./views/CoverageMap.vue";
+import Settings from "./views/Settings.vue";
+import Faq from "./views/Faq.vue";
 
 Vue.use(Router);
 
@@ -109,6 +112,21 @@ export default new Router({
       path: "/plan-vmax",
       name: "plan-vmax",
       component: PlanVmax
+    },
+    {
+      path: "/coverage-map",
+      name: "coverage-map",
+      component: CoverageMap
+    },
+    {
+      path: "/settings",
+      name: "settings",
+      component: Settings
+    },
+    {
+      path: "/faq",
+      name: "faq",
+      component: Faq
     },
     // {
     //   path: "/about",

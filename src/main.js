@@ -3,7 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faAngleLeft, faAngleRight, faDollarSign, faEuroSign, faExchangeAlt } from '@fortawesome/free-solid-svg-icons'
+import { faAngleLeft, faAngleRight, faDollarSign, faEuroSign, faExchangeAlt, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 library.add(faAngleLeft)
@@ -11,6 +11,7 @@ library.add(faAngleRight)
 library.add(faDollarSign)
 library.add(faEuroSign)
 library.add(faExchangeAlt)
+library.add(faSearch)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
