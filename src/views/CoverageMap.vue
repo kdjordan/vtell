@@ -110,6 +110,7 @@ export default {
         padding: 56px;
         margin: 28px 0;
         background: rgba(252, 252, 252, 0.25);
+        margin-bottom: 8rem;
         & p {
             color: white;
             font-size: 16px;
