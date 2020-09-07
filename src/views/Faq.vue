@@ -426,6 +426,7 @@ export default {
     &Active {
         padding-top: 10px;
         padding-bottom: 5px;
+        margin-bottom: 1rem;
         background-color: $black-background-color;
     }
 }
