@@ -21,8 +21,8 @@ import Privilege from '@/components/Privilege'
 import Hero from '@/components/Hero'
 
 export default {
-  name: "home",
-  components: {
+    name: "home",
+    components: {
     Hero,
     Privilege,
     Advantages,
@@ -30,6 +30,9 @@ export default {
     Tariffs,
     Sim,
     Countries
-  }
+    },
+    mounted () {
+        window.scrollTo(0, 0);
+    }
 };
 </script>

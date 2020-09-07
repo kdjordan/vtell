@@ -381,6 +381,9 @@ export default {
             console.log('clicked', num);
             this.activeEntry[num] = !this.activeEntry[num];
         }
+    },
+    mounted () {
+        window.scrollTo(0, 0);
     }
 }
 </script>

@@ -95,6 +95,9 @@ export default {
         activateList(num) {
             this.listActive[num] = !this.listActive[num];
         }
+    },
+    mounted () {
+        window.scrollTo(0, 0);
     }
 }
 </script>

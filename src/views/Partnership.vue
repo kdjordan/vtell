@@ -87,7 +87,10 @@
 import PageCrumbs from '@/components/PageCrumbs';
 import PageDivider from '@/components/PageDivider';
 export default {
-    components: {PageDivider, PageCrumbs}
+    components: {PageDivider, PageCrumbs},
+    mounted () {
+        window.scrollTo(0, 0);
+    }
 }
 </script>
 <style lang="scss">

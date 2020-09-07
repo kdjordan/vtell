@@ -97,6 +97,9 @@ export default {
         selectIndex(index) {
             this.index = index;
         }
+    },
+    mounted () {
+        window.scrollTo(0, 0);
     }
 }
 </script>

@@ -215,8 +215,6 @@ export default {
 <style lang="scss">
 @import '../scss/_variables.scss';
 
-
-
 .header {
     position: fixed;
     top: 0;
@@ -225,55 +223,45 @@ export default {
     width: auto;
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 99;
-    
+    z-index: 99; 
     @media(max-width: 760px) {
         display: none;
     }
 }
-
 .headerOpaque {
     background-image: url('../assets/img/border.png');
     background-position: center;
 }
-
-
 .nav-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
-
 .nav-menu {
     font-size: .9rem;
     max-width: 1024px;
     display: flex;
     align-items: center;
-    padding-top: .5rem;
-    
+    padding-top: .5rem;   
     &__upper {
         justify-content: space-between; 
     }
-
     &__lower {
         justify-content: space-evenly;
         margin-top: .2rem;    
     }
 }
-
 .nav-logo {
     z-index: 99;
     &__svg {
         width: 8rem;
         transition: all .4s;
     }
-
     :hover {
         filter: opacity(80%);
     }
 }
-
 .nav-link {
         color: white;
         text-decoration: none;
@@ -302,26 +290,26 @@ export default {
                 }
             }
         }
-
-        &__root-container {
+        &__root {
+            display: block;
+            width: 100%;
             padding: 16px 0;
+        }
+        &__root-container {
             width: 95%;
             position: relative;
             z-index: 0;
             cursor: pointer;
-
             &:hover, &:hover .nav-link__root {
                 background: rgba(0,0,0, .8);
                 color: $red;
             }
-
             &:hover > .drop-down {
                 color: $red;
                 display: block;
                 z-index: 2;
             }
         }  
-
         &__drop {
             width: 100%;
             height: auto;
@@ -330,18 +318,15 @@ export default {
             line-height: 16px;
             text-align: left;
             padding-left: .4rem;
-
             &:hover {
                 width: 100%;
                 background: $red;
             }
-
             &:hover .dot {
                 background: black;
             }
         }
 }
-
 .drop-down {
     z-index: -1;
     width: 100%;
@@ -350,9 +335,7 @@ export default {
     top: 3rem;
     left: 0;
     display: none;
-        
 }
-
 .top-bar {
     position: absolute;
     top: 0;
@@ -363,14 +346,11 @@ export default {
     display: block;
     width: 100%;
 }
-
-
 .vert-border {
     width: 1px;
     height: 30px;
     background: $red;
 }
-
 .dot {
     display: inline-block;
     height: 10px;
@@ -379,9 +359,7 @@ export default {
     border-radius: 50%;
     margin-right: 5px;
 }
-
 //**********************MOBILE STYLES************************/
-
 .mobile-nav {
     position: fixed;
     top: 0;
@@ -394,24 +372,20 @@ export default {
     justify-content: space-between;
     align-items: center;
     min-height: 70px;
-
     @media(min-width: 760px) {
            display: none;
         }
-
     &__left {
         &--svg {
             width: 5.5rem;
         }
     }
 }
-
 .mobile-arrow {
     color: $red;
     font-size: 1.8rem;
     margin-left: 8px;
 }
-
 .mobile-burger {
     z-index: 1;
     width: 40px;
@@ -419,8 +393,6 @@ export default {
     transform: rotate(0deg);
     transition: .5s ease-in-out;
     cursor: pointer;
-
-
     & span {
         display: block;
         position: absolute;
@@ -432,22 +404,18 @@ export default {
         transform: rotate(0deg);
         transition: .25s ease-in-out;
     }
-
     & span:nth-child(1) {
         top: 0px;
         transform-origin: left center;
     }
-
     & span:nth-child(2) {
         top: 10px;
         transform-origin: left center;
     }
-
     & span:nth-child(3) {
         top: 20px;
         transform-origin: left center;
     }
-
 }
 
 .slideOpen {
@@ -467,14 +435,11 @@ export default {
         transform: rotate(-45deg) !important;
     }
 }
-
-
 .mobile {
     &-icon {
         width: 1.6rem;
         margin-left: .5rem;
     }
-
     &__overlay {
         position: absolute;
         top: 4.6rem;
@@ -487,7 +452,6 @@ export default {
         width: 100vw;
         height: 100vh;
         transition: all .4s;
-
         &--inner {
             position: absolute;
             top: .5rem;
@@ -498,7 +462,6 @@ export default {
             transition: all .4s;
         }
     }
-
     &__link {
         display: flex;
         align-items: center;
@@ -506,7 +469,6 @@ export default {
         margin: 0 auto;
         font-size: 14px;
         margin: .3rem 0;
-
         &--text {
             padding-top: 3px;
 
