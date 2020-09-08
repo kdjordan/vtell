@@ -175,6 +175,9 @@ import PlanCalculator from '@/components/PlanCalculator';
 
 export default {
     components: {PageDivider, PageCrumbs, PlanCalculator},
+     mounted () {
+        window.scrollTo(0, 0);
+    },
     data() {
         return {
             buttonMssg: 'SHOW MORE',
