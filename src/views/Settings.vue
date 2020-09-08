@@ -150,17 +150,30 @@ export default {
         font-size: 16px;
         line-height: 26px;
         margin: 1rem 0;
+        @media(max-width: 655px) {
+            text-align: center;
+        }
     }
     &__top {
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
+        @media(max-width: 655px) {
+            flex-direction: column;
+        }
         &--left {
             width: 80%;
+            @media(max-width: 655px) {
+                width: 100%;
+            }
         }
         &--right{
             display: flex;
             width: 20%;
+            @media(max-width: 655px) {
+                width: 100%;
+                justify-content: center;
+            }
         }
     }
     &__svg {
@@ -214,12 +227,18 @@ export default {
             flex-direction: column;
             align-items: flex-start;
             flex-basis: 55%;
+            @media(max-width: 655px) {
+                margin-left: 2rem;
+            }
         }
         &--right {
             flex-basis: 5%;
             display: flex;
             flex-direction: column;
             align-items: center;
+            @media(max-width: 655px) {
+                display: none;
+            }
             & .up-arrow {
                 width: 0;
                 height: 0;
