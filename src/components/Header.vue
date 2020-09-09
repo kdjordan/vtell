@@ -145,26 +145,26 @@
         </div>
         <div class="mobile__overlay" :class="{slideOpen : mobileOpen}">
             <div class="mobile__overlay--inner">
-                <router-link class="nav-link mobile__link" to="/about">
+                <router-link class="nav-link mobile__link" to="/about" @click.native="closeMobile()">
                     <span class="mobile__link--text">About Us</span>
                     <font-awesome-icon icon="angle-right" class="mobile-arrow"/>
                 </router-link>
-                <router-link class="nav-link mobile__link" to="/plans">
+                <router-link class="nav-link mobile__link" to="/plans" @click.native="closeMobile()">
                     <span class="mobile__link--text">Tariffs</span>
                     <font-awesome-icon icon="angle-right" class="mobile-arrow"/>
                 </router-link>
-                <router-link class="nav-link mobile__link" to="/search">
+                <router-link class="nav-link mobile__link" to="/advantages" @click.native="closeMobile()">
                     <span class="mobile__link--text">Subscribers</span>
                     <font-awesome-icon icon="angle-right" class="mobile-arrow"/>
                 </router-link>
-                <router-link class="nav-link mobile__link" to="/partnerships">
+                <router-link class="nav-link mobile__link" to="/partnerships" @click.native="closeMobile()">
                     <span class="mobile__link--text">Partnerships</span>
                 </router-link>
-                <router-link class="nav-link mobile__link" to="/contact-us">
+                <router-link class="nav-link mobile__link" to="/contact-us" @click.native="closeMobile()">
                     <span class="mobile__link--text">Contacts</span>
                     <font-awesome-icon icon="angle-right" class="mobile-arrow"/>
                 </router-link>
-                <router-link class="nav-link mobile__link" to="/search">
+                <router-link class="nav-link mobile__link" to="/" @click.native="closeMobile()">
                     <span class="mobile__link--text">Search</span>
                     <img class="mobile-icon" src="../assets/nav/search.svg" alt="">
                 </router-link>
@@ -172,16 +172,17 @@
                     <span class="mobile__link--text">Add Funds</span>
                     <img class="mobile-icon" src="../assets/nav/payments.svg" alt="">
                 </router-link>
-                <router-link class="nav-link mobile__link" to="/myvtell">
+                <router-link class="nav-link mobile__link" to="/myvtell" @click.native="closeMobile()">
                     <span class="mobile__link--text">My V-Tell</span>
                     <img class="mobile-icon" src="../assets/nav/account.svg" alt="">
                 </router-link>
-                <router-link class="nav-link mobile__link" to="#">
+                <router-link class="nav-link mobile__link" to="/" @click.native="closeMobile()">
                     <span class="mobile__link--text">Cart</span>
                     <img class="mobile-icon" src="../assets/nav/cart.svg" alt="">
                 </router-link>
             </div>
         </div>
+        <!-- <p style="color: whitte">{{mobileOpen}}</p>  -->
     </nav>
 </div>
 </template>
@@ -201,6 +202,10 @@ export default {
             } else {
                 this.addOpaqueBack = false;
             }
+        },
+        closeMobile() {
+            console.log('closing');
+            this.mobileOpen = true;
         }
     },
     created() {

@@ -1,7 +1,7 @@
 <template>
 <div class="page">
     <div class="container">
-        <PageCrumbs title="ADVANTAGES" />
+        <PageCrumbs path="ADVANTAGES" />
         <PageDivider title="ADVANTAGES" />
         <div class="advantages">
             <div class="advantages__wrap">
@@ -9,7 +9,7 @@
                     <img src="../assets/advantages/adv_image1.png" alt="">
                     <div class="advantages__desc advantages__desc--1">One Global Rate</div>
                 </div>
-                <div>
+                <div @click.prevent="goTo(1)" style="border: 1px solid red;">
                     <img src="../assets/advantages/adv_image2.png" alt="">
                     <div class="advantages__desc advantages__desc--2">Excellent Mobile<br />Internet</div>
                 </div>
@@ -43,8 +43,16 @@
 <script>
 import PageDivider from '@/components/PageDivider';
 import PageCrumbs from '@/components/PageCrumbs';
+import { bus } from '../main';
 export default {
     components: {PageDivider,PageCrumbs},
+    methods: {
+        goTo(num) {
+            console.log('clicked')
+            bus.$emit('incoming', num);
+            this.$router.push('/advantages-list/');
+        }
+    },
     mounted () {
         window.scrollTo(0, 0);
     }
