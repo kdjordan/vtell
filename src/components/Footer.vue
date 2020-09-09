@@ -254,15 +254,21 @@ export default {
         color: white;
         min-height: 40vh;
         
-        @media(max-width: 960px) {
+        @media(max-width: 768px) {
             margin: 0 1rem;
         }
 
         &--entry {
             margin: 1rem 0;
+            @media(max-width: 768px) {
+                margin: 0;
+            }
 
             & > * {
                 margin: .3rem 0;
+                @media(max-width: 768px) {
+                    margin: .2rem 0;
+                }
             }
         }
 
@@ -364,6 +370,10 @@ export default {
             display: flex;
             justify-content: center;
             align-items: center;
+
+            @media(max-width: 768px) {
+                margin: .1rem 0rem;
+            }
 
             & .social-icon {
                 width: 9%;

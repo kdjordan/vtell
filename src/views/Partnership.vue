@@ -34,34 +34,34 @@
         <button class="partnership__btn">Calculate</button>
         </div>
         <div class="partner-boxes">
-            <div class="partner-boxes__box partner-boxes__box--1">
+            <div class="partner-boxes__box partner-boxes__box--1" @click.prevent="openDesc(1)">
                 <div class="partner-boxes__box--desc">V-Tell offers Unique Products</div>
             </div>
-            <div class="partner-boxes__box partner-boxes__box--2">
+            <div class="partner-boxes__box partner-boxes__box--2" @click.prevent="openDesc(2)">
                 <div class="partner-boxes__box--desc">Attractive Partner’s compensation for successful Sales is guaranteed</div>
             </div>
-            <div class="partner-boxes__box partner-boxes__box--3">
+            <div class="partner-boxes__box partner-boxes__box--3" @click.prevent="openDesc(3)">
                 <div class="partner-boxes__box--desc">Partners will always be informed about our latest news, promotions, and discounts.</div>
             </div>
-            <div class="partner-boxes__box partner-boxes__box--4">
+            <div class="partner-boxes__box partner-boxes__box--4" @click.prevent="openDesc(4)">
                 <div class="partner-boxes__box--desc">My V-TELL Business (soon)</div>
             </div>
-            <div class="partner-boxes__box partner-boxes__box--5">
+            <div class="partner-boxes__box partner-boxes__box--5" @click.prevent="openDesc(5)">
                 <div class="partner-boxes__box--desc">Attractive Partner’s compensation for successful Sales is guaranteed</div>
             </div>
-            <div class="partner-boxes__box partner-boxes__box--6">
+            <div class="partner-boxes__box partner-boxes__box--6" @click.prevent="openDesc(6)">
                 <div class="partner-boxes__box--desc">Partners will always be informed about our latest news, promotions, and discounts.</div>
             </div>
-            <div class="partner-boxes__box partner-boxes__box--7">
+            <div class="partner-boxes__box partner-boxes__box--7" @click.prevent="openDesc(7)">
                 <div class="partner-boxes__box--desc adjust">Learn more about our Terms and Conditions here</div>
             </div>
         </div>
-        <div class="partner-desc">
+        <div v-if="descOpen" class="partner-desc">
             <div class="partner-desc__active">
-                <img src="../assets/SVG/up-arrow.svg" alt="">
+                <img src="../assets/SVG/up-arrow.svg" alt="" @click.prevent="descOpen = false">
             </div>
             <div class="partner-desc__content">
-                <!-- FUTURE CONTENT HERE -->
+                {{descContent[contentIndex]}}
             </div>
         </div>
         <div class="partner-bottom">
@@ -88,8 +88,34 @@ import PageCrumbs from '@/components/PageCrumbs';
 import PageDivider from '@/components/PageDivider';
 export default {
     components: {PageDivider, PageCrumbs},
+    data() {
+        return {
+            descOpen: false,
+            contentIndex: 1,
+            descContent: {
+                1: "V-Tell is an international mobile operator that delivers its’ services worldwide. Our broad mobile network is designed to meet expectations of people involved in international business and communication. V-Tell is the most convenient way of communication with relatives and friends who live abroad. V-Tell allows to make and receive calls utilizing a phone number that will be identified as a country local number and charged by local rates. V-Tell delivers an ultimate convenience for you, your families, friends and colleagues! One single phone with multiple numbers that will enable you to stay always in touch and use mobile internet wherever you are. Click here for details.",
+                2: "A partner gets a commission of 10% of a monthly subscription fee and 10% of a monthly charge for additional phone numbers of Multi Numbers service for every new Subscriber signed up. A Partner is compensated monthly during Subscriber's lifetime with V-Tell services (excluding VAT and personal discounts provided to a Subscriber).",
+                3: "Once needed we will gladly consult you in person.",
+                4: "Once using My V-Tell Business, you will be able to sign up new customers remotely, monitor your revenue, and receive the company's latest news. All changes in your Business Account will be emailed to you instantly.",
+                5: "A dedicated V-Tell team member will be assigned to you and chiming in when needed. You can get in touch with a personal manager at your earliest convenience via a phone call or email. Additionally, you can request a call back at MY V-Tell Business or schedule an appointment at the prospective client's office.",
+                6: "We provide our partners with the latest Point-of-Sale and advertising materials.",
+                7: `1. A partner gets a commission of 10% of a monthly subscription fee and 10% of a monthly charge for additional phone numbers of Multi Numbers* service for every new Subscriber signed up. (Excluding VAT and personal discounts provided to a Subscriber). A Partner is compensated monthly during Subscriber\'s lifetime with V-Tell Services, given that Subscriber is paying in full and on time (100% Subscription fee should be charged monthly)
+                2. Subscriber is considered active once he or she has signed a Contract Agreement, and has paid both monthly and Multiple Service fees.
+                3. If the Subscriber changes Plan initially chosen, the Partner’s compensation will be calculated based on the new Plan.
+                4. Partner’s compensation payment for previously signed Subscriber shall cease upon the termination of Subscriber's Contract Agreement or if the (Partner has not signed up any new Subscriber(s) for 3 (three) consecutive months.
+                5. Once, after the period specified in paragraph 4, the Partner starts signing up Subscribers, then his or her compensation is calculated from newly signed Subscribers (excluding previously attracted Subscribers)."`
+            }
+        }
+    },
+    methods: {
+        openDesc(num) {
+            console.log('clicked', num);
+            this.contentIndex = num;
+            this.descOpen = true;
+        }
+    },
     mounted () {
-        window.scrollTo(0, 0);
+        // window.scrollTo(0, 0);
     }
 }
 </script>
@@ -143,7 +169,7 @@ export default {
 }
 
 .partner-desc {
-    display: none;
+    // display: none;
     background: #52524f;
     margin-bottom: 2rem;
     padding: 40px 60px;
@@ -152,10 +178,24 @@ export default {
         margin-left: 90%;
         display: inline-block;
         & img {
+            cursor: pointer;
             transform: rotateX(45deg);
             width: 2.2rem;
             text-align: right;
+            
+            &:hover {
+                filter: opacity(50%);
+            }
         }
+    }
+
+    &__content {
+        white-space: pre-line;
+        margin-top: .7rem;
+        font-size: 16px;
+        line-height: 26px;
+        color: $vwhite2;
+        text-align: left;
     }
 }   
 
@@ -197,6 +237,10 @@ export default {
 
             @media(max-width: 768px) {
                 margin-top: 25%;
+            }
+
+            @media(max-width: 580px) {
+                margin-top: 35%;
             }
         }
 
