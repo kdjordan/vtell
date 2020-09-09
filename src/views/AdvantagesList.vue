@@ -76,6 +76,7 @@
 <script>
 import PageDivider from '@/components/PageDivider';
 import PageCrumbs from '@/components/PageCrumbs';
+import { bus } from '../main';
 export default {
     components: {PageDivider, PageCrumbs},
     data() {
@@ -94,9 +95,18 @@ export default {
     methods: {
         activateList(num) {
             this.listActive[num] = !this.listActive[num];
+            console.log(this.listActive[num])
         }
     },
+    created() {
+        
+    },
     mounted () {
+        bus.$on('incoming', (data) => {
+            console.log('before',this.listActive[data])
+            this.listActive[data] = true;
+            console.log('after',this.listActive[data])
+        })
         window.scrollTo(0, 0);
     }
 }

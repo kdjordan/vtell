@@ -143,7 +143,7 @@ export default {
 .settings {
     padding: 56px;
     margin: 28px 0;
-    background: rgba(252, 252, 252, 0.25);
+    background: rgba(252, 252, 252, 0.2);
     box-shadow: 0 0 6em rgba(31, 31, 31, 0.25) inset;
     & p {
         color: $vwhite2;
@@ -167,7 +167,7 @@ export default {
                 width: 100%;
             }
         }
-        &--right{
+        &--right {
             display: flex;
             width: 20%;
             @media(max-width: 655px) {

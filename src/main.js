@@ -13,6 +13,8 @@ library.add(faEuroSign)
 library.add(faExchangeAlt)
 library.add(faSearch)
 
+export const bus = new Vue();
+
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false;
