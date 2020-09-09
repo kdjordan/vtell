@@ -72,9 +72,6 @@
                             <span class="nav-link__container">
                                 <router-link class="nav-link nav-link__drop" to="/plan-vmax"><span class="dot"></span>V-Max</router-link>
                             </span>
-                            <!-- <span class="nav-link__container">
-                                <router-link class="nav-link nav-link__drop" to="/"><span class="dot"></span>Archive Tariffs</router-link>
-                            </span> -->
                         </div>
                     </div>
                 </span>
@@ -98,7 +95,7 @@
                                 <router-link class="nav-link nav-link__drop" to="/faq"><span class="dot"></span>FAQ</router-link>
                             </span>
                             <span class="nav-link__container">
-                                <router-link class="nav-link nav-link__drop" to="/advantages-list"><span class="dot"></span>Advantages List</router-link>
+                                <router-link class="nav-link nav-link__drop" to="/advantages-list/0"><span class="dot"></span>Advantages List</router-link>
                             </span>
                             <span class="nav-link__container">
                                 <router-link class="nav-link nav-link__drop" to="/corporate-services"><span class="dot"></span>Corporate Services</router-link>
@@ -168,7 +165,7 @@
                     <span class="mobile__link--text">Search</span>
                     <img class="mobile-icon" src="../assets/nav/search.svg" alt="">
                 </router-link>
-                <router-link class="nav-link mobile__link" to="/addfunds">
+                <router-link class="nav-link mobile__link" to="/addfunds" @click.native="closeMobile()">
                     <span class="mobile__link--text">Add Funds</span>
                     <img class="mobile-icon" src="../assets/nav/payments.svg" alt="">
                 </router-link>

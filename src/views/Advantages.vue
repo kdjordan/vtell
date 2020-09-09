@@ -5,31 +5,31 @@
         <PageDivider title="ADVANTAGES" />
         <div class="advantages">
             <div class="advantages__wrap">
-                <div class="advantages__wrap--square">
+                <div class="advantages__wrap--square"  @click.prevent="goTo(1)">
                     <img src="../assets/advantages/adv_image1.png" alt="">
                     <div class="advantages__desc advantages__desc--1">One Global Rate</div>
                 </div>
-                <div @click.prevent="goTo(1)" style="border: 1px solid red;">
+                <div @click.prevent="goTo(2)">
                     <img src="../assets/advantages/adv_image2.png" alt="">
                     <div class="advantages__desc advantages__desc--2">Excellent Mobile<br />Internet</div>
                 </div>
-                <div>
+                <div @click.prevent="goTo(3)">
                     <img src="../assets/advantages/adv_image3.png" alt="">
                     <div class="advantages__desc advantages__desc--3">V-TELL PHONE NUMBERS<br> IN DIFFERENT COUNTRIES<br> ALL ON ONE SIM CARD</div>
                 </div>
-                <div>
+                <div @click.prevent="goTo(4)">
                     <img src="../assets/advantages/adv_image4.png" alt="">
                     <div class="advantages__desc advantages__desc--4">YOU CAN BE REACHED<br>WORLDWIDE WITH NO<br>OVERSEAS CHARGE TO<br> YOUR HOST</div>
                 </div>
-                <div>
+                <div @click.prevent="goTo(5)">
                     <img src="../assets/advantages/adv_image5.png" alt="">
                     <div class="advantages__desc advantages__desc--5">YOU'RE LOCAL NO<br>MATTER WHERE YOU ARE</div>
                 </div>
-                <div>
+                <div @click.prevent="goTo(6)">
                     <img src="../assets/advantages/adv_image6.png" alt="">
                     <div class="advantages__desc advantages__desc--6">V-TELL DOES NOT UTILIZE<br>IP TELEPHONY</div>
                 </div>
-                <div>
+                <div @click.prevent="goTo(7)">
                     <img src="../assets/advantages/adv_image7.png" alt="">
                     <div class="advantages__desc advantages__desc--6">AUTOMATIC SWITCH OF V-TELL PHONE NUMBERS</div>
                 </div>
@@ -43,14 +43,11 @@
 <script>
 import PageDivider from '@/components/PageDivider';
 import PageCrumbs from '@/components/PageCrumbs';
-import { bus } from '../main';
 export default {
     components: {PageDivider,PageCrumbs},
     methods: {
         goTo(num) {
-            console.log('clicked')
-            bus.$emit('incoming', num);
-            this.$router.push('/advantages-list/');
+            this.$router.push(`/advantages-list/${num}`);
         }
     },
     mounted () {
@@ -71,7 +68,7 @@ export default {
     &__desc {
         color: white;
         font-size: 16px;
-        word-wrap: wrap;
+        word-wrap: normal;
         position: relative;
         text-transform: uppercase;
         margin: 0 auto;

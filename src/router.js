@@ -89,7 +89,7 @@ export default new Router({
       component: CorporateServices
     },
     {
-      path: "/advantages-list",
+      path: "/advantages-list/:id",
       name: "advantages-list",
       component: AdvantagesList
     },
