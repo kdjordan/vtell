@@ -163,7 +163,7 @@ export default {
 }
 
 .activeDesc {
-    max-height: 10rem;
+    max-height: 17rem;
     height: auto;
     opacity: 1;
 }

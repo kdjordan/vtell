@@ -396,12 +396,15 @@ export default {
 .ml-6 {
     margin-left: 6rem;
 }
+
 .no-top-border {
     border-top: none !important;
 }
+
 .no-bot-border {
     border-bottom: none !important;
 }
+
 .no-bot-border {
     border-bottom: none !important;
 }
@@ -504,10 +507,8 @@ export default {
             margin: 1rem 0;
         }
     }
-
-  
-  
 }
+
 .faq-page-input {
     width: 50%;
     border-radius: 77px;

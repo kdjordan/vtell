@@ -45,9 +45,9 @@ import PageDivider from '@/components/PageDivider';
 import PageCrumbs from '@/components/PageCrumbs';
 export default {
     components: {PageDivider, PageCrumbs},
-    // mounted () {
-    //     window.scrollTo(0, 0);
-    // }
+    mounted () {
+        window.scrollTo(0, 0);
+    }
 }
 </script>
 
@@ -162,9 +162,6 @@ export default {
             &--row {
                 display: flex;
                 margin-bottom: 1rem;
-
-               
-
             }
 
             &--col {
@@ -193,7 +190,5 @@ export default {
         }
     }
 }
-
-
 
 </style>

@@ -145,6 +145,7 @@ export default {
     margin: 28px 0;
     background: rgba(252, 252, 252, 0.2);
     box-shadow: 0 0 6em rgba(31, 31, 31, 0.25) inset;
+
     & p {
         color: $vwhite2;
         font-size: 16px;
@@ -154,6 +155,7 @@ export default {
             text-align: center;
         }
     }
+
     &__top {
         display: flex;
         justify-content: space-between;
@@ -161,12 +163,14 @@ export default {
         @media(max-width: 655px) {
             flex-direction: column;
         }
+
         &--left {
             width: 80%;
             @media(max-width: 655px) {
                 width: 100%;
             }
         }
+
         &--right {
             display: flex;
             width: 20%;
@@ -176,21 +180,25 @@ export default {
             }
         }
     }
+
     &__svg {
         width: 2.5rem;
         margin: 0 1rem;
         fill: white;
         transition: all .4s;
         cursor: pointer;
+
         &:hover, &:hover ~ &--label{
             fill: $red;
             color: $red;
         }
+
         &--label {
             color: white;
             margin-top: 1rem;
         }
     }
+
     &__lower {
         color: $vwhite2;
         margin-top: 2rem;
@@ -198,9 +206,11 @@ export default {
         justify-content: space-between;
         align-items: flex-start;
         font-size: 16px;
+
         &--title {
             margin-bottom: 1rem;
         }
+
         &--entry {
             cursor: pointer;
             margin: .2rem 0;
@@ -208,9 +218,11 @@ export default {
             text-decoration: none;
             line-height: 20px;
             transition: all .4s;
+
             &:hover {
                 text-decoration: underline;
             }
+
             &-desc {
                 color: rgb(138, 138, 138);
                 & span {
@@ -218,9 +230,11 @@ export default {
                 }
             }
         }
+
         &--left {
             flex-basis: 30%;
         }
+
         &--mid {
             text-align: left;
             display: flex;
@@ -231,14 +245,17 @@ export default {
                 margin-left: 2rem;
             }
         }
+
         &--right {
             flex-basis: 5%;
             display: flex;
             flex-direction: column;
             align-items: center;
+
             @media(max-width: 655px) {
                 display: none;
             }
+
             & .up-arrow {
                 width: 0;
                 height: 0;
@@ -247,6 +264,7 @@ export default {
                 border-bottom: 10px solid white;
                 cursor: pointer;
             }
+
             & .down-arrow {
                 width: 0;
                 height: 0;
@@ -255,6 +273,7 @@ export default {
                 border-top: 10px solid white;
                 cursor: pointer;
             }
+
             & .upper-slider {
                 display: block;
                 width: 10px;
@@ -263,6 +282,7 @@ export default {
                 border-radius: 4px;
                 margin: .3rem 0;
             }
+
             & .upper-slider--indicator {
                 display: block;
                 background: white;
@@ -273,6 +293,7 @@ export default {
                 top: 0px;
                 transition: all .4s;
             }
+
             & .lower-slider {
                 display: block;
                 width: 10px;
@@ -281,6 +302,7 @@ export default {
                 border-radius: 4px;
                 margin: .3rem 0;
             }
+
             & .lower-slider--indicator {
                 display: block;
                 background: white;
@@ -295,13 +317,16 @@ export default {
         }
     }
 }
+
 .activeSetting {
     fill: $red;
     color: $red;
 }
+
 .activeEntry {
     color: white;
 }
+
 .fade-enter-active, .fade-leave-active {
     transition: opacity 1s;
   }

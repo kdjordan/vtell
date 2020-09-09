@@ -117,6 +117,7 @@ export default {
             margin: 2rem 1rem;
         }
     }
+
     &__countries {
         margin-bottom: 2rem;
         & p {
@@ -126,11 +127,13 @@ export default {
              word-spacing: 5px;
         }
     }
+
     &__desc {
         padding: 56px;
         margin: 28px 0;
         background: rgba(252, 252, 252, 0.25);
         margin-bottom: 8rem;
+
         & p {
             color: white;
             font-size: 16px;
@@ -146,6 +149,4 @@ export default {
     width: 25px !important;
 
 }
-
-
 </style>

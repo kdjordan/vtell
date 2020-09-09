@@ -90,7 +90,6 @@ export default {
         }
 
         & .input-boxes {
-            // border: 1px solid red;
             font-size: 16px;
             flex: 0 1 100%;
             display: flex;

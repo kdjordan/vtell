@@ -404,8 +404,6 @@ export default {
                 display: flex;
                 flex-direction: column;
             }
-
-           
         }
 
         & .city {
@@ -422,7 +420,6 @@ export default {
             & .number {
                 font-size: 14px;
             }
-
         }
 
     & .footer__copyright {

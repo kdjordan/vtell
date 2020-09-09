@@ -79,7 +79,7 @@
                 <div class="vert-border"></div>
 
                 <span class="nav-link__root-container ">
-                    <router-link class="nav-link nav-link__root"  to="/tariffs">Subscribers</router-link>
+                    <router-link class="nav-link nav-link__root"  to="/advantages">Subscribers</router-link>
                     <div class="drop-down">
                         <div class="drop-down__inner">
                             <span class="nav-link__container">
@@ -131,7 +131,7 @@
     </section>
     <nav class="mobile-nav">
         <div class="mobile-nav-header__left">
-            <a href="/index.html"><img class="mobile-nav__left--svg" src="../assets/nav/logo.svg" alt=""></a>
+            <a href="/"><img class="mobile-nav__left--svg" src="../assets/nav/logo.svg" alt=""></a>
         </div>
         <div class="mobile-nav-header__right">
             <div class="mobile-burger" @click.prevent="mobileOpen = !mobileOpen">
@@ -179,7 +179,6 @@
                 </router-link>
             </div>
         </div>
-        <!-- <p style="color: whitte">{{mobileOpen}}</p>  -->
     </nav>
 </div>
 </template>
@@ -230,40 +229,49 @@ export default {
         display: none;
     }
 }
+
 .headerOpaque {
     background-image: url('../assets/img/border.png');
     background-position: center;
 }
+
 .nav-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
+
 .nav-menu {
     font-size: .9rem;
     max-width: 1024px;
     display: flex;
     align-items: center;
-    padding-top: .5rem;   
+    padding-top: .5rem;  
+
     &__upper {
         justify-content: space-between; 
     }
+
     &__lower {
         justify-content: space-evenly;
         margin-top: .2rem;    
     }
 }
+
 .nav-logo {
     z-index: 99;
+
     &__svg {
         width: 8rem;
         transition: all .4s;
     }
+
     :hover {
         filter: opacity(80%);
     }
 }
+
 .nav-link {
         color: white;
         text-decoration: none;
@@ -292,26 +300,31 @@ export default {
                 }
             }
         }
+
         &__root {
             display: block;
             width: 100%;
             padding: 16px 0;
         }
+
         &__root-container {
             width: 95%;
             position: relative;
             z-index: 0;
             cursor: pointer;
+
             &:hover, &:hover .nav-link__root {
                 background: rgba(0,0,0, .8);
                 color: $red;
             }
+
             &:hover > .drop-down {
                 color: $red;
                 display: block;
                 z-index: 2;
             }
         }  
+
         &__drop {
             width: 100%;
             height: auto;
@@ -320,15 +333,18 @@ export default {
             line-height: 16px;
             text-align: left;
             padding-left: .4rem;
+
             &:hover {
                 width: 100%;
                 background: $red;
             }
+
             &:hover .dot {
                 background: black;
             }
         }
 }
+
 .drop-down {
     z-index: -1;
     width: 100%;
@@ -338,6 +354,7 @@ export default {
     left: 0;
     display: none;
 }
+
 .top-bar {
     position: absolute;
     top: 0;
@@ -348,11 +365,13 @@ export default {
     display: block;
     width: 100%;
 }
+
 .vert-border {
     width: 1px;
     height: 30px;
     background: $red;
 }
+
 .dot {
     display: inline-block;
     height: 10px;
@@ -361,7 +380,9 @@ export default {
     border-radius: 50%;
     margin-right: 5px;
 }
+
 //**********************MOBILE STYLES************************/
+
 .mobile-nav {
     position: fixed;
     top: 0;
@@ -374,20 +395,24 @@ export default {
     justify-content: space-between;
     align-items: center;
     min-height: 70px;
+
     @media(min-width: 760px) {
            display: none;
         }
+
     &__left {
         &--svg {
             width: 5.5rem;
         }
     }
 }
+
 .mobile-arrow {
     color: $red;
     font-size: 1.8rem;
     margin-left: 8px;
 }
+
 .mobile-burger {
     z-index: 1;
     width: 40px;
@@ -395,6 +420,7 @@ export default {
     transform: rotate(0deg);
     transition: .5s ease-in-out;
     cursor: pointer;
+
     & span {
         display: block;
         position: absolute;
@@ -406,14 +432,17 @@ export default {
         transform: rotate(0deg);
         transition: .25s ease-in-out;
     }
+
     & span:nth-child(1) {
         top: 0px;
         transform-origin: left center;
     }
+
     & span:nth-child(2) {
         top: 10px;
         transform-origin: left center;
     }
+
     & span:nth-child(3) {
         top: 20px;
         transform-origin: left center;
@@ -423,25 +452,31 @@ export default {
 .slideOpen {
     left: -50rem !important;
 }
+
 .burgerOpen {
+
     &Top {
         top: -8px !important;
         right: 0px !important;
         transform: rotate(45deg) !important;
     }
+
     &Mid {
         width: 0% !important;
         opacity: 0 !important;
     }
+
     &Bot {
         transform: rotate(-45deg) !important;
     }
 }
+
 .mobile {
     &-icon {
         width: 1.6rem;
         margin-left: .5rem;
     }
+
     &__overlay {
         position: absolute;
         top: 4.6rem;
@@ -454,6 +489,7 @@ export default {
         width: 100vw;
         height: 100vh;
         transition: all .4s;
+
         &--inner {
             position: absolute;
             top: .5rem;
@@ -464,6 +500,7 @@ export default {
             transition: all .4s;
         }
     }
+
     &__link {
         display: flex;
         align-items: center;
