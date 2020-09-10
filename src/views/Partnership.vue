@@ -103,13 +103,12 @@ export default {
                 2. Subscriber is considered active once he or she has signed a Contract Agreement, and has paid both monthly and Multiple Service fees.
                 3. If the Subscriber changes Plan initially chosen, the Partner’s compensation will be calculated based on the new Plan.
                 4. Partner’s compensation payment for previously signed Subscriber shall cease upon the termination of Subscriber's Contract Agreement or if the (Partner has not signed up any new Subscriber(s) for 3 (three) consecutive months.
-                5. Once, after the period specified in paragraph 4, the Partner starts signing up Subscribers, then his or her compensation is calculated from newly signed Subscribers (excluding previously attracted Subscribers)."`
+                5. Once, after the period specified in paragraph 4, the Partner starts signing up Subscribers, then his or her compensation is calculated from newly signed Subscribers (excluding previously attracted Subscribers).`
             }
         }
     },
     methods: {
         openDesc(num) {
-            console.log('clicked', num);
             this.contentIndex = num;
             this.descOpen = true;
         }

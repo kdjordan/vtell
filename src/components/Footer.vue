@@ -20,12 +20,12 @@
                     </svg>
                 </div>
                 <div class="social__middle">
-                    <img class="icon social-icon" src="../assets/SVG/footer/footerFB.svg" alt="facebook icon">
-                    <img class="icon social-icon" src="../assets/SVG/footer/footerIG.svg" alt="instagram icon">
-                    <img class="icon social-icon" src="../assets/SVG/footer/footerLI.svg" alt="linkedin icon">
-                    <img class="icon social-icon" src="../assets/SVG/footer/footerTWIT.svg" alt="twitter icon">
-                    <img class="icon social-icon" src="../assets/SVG/footer/footerTELEGRAM.svg" alt="telegram icon">
-                    <img class="icon social-icon" src="../assets/SVG/footer/footerYT.svg" alt="youtube icon">
+                    <a href="https://facebook.com/vtellofficial/" rel="noopener noreferrer" target="_blank"><img class="icon social-icon" src="../assets/SVG/footer/footerFB.svg" alt="facebook icon"></a> 
+                    <a href=" https://instagram.com/vtellofficial/" rel="noopener noreferrer" target="_blank"><img class="icon social-icon" src="../assets/SVG/footer/footerIG.svg" alt="instagram icon"></a>
+                    <a href=" https://linkedin.com/company/v-tell-group/" rel="noopener noreferrer" target="_blank"><img class="icon social-icon" src="../assets/SVG/footer/footerLI.svg" alt="linkedin icon"></a>
+                    <a href=" https://twitter.com/VTellGroup" rel="noopener noreferrer" target="_blank"><img class="icon social-icon" src="../assets/SVG/footer/footerTWIT.svg" alt="twitter icon"></a>
+                    <a href="https://t.me/vtell" rel="noopener noreferrer" target="_blank"><img class="icon social-icon" src="../assets/SVG/footer/footerTELEGRAM.svg" alt="telegram icon"></a>
+                    <a href="https://youtube.com" rel="noopener noreferrer" target="_blank"><img class="icon social-icon" src="../assets/SVG/footer/footerYT.svg" alt="youtube icon"></a>
                 </div>
                 <div class="social__right">
                     <img class="icon social-icon" src="../assets/SVG/footer/headphones.svg" alt="phone numbers icon">
@@ -170,12 +170,12 @@
             </div>
         </div>
         <div class="social__bottom">
-            <img class="icon social-icon" src="../assets/SVG/footer/footerFB.svg" alt="facebook icon">
-            <img class="icon social-icon" src="../assets/SVG/footer/footerIG.svg" alt="instagram icon">
-            <img class="icon social-icon" src="../assets/SVG/footer/footerLI.svg" alt="linkedin icon">
-            <img class="icon social-icon" src="../assets/SVG/footer/footerTWIT.svg" alt="twitter icon">
-            <img class="icon social-icon" src="../assets/SVG/footer/footerTELEGRAM.svg" alt="telegram icon">
-            <img class="icon social-icon" src="../assets/SVG/footer/footerYT.svg" alt="youtube icon">
+            <a href="https://facebook.com/vtellofficial/" rel="noopener noreferrer" target="_blank"><img class="icon social-icon" src="../assets/SVG/footer/footerFB.svg" alt="facebook icon"></a> 
+            <a href=" https://instagram.com/vtellofficial/" rel="noopener noreferrer" target="_blank"><img class="icon social-icon" src="../assets/SVG/footer/footerIG.svg" alt="instagram icon"></a>
+            <a href=" https://linkedin.com/company/v-tell-group/" rel="noopener noreferrer" target="_blank"><img class="icon social-icon" src="../assets/SVG/footer/footerLI.svg" alt="linkedin icon"></a>
+            <a href=" https://twitter.com/VTellGroup"  rel="noopener noreferrer" target="_blank"><img class="icon social-icon" src="../assets/SVG/footer/footerTWIT.svg" alt="twitter icon"></a>
+            <a href="https://t.me/vtell" rel="noopener noreferrer" target="_blank"><img class="icon social-icon" src="../assets/SVG/footer/footerTELEGRAM.svg" alt="telegram icon"></a>
+            <a href="https://youtube.com" rel="noopener noreferrer" target="_blank"><img class="icon social-icon" src="../assets/SVG/footer/footerYT.svg" alt="youtube icon"></a>
         </div>
     </div>
 </div>
@@ -219,6 +219,8 @@ export default {
 .icon {
     cursor: pointer;
     fill: white;
+    filter: opacity(100%);
+    transition: all .4s;
     &:hover {
         filter: opacity(50%);
     }
@@ -336,7 +338,7 @@ export default {
         display: flex;
         justify-content: space-evenly;
 
-        & .social-icon {
+        & a.social-icon {
             width: 8%;
         }
     }
