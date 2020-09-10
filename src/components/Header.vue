@@ -201,7 +201,7 @@ export default {
         return {
             mobileOpen: true,
             addOpaqueBack: false,
-            searchModal: true
+            searchModal: false
         }
     },
     methods: {
