@@ -5,7 +5,7 @@
         alt="V-Tell Telecom US"
         :class="{noShow: !show}"
         >
-      <img v-else class="hero__img no-show" 
+      <img v-else class="hero__img" 
         :src="`${this.images[this.slideIndex].pathSm}`" 
         alt="V-Tell Telecom US"
         :class="{noShow: !show}"
@@ -19,16 +19,6 @@
           <span :class="{active : slideIndex == 5  }" class="hero__controls--circle" @click.prevent="selectSlide(5)"></span>
           <span :class="{active : slideIndex == 6  }" class="hero__controls--circle" @click.prevent="selectSlide(6)"></span>
       </div>
-      <!-- <div class="hero__mssg" 
-      :class="{noShow: !show}" 
-      :style="{
-        left: getLeftText + 'px', 
-        color: `${this.images[this.slideIndex].color}`,
-        fontSize: `${this.images[this.slideIndex].size}` + 'vw'
-        }"
-      >
-        {{`${this.images[this.slideIndex].mssg}`}}
-      </div> -->
       <div class="hero__mssg" 
       :class="{noShow: !show}" 
       :style="{
@@ -39,10 +29,7 @@
         }"
       >
         {{`${this.images[this.slideIndex].mssg}`}}
-      </div>
-      <!-- <p style="margin-top: 10rem;">{{this.images[this.slideIndex].path}}</p>  -->
-      <!-- <p>{{slideIndex}}</p> -->
-      
+      </div>  
 </div>
 </template>
 
@@ -138,7 +125,7 @@ export default {
     startSlider() {
       this.sliderTimer = setInterval(()=> {
         this.doFade();
-      }, 3000)
+      }, 3000);
     },
     doFade(){
       this.show = false;
@@ -150,7 +137,7 @@ export default {
           this.slideIndex++;
           this.show = true;
         }
-      }, 400)
+      }, 400);
     },
     handleResize() {
         this.windowWidth = window.innerWidth;

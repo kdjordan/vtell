@@ -20,13 +20,13 @@ import PlanVmax from "./views/PlanVmax.vue";
 import CoverageMap from "./views/CoverageMap.vue";
 import Settings from "./views/Settings.vue";
 import Faq from "./views/Faq.vue";
+import Cart from "./views/Cart.vue";
 
 Vue.use(Router);
 
 export default new Router({
   mode: "history",
   base: process.env.BASE_URL,
-//   base: 'http://v-tell-static.s3-us-west-2.amazonaws.com/index.html',
   routes: [
     {
       path: "/",
@@ -89,7 +89,7 @@ export default new Router({
       component: CorporateServices
     },
     {
-      path: "/advantages-list",
+      path: "/advantages-list/:id",
       name: "advantages-list",
       component: AdvantagesList
     },
@@ -127,6 +127,11 @@ export default new Router({
       path: "/faq",
       name: "faq",
       component: Faq
+    },
+    {
+      path: "/cart",
+      name: "cart",
+      component: Cart
     },
     // {
     //   path: "/about",

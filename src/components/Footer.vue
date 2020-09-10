@@ -20,16 +20,16 @@
                     </svg>
                 </div>
                 <div class="social__middle">
-                    <img class="icon social-icon" src="../assets/SVG/footer/footerFB.svg" alt="facebook icon">
-                    <img class="icon social-icon" src="../assets/SVG/footer/footerIG.svg" alt="instagram icon">
-                    <img class="icon social-icon" src="../assets/SVG/footer/footerLI.svg" alt="linkedin icon">
-                    <img class="icon social-icon" src="../assets/SVG/footer/footerTWIT.svg" alt="twitter icon">
-                    <img class="icon social-icon" src="../assets/SVG/footer/footerTELEGRAM.svg" alt="telegram icon">
-                    <img class="icon social-icon" src="../assets/SVG/footer/footerYT.svg" alt="youtube icon">
+                    <a href="https://facebook.com/vtellofficial/" rel="noopener noreferrer" target="_blank"><img class="icon social-icon" src="../assets/SVG/footer/footerFB.svg" alt="facebook icon"></a> 
+                    <a href=" https://instagram.com/vtellofficial/" rel="noopener noreferrer" target="_blank"><img class="icon social-icon" src="../assets/SVG/footer/footerIG.svg" alt="instagram icon"></a>
+                    <a href=" https://linkedin.com/company/v-tell-group/" rel="noopener noreferrer" target="_blank"><img class="icon social-icon" src="../assets/SVG/footer/footerLI.svg" alt="linkedin icon"></a>
+                    <a href=" https://twitter.com/VTellGroup" rel="noopener noreferrer" target="_blank"><img class="icon social-icon" src="../assets/SVG/footer/footerTWIT.svg" alt="twitter icon"></a>
+                    <a href="https://t.me/vtell" rel="noopener noreferrer" target="_blank"><img class="icon social-icon" src="../assets/SVG/footer/footerTELEGRAM.svg" alt="telegram icon"></a>
+                    <a href="https://youtube.com" rel="noopener noreferrer" target="_blank"><img class="icon social-icon" src="../assets/SVG/footer/footerYT.svg" alt="youtube icon"></a>
                 </div>
                 <div class="social__right">
                     <img class="icon social-icon" src="../assets/SVG/footer/headphones.svg" alt="phone numbers icon">
-                    <img class="icon social-icon" src="../assets/SVG/footer/footerMSG.svg" alt="mail icon">
+                    <img @click.prevent="launchMssgModal" class="icon social-icon" src="../assets/SVG/footer/footerMSG.svg" alt="mail icon">
                 </div>
             </div>
             <div v-if="footerPanel == 1" class="footer__content mt-1">
@@ -89,9 +89,10 @@
                     &reg;&nbsp;All rights reserved.  
                 </div>
             </div>
-        </div>  
+        </div> 
     </div>
     <div v-else class="footer-sm">
+
         <button class="footer__btn mt-1 mb-1">Become customer</button>
         <div class="social__top mb-1">
             <svg @click.prevent="footerPanel = 1" class="social-icon icon"  :class="{iconActive: activePanel == 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34" alt="phone numbers icon">
@@ -170,28 +171,33 @@
             </div>
         </div>
         <div class="social__bottom">
-            <img class="icon social-icon" src="../assets/SVG/footer/footerFB.svg" alt="facebook icon">
-            <img class="icon social-icon" src="../assets/SVG/footer/footerIG.svg" alt="instagram icon">
-            <img class="icon social-icon" src="../assets/SVG/footer/footerLI.svg" alt="linkedin icon">
-            <img class="icon social-icon" src="../assets/SVG/footer/footerTWIT.svg" alt="twitter icon">
-            <img class="icon social-icon" src="../assets/SVG/footer/footerTELEGRAM.svg" alt="telegram icon">
-            <img class="icon social-icon" src="../assets/SVG/footer/footerYT.svg" alt="youtube icon">
+            <a href="https://facebook.com/vtellofficial/" rel="noopener noreferrer" target="_blank"><img class="icon social-icon" src="../assets/SVG/footer/footerFB.svg" alt="facebook icon"></a> 
+            <a href=" https://instagram.com/vtellofficial/" rel="noopener noreferrer" target="_blank"><img class="icon social-icon" src="../assets/SVG/footer/footerIG.svg" alt="instagram icon"></a>
+            <a href=" https://linkedin.com/company/v-tell-group/" rel="noopener noreferrer" target="_blank"><img class="icon social-icon" src="../assets/SVG/footer/footerLI.svg" alt="linkedin icon"></a>
+            <a href=" https://twitter.com/VTellGroup"  rel="noopener noreferrer" target="_blank"><img class="icon social-icon" src="../assets/SVG/footer/footerTWIT.svg" alt="twitter icon"></a>
+            <a href="https://t.me/vtell" rel="noopener noreferrer" target="_blank"><img class="icon social-icon" src="../assets/SVG/footer/footerTELEGRAM.svg" alt="telegram icon"></a>
+            <a href="https://youtube.com" rel="noopener noreferrer" target="_blank"><img class="icon social-icon" src="../assets/SVG/footer/footerYT.svg" alt="youtube icon"></a>
         </div>
     </div>
+     
 </div>
 </template>
 
 <script>
+import { bus } from '../main';
 export default {
     data() {
         return {
             windowWidth: 0,
-            footerPanel: 1
+            footerPanel: 1,
         }
     },
     methods: {
         handleResize() {
             this.windowWidth = window.innerWidth;
+        },
+        launchMssgModal() {
+            bus.$emit('launchMssg');
         }
     },
     computed: {
@@ -216,9 +222,12 @@ export default {
 @import '../scss/_base.scss';
 @import '../scss/_utilities.scss';
 
+
 .icon {
     cursor: pointer;
     fill: white;
+    filter: opacity(100%);
+    transition: all .4s;
     &:hover {
         filter: opacity(50%);
     }
@@ -254,15 +263,21 @@ export default {
         color: white;
         min-height: 40vh;
         
-        @media(max-width: 960px) {
+        @media(max-width: 768px) {
             margin: 0 1rem;
         }
 
         &--entry {
             margin: 1rem 0;
+            @media(max-width: 768px) {
+                margin: 0;
+            }
 
             & > * {
                 margin: .3rem 0;
+                @media(max-width: 768px) {
+                    margin: .2rem 0;
+                }
             }
         }
 
@@ -330,7 +345,7 @@ export default {
         display: flex;
         justify-content: space-evenly;
 
-        & .social-icon {
+        & a.social-icon {
             width: 8%;
         }
     }
@@ -364,6 +379,10 @@ export default {
             display: flex;
             justify-content: center;
             align-items: center;
+
+            @media(max-width: 768px) {
+                margin: .1rem 0rem;
+            }
 
             & .social-icon {
                 width: 9%;
@@ -404,8 +423,6 @@ export default {
                 display: flex;
                 flex-direction: column;
             }
-
-           
         }
 
         & .city {
@@ -422,7 +439,6 @@ export default {
             & .number {
                 font-size: 14px;
             }
-
         }
 
     & .footer__copyright {

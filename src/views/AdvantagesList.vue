@@ -95,18 +95,15 @@ export default {
     methods: {
         activateList(num) {
             this.listActive[num] = !this.listActive[num];
-            console.log(this.listActive[num])
         }
     },
-    created() {
-        
-    },
-    mounted () {
-        bus.$on('incoming', (data) => {
-            console.log('before',this.listActive[data])
-            this.listActive[data] = true;
-            console.log('after',this.listActive[data])
-        })
+    mounted() {
+        let theId = this.$route.params.id;
+        if(theId == 0) {
+            return;
+        } else {
+            this.listActive[theId] = true;
+        }
         window.scrollTo(0, 0);
     }
 }
@@ -166,7 +163,7 @@ export default {
 }
 
 .activeDesc {
-    max-height: 10rem;
+    max-height: 17rem;
     height: auto;
     opacity: 1;
 }
