@@ -2,21 +2,36 @@
   <div id="app">
     <Header />
     <transition name="fade" mode="out-in">
-    <router-view />
+        <router-view />
     </transition>
     <Footer />
+    <transition name="fade" mode="out-in">
+        <MssgModal v-if="mssgModal" />
+    </transition>
   </div>
 </template>
 
 <script>
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import MssgModal from '@/components/MssgModal';
+import { bus } from './main';
 export default {
-  components: {
-    Header,
-    Footer
-  }
+    components: {
+        Header,
+        Footer,
+        MssgModal
+    },
+    data() {
+        return {
+            mssgModal: true
+        }
+    },
+    created() {
+        bus.$on('launchMssg', () => {
+            this.mssgModal = !this.mssgModal;
+        })
+    }
 }
 </script>
 

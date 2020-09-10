@@ -183,7 +183,7 @@
     <div v-if="searchModal" class="search-modal">
         <div class="search-modal__top">
             <div>SEARCH</div>
-            <div @click.prevent="searchModal = false">X</div>
+            <div @click.prevent="searchModal = false">&#10005;</div>
         </div>
         <div class="search-modal__mid">
             <input type="text" name="" id="">

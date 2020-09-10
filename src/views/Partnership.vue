@@ -168,7 +168,6 @@ export default {
 }
 
 .partner-desc {
-    // display: none;
     background: #52524f;
     margin-bottom: 2rem;
     padding: 40px 60px;

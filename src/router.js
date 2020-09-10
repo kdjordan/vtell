@@ -20,6 +20,7 @@ import PlanVmax from "./views/PlanVmax.vue";
 import CoverageMap from "./views/CoverageMap.vue";
 import Settings from "./views/Settings.vue";
 import Faq from "./views/Faq.vue";
+import Cart from "./views/Cart.vue";
 
 Vue.use(Router);
 
@@ -127,6 +128,11 @@ export default new Router({
       path: "/faq",
       name: "faq",
       component: Faq
+    },
+    {
+      path: "/cart",
+      name: "cart",
+      component: Cart
     },
     // {
     //   path: "/about",

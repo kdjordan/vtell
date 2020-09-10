@@ -29,7 +29,7 @@
                 </div>
                 <div class="social__right">
                     <img class="icon social-icon" src="../assets/SVG/footer/headphones.svg" alt="phone numbers icon">
-                    <img class="icon social-icon" src="../assets/SVG/footer/footerMSG.svg" alt="mail icon">
+                    <img @click.prevent="launchMssgModal" class="icon social-icon" src="../assets/SVG/footer/footerMSG.svg" alt="mail icon">
                 </div>
             </div>
             <div v-if="footerPanel == 1" class="footer__content mt-1">
@@ -89,9 +89,10 @@
                     &reg;&nbsp;All rights reserved.  
                 </div>
             </div>
-        </div>  
+        </div> 
     </div>
     <div v-else class="footer-sm">
+
         <button class="footer__btn mt-1 mb-1">Become customer</button>
         <div class="social__top mb-1">
             <svg @click.prevent="footerPanel = 1" class="social-icon icon"  :class="{iconActive: activePanel == 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34" alt="phone numbers icon">
@@ -178,20 +179,25 @@
             <a href="https://youtube.com" rel="noopener noreferrer" target="_blank"><img class="icon social-icon" src="../assets/SVG/footer/footerYT.svg" alt="youtube icon"></a>
         </div>
     </div>
+     
 </div>
 </template>
 
 <script>
+import { bus } from '../main';
 export default {
     data() {
         return {
             windowWidth: 0,
-            footerPanel: 1
+            footerPanel: 1,
         }
     },
     methods: {
         handleResize() {
             this.windowWidth = window.innerWidth;
+        },
+        launchMssgModal() {
+            bus.$emit('launchMssg');
         }
     },
     computed: {
@@ -215,6 +221,7 @@ export default {
 @import '../scss/_variables.scss';
 @import '../scss/_base.scss';
 @import '../scss/_utilities.scss';
+
 
 .icon {
     cursor: pointer;

@@ -97,7 +97,7 @@ export default {
             this.listActive[num] = !this.listActive[num];
         }
     },
-    mounted () {
+    mounted() {
         let theId = this.$route.params.id;
         if(theId == 0) {
             return;

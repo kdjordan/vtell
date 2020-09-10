@@ -12,7 +12,7 @@
             <p>V-Tell Customer Care ensures that V-Tell customer partners, relatives and friends all benefit. A call to another V-Tell Subscriber from anywhere in the world* is charged according to the caller’s local rate.</p>
             <p>V-Tell Team members have extensive telecommunications experience. Many of them have worked with major international telecoms companies or developed telecoms products and services, which are now used as industry standards.</p>
         </div>
-        <div class="page__block mb-1">
+        <div class="page__block mb-1" @click.prevent="gotoPressPage()">
             <div class="page__block--title">Press-Centre</div>
             <div class="page__block--cube">
             <img src="../assets/pages/cube-tab.png" alt="">
@@ -30,6 +30,11 @@ import PageDivider from '@/components/PageDivider';
 import PageCrumbs from '@/components/PageCrumbs';
 export default {
     components: {PageDivider, PageCrumbs},
+    methods: {
+        gotoPressPage() {
+            this.$router.push('/press-center');
+        }
+    },
     mounted () {
         window.scrollTo(0, 0);
     }
