@@ -27,7 +27,6 @@ Vue.use(Router);
 export default new Router({
   mode: "history",
   base: process.env.BASE_URL,
-//   base: 'http://v-tell-static.s3-us-west-2.amazonaws.com/index.html',
   routes: [
     {
       path: "/",
