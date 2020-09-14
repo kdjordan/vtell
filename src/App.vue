@@ -6,7 +6,7 @@
     </transition>
     <Footer />
     <transition name="fade" mode="out-in">
-        <MssgModal v-if="mssgModal" />
+        <MssgModal v-if="mssgModal" :type="modalType" />
     </transition>
   </div>
 </template>
@@ -24,11 +24,14 @@ export default {
     },
     data() {
         return {
-            mssgModal: false
+            mssgModal: false,
+            modalType: ''
         }
     },
     created() {
-        bus.$on('launchMssg', () => {
+        bus.$on('launchMssg', (data) => {
+            console.log(data)
+            this.modalType = data
             this.mssgModal = !this.mssgModal;
         })
     }

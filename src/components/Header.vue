@@ -8,7 +8,7 @@
             </div>
             <div class="menu-container">
             <nav class="nav-menu nav-menu__upper">
-                <router-link class="nav-link nav-link__upper" to="/" @click.native="launchSearchModal()">
+                <router-link class="nav-link nav-link__upper" to="#" @click.native="launchSearchModal()">
                     <span class="nav-link__container">
                         <div class="nav-link__container--text">Search</div>  
                         <img class="icon" src="../assets/nav/search.svg" alt="">
@@ -180,18 +180,20 @@
             </div>
         </div>
     </nav>
-    <div v-if="searchModal" class="search-modal">
-        <div class="search-modal__top">
-            <div>SEARCH</div>
-            <div @click.prevent="searchModal = false">&#10005;</div>
+    <transition name="fade">
+        <div v-if="searchModal" class="search-modal">
+            <div class="search-modal__top">
+                <div>SEARCH</div>
+                <div @click.prevent="searchModal = false">&#10005;</div>
+            </div>
+            <div class="search-modal__mid">
+                <input type="text" name="" id="">
+            </div>
+            <div class="search-modal__bot">
+                <button>FIND</button>
+            </div>
         </div>
-        <div class="search-modal__mid">
-            <input type="text" name="" id="">
-        </div>
-        <div class="search-modal__bot">
-            <button>FIND</button>
-        </div>
-    </div>
+    </transition>
 </div>
 </template>
 
@@ -213,11 +215,9 @@ export default {
             }
         },
         closeMobile() {
-            console.log('closing');
             this.mobileOpen = true;
         },
         launchSearchModal() {    
-            console.log('clicked');
             this.searchModal = !this.searchModal;
         }
     },

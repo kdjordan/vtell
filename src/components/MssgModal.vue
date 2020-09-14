@@ -1,5 +1,6 @@
 <template>
 <div class="mssg-modal">
+    <div v-if="type == 'mssg'" class="mssg-modal__container">
         <div class="mssg-modal__top">
             <div class="mssg-modal__top--left">
                 <div>Ask a question</div> 
@@ -21,7 +22,7 @@
                 <input type="text" name="email" id="email" class="modal-form__input-text">
             </div>
             <div>
-                <label for="Question">Message</label>
+                <label for="Question" class="modal-form__input-textarea--label">Message</label>
                 <textarea name="mssg" id="mssg" cols="40" rows="10" class="modal-form__input-textarea"></textarea>
             </div>
         </div>
@@ -35,17 +36,48 @@
             <button class="mssg-modal__bot--button">Submit</button>
         </div>
     </div>
+    <div v-else class="mssg-modal__container">
+        <div class="mssg-modal__top mssg-modal__top--callback">
+            <div>REQUEST A CALL BACK</div> 
+            <img src="../assets/SVG/footer/headphones.svg" alt="phone numbers icon">
+            <div @click.prevent="closeModal()" class="mssg-modal__top--right">&#10005;</div>
+        </div>
+        <div class="mssg-modal__form">
+            <div class="mssg-modal__form--cb">
+                <label for="cbname">Name</label>
+                <input type="text" name="cbname" id="cbname" class="modal-form__input-text">
+            </div>
+            <div class="mssg-modal__form--cb">
+                <label for="cbphone" class="cb-label" >Contact<br>Number</label>
+                <input type="text" name="cbphone" id="cbphone" class="modal-form__input-text">
+            </div>
+            <div class="mssg-modal__form--cb">
+                <label for="cbtime" class="cb-label" >Preferable<br>Time</label>
+                <input type="text" name="cbtime" id="cbtime" class="modal-form__input-text">
+            </div>
+        </div>
+        <div class="mssg-modal__bot">
+            <div class="mssg-modal__bot--checkbox-wrap">
+                <div>I agree with personal data processing</div>
+                <div>
+                    <input type="checkbox" name="" id="" class="modal-form__input-check">
+                </div>
+            </div>
+            <button class="mssg-modal__bot--button">Submit</button>
+        </div>
+    </div>
+</div>
 </template>
 
 <script>
 import { bus } from '../main';
 export default {
+    props: ['type'],
     methods: {
         closeModal() {
             bus.$emit('launchMssg');
         }
     }
-
 }
 </script>
 
@@ -54,22 +86,47 @@ export default {
 
 .mssg-modal {
     position: fixed;
-    top: 20%;
-    left: 30%;
-    width: 40%;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    background: #6f6f6e;
-    font-family: inherit;
-    color: $vwhite2;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, .8);
+
+
+    &__container {
+        background: #6f6f6e;
+        font-family: inherit;
+        color: $vwhite2;
+        width: 40%;
+        max-width: 600px;
+        min-width: 400px;
+    }
 
     &__top {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
         width: 100%;
-        padding: 2rem 1rem;
+        padding: 1.5rem 2rem;
+
+        &--callback {
+            font-size: 24px;
+            justify-content: center;
+            align-items: center;
+
+            & img {
+                width: 4rem;
+                margin: 0 1.5rem;
+            }
+
+            & .mssg-modal__top--right {
+               margin-bottom: 2rem;
+               margin-left: 2rem;
+            }
+        }
         
 
         &--left {
@@ -105,20 +162,30 @@ export default {
         flex-direction: column;
         font-size: 16px;
         min-width: 0;
+        width: 100%;
+        margin: 0 auto;
+
+        &--cb {
+            display: flex;
+            justify-content: center;
+            width: 80%;
+            margin: 0 auto;
+            align-items: center;
+
+            &__input-text {
+                width: 80%;
+            }
+        }
 
         & label {
-            margin-right: 4rem;
+            text-align: left;
+            width: 100px;
         }
 
-        & div:nth-child(4) {
-            width: 85%;
-            margin: 0 auto;
-            margin-top: 1rem;
+        & .cb-label {
+            display: flex;
         }
 
-        & div:nth-child(4) > label {
-            vertical-align: top;
-        }
     }
 
     &__bot {
@@ -149,10 +216,19 @@ export default {
         border-bottom: 1px solid $vwhite2;
         margin: 1rem 0;
         width: 60%;
+        @media(max-width: 1370px) {
+            
+        }
     }
 
     &__input-textarea {
         background: rgba(242, 242, 242, 0.07);
+        width: 60%;
+        margin-right: 1.5rem;
+
+        &--label {
+            vertical-align: top;
+        }
     }
     
     &__input-check {
@@ -162,5 +238,11 @@ export default {
     }
 }
 
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 1s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
 
 </style>

@@ -28,8 +28,8 @@
                     <a href="https://youtube.com" rel="noopener noreferrer" target="_blank"><img class="icon social-icon" src="../assets/SVG/footer/footerYT.svg" alt="youtube icon"></a>
                 </div>
                 <div class="social__right">
-                    <img class="icon social-icon" src="../assets/SVG/footer/headphones.svg" alt="phone numbers icon">
-                    <img @click.prevent="launchMssgModal" class="icon social-icon" src="../assets/SVG/footer/footerMSG.svg" alt="mail icon">
+                    <img @click.prevent="launchModal('call')" class="icon social-icon" src="../assets/SVG/footer/headphones.svg" alt="phone numbers icon">
+                    <img @click.prevent="launchModal('mssg')" class="icon social-icon" src="../assets/SVG/footer/footerMSG.svg" alt="mail icon">
                 </div>
             </div>
             <div v-if="footerPanel == 1" class="footer__content mt-1">
@@ -196,8 +196,8 @@ export default {
         handleResize() {
             this.windowWidth = window.innerWidth;
         },
-        launchMssgModal() {
-            bus.$emit('launchMssg');
+        launchModal(type) {
+            bus.$emit('launchMssg', type);
         }
     },
     computed: {
