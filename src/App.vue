@@ -30,9 +30,12 @@ export default {
     },
     created() {
         bus.$on('launchMssg', (data) => {
-            console.log(data)
-            this.modalType = data
-            this.mssgModal = !this.mssgModal;
+            if(data == 'close') {
+                this.mssgModal = false;
+            } else {
+                this.modalType = data
+                this.mssgModal = !this.mssgModal;
+            }
         })
     }
 }

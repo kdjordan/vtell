@@ -1,5 +1,5 @@
 <template>
-<div class="mssg-modal">
+<div class="mssg-modal" @click.stop="closeModal()">
     <div v-if="type == 'mssg'" class="mssg-modal__container">
         <div class="mssg-modal__top">
             <div class="mssg-modal__top--left">
@@ -75,7 +75,7 @@ export default {
     props: ['type'],
     methods: {
         closeModal() {
-            bus.$emit('launchMssg');
+            bus.$emit('launchMssg', 'close');
         }
     }
 }
@@ -180,6 +180,7 @@ export default {
         & label {
             text-align: left;
             width: 100px;
+            margin-right: 1rem;
         }
 
         & .cb-label {

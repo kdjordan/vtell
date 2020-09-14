@@ -7,7 +7,7 @@
             <p>V-Tell is a rapidly growing telecommunication company acting as an International Mobile Operator, devoted to provide services and innovative technology to customers across the globe. One V-Tell SIM card allows the subscriber to get unlimited amount of phone numbers with no roaming internet and mobile services.</p>
             <button class="plans__btn mt-2 mb-2"  @click.prevent="toggleButton()" >{{buttonMssg}}&nbsp;&nbsp;&nbsp;&nbsp;<span style="padding-bottom: 8px;">{{buttonMssgExt}}</span></button>
 
-            <div v-if="buttonActive">
+            <div v-if="buttonActive" class="toggle-content">
                 <div class="plans__title">V-TELL PRICES, PACKAGES, BUNDLES, DEALS</div>
                 <p class="mb-1">There are four Package Deals (the amount of data and minutes differs).</p>  
                 <p class="mb-1">V-1, V-2, V-3, V-Max offered to our Subscribers. Each of them includes the following services:</p> 
@@ -331,6 +331,10 @@ export default {
 p {
     color: rgba(252, 252, 252, 0.8);
     text-align: left;
+}
+
+.toggle-content {
+    width: 100%;
 }
 
 .btn-plans {
