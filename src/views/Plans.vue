@@ -74,7 +74,7 @@
 
                 </div>
                 <button class="btn-pricing">BUY NOW</button>
-                <button class="btn-pricing btn-ghost">READ MORE</button>
+                <router-link :to="`${theCards[indicies.first].route}`"><button class="btn-pricing btn-ghost">READ MORE</button></router-link>
         
             </div>
 
@@ -115,7 +115,7 @@
 
                 </div>
                 <button class="btn-pricing">BUY NOW</button>
-                <button class="btn-pricing btn-ghost">READ MORE</button>
+                <router-link :to="`${theCards[indicies.second].route}`"><button class="btn-pricing btn-ghost">READ MORE</button></router-link>
         
             </div>
 
@@ -156,7 +156,7 @@
 
                 </div>
                 <button class="btn-pricing">BUY NOW</button>
-                <button class="btn-pricing btn-ghost">READ MORE</button>
+                <router-link :to="`${theCards[indicies.third].route}`"><button class="btn-pricing btn-ghost">READ MORE</button></router-link>
         
             </div>
         </div>
@@ -200,7 +200,8 @@ export default {
                     sms: 'UNLIMITED',
                     data: 5,
                     euroPrice: 90,
-                    dollarPrice: 98
+                    dollarPrice: 98,
+                    route: '/plan-v1'
                 },
                 {
                     plan: 'V-2',
@@ -209,7 +210,8 @@ export default {
                     sms: 'UNLIMITED',
                     data: 10,
                     euroPrice: 140,
-                    dollarPrice: 160
+                    dollarPrice: 160,
+                    route: '/plan-v2'
                 },
                 {
                     plan: 'V-3',
@@ -218,7 +220,8 @@ export default {
                     sms: 'UNLIMITED',
                     data: 15,
                     euroPrice: 190,
-                    dollarPrice: 219
+                    dollarPrice: 219,
+                    route: '/plan-v3'
                 },
                 {
                     plan: 'V-MAXX',
@@ -227,7 +230,8 @@ export default {
                     sms: 'UNLIMITED',
                     data: 'UNLIMITED',
                     euroPrice: 500,
-                    dollarPrice: 570
+                    dollarPrice: 570,
+                    route: '/plan-vmax'
                 },
             ]
         }
@@ -353,5 +357,6 @@ p {
         border: 1px solid $red;
     }
 }
+
 
 </style>

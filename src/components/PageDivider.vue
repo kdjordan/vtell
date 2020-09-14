@@ -24,6 +24,10 @@ export default {
     justify-content: flex-start;
     margin-bottom: 3rem;
 
+    @media(max-width: 960px) {
+        margin-left: 2rem;
+    } 
+
     &__cube {
       height: 50px;
     }
