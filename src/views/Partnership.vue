@@ -9,27 +9,42 @@
             <p>V-Tell is interested in collaboration with sales agents to promote our mobile services. The Partner’s target is to spread our mobile network services by attracting new Subscribers. V-Tell offers enticing compensation, which is 10% of a monthly subscription fee. The more customers you sign up, the more you earn.</p>
             <p class="red">Please use a partner compensation calculator to estimate your future earnings</p>
             <div class="calc__container">
-            <div class="calc__header">
-                <div>Subscriber Count</div>
-                <div>Amount of additional phone Monthly Plan numbers sold (extra phone numbers purchased by a Subscriber)</div>
-                <div>Monthly Plan</div>
-            </div>
-            <div class="calc__row">
-                <div><input class="calc__row--input" type="text" name="" id=""></div>
-                <div><input class="calc__row--input" type="text" name="" id=""></div>
-                <div><input class="calc__row--input" type="text" name="" id=""></div>
-                <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="25" cy="25" r="23" stroke="#E7383B" stroke-width="3" fill="transparent"></circle>
-                    <line x1="14" y1="25" x2="36" y2="25" stroke="#E7383B" stroke-width="3" stroke-linecap="round"></line>
-                    <line x1="25" y1="14" x2="25" y2="36" stroke="#E7383B" stroke-width="3" stroke-linecap="round"></line>
-                </svg>
-            </div>
-            <div class="calc__row calc__row--end">
+                <div class="calc__row">
+                    <div class="calc__header--1">Subscriber Count</div>
+                    <div class="calc__header--2">Amount of additional phone Monthly Plan numbers sold (extra phone numbers purchased by a Subscriber)</div>
+                    <div class="calc__header--3">Monthly Plan</div>
+                    <div class="calc__header--4"></div>
+                </div>
+                <div class="calc__row">
+                    <div class="calc__header--1"><input class="calc__row--input" type="text" name="" id=""></div>
+                    <div class="calc__header--2"><input class="calc__row--input" type="text" name="" id=""></div>
+                    <div class="calc__header--3"><input class="calc__row--input" type="text" name="" id=""></div>
+                    <div class="calc__header--4">
+                        <svg class="calc__header--svg" width="50" height="50" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="25" cy="25" r="23" stroke="#E7383B" stroke-width="3" fill="transparent"></circle>
+                            <line x1="14" y1="25" x2="36" y2="25" stroke="#E7383B" stroke-width="3" stroke-linecap="round"></line>
+                            <line x1="25" y1="14" x2="25" y2="36" stroke="#E7383B" stroke-width="3" stroke-linecap="round"></line>
+                        </svg>
+                        <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="25" cy="25" r="23" stroke="#E7383B" stroke-width="3" fill="transparent"></circle>
+                            <line x1="14" y1="25" x2="36" y2="25" stroke="#E7383B" stroke-width="3" stroke-linecap="round"></line>
+                        </svg>
+                    </div>
+                </div>
+                <div class="calc__row">
+                    <div class="calc__header--1"></div>
+                    <div class="calc__header--2"></div>
+                    <div class="calc__header--3"><span style="margin-bottom: 1rem; display: block;">Currency</span>
+                        <input class="calc__row--input" type="text" name="" id="">
+                    </div>
+                    <div class="calc__header--4"></div>
+                </div>
+            <!-- <div class="calc__row calc__row--end">
                 <div class="calc__row--end-curr">Currency</div>
             </div>
             <div class="calc__row calc__row--end">
                 <div><input class="calc__row--input" type="text" name="" id=""></div>
-            </div>
+            </div> -->
         </div>
         <button class="partnership__btn">Calculate</button>
         </div>
@@ -367,14 +382,29 @@ export default {
     &__header {
         display: flex;
         justify-content: space-between;
-        margin-right: 5rem;
+        font-size: 16px;
+        line-height: 20px;
+        color: white;
+        text-align: left;
 
-        & > div {
-            font-size: 16px;
-            line-height: 20px;
-            color: white;
-            text-align: left;
-            flex: 0 0 30%;
+        &--1 {
+            width: 26%;
+        }
+
+        &--2 {
+            width: 30%;
+        }
+
+        &--3 {
+            width: 25%;
+        }
+
+        &--4 {
+            width: 19%;
+        }
+
+        &--svg {
+            margin: 0 .5rem;
         }
     }
     
@@ -386,8 +416,8 @@ export default {
         color: white;
         margin-bottom: 2rem;
 
-        & > div {
-            flex: 0 0 26%;
+        @media(max-width: 842px) {
+            flex-direction: column;
         }
 
         &--input {

@@ -1,12 +1,12 @@
 <template>
-<div class="mssg-modal" @click.stop="closeModal()">
+<div class="mssg-modal" @click="closeModal($event)">
     <div v-if="type == 'mssg'" class="mssg-modal__container">
         <div class="mssg-modal__top">
             <div class="mssg-modal__top--left">
                 <div>Ask a question</div> 
                 <div>All fields are required</div>
             </div>
-            <div @click.prevent="closeModal()" class="mssg-modal__top--right">&#10005;</div>
+            <div @click.prevent="closeModal(0)" class="mssg-modal__top--right">&#10005;</div>
         </div>
         <div class="mssg-modal__form">
             <div>
@@ -40,7 +40,7 @@
         <div class="mssg-modal__top mssg-modal__top--callback">
             <div>REQUEST A CALL BACK</div> 
             <img src="../assets/SVG/footer/headphones.svg" alt="phone numbers icon">
-            <div @click.prevent="closeModal()" class="mssg-modal__top--right">&#10005;</div>
+            <div @click.prevent="closeModal(0)" class="mssg-modal__top--right">&#10005;</div>
         </div>
         <div class="mssg-modal__form">
             <div class="mssg-modal__form--cb">
@@ -74,10 +74,17 @@ import { bus } from '../main';
 export default {
     props: ['type'],
     methods: {
-        closeModal() {
-            bus.$emit('launchMssg', 'close');
+        closeModal(ev) {
+            if(ev == 0) {
+                 bus.$emit('launchMssg', 'close');
+            }
+            else if(ev.target.className !== "mssg-modal"){
+                return;
+            } else {
+                bus.$emit('launchMssg', 'close');
+            }
         }
-    }
+    },
 }
 </script>
 
@@ -94,6 +101,7 @@ export default {
     justify-content: center;
     align-items: center;
     background: rgba(0, 0, 0, .8);
+    z-index: 0;
 
 
     &__container {
@@ -103,6 +111,7 @@ export default {
         width: 40%;
         max-width: 600px;
         min-width: 400px;
+        z-index: 99;
     }
 
     &__top {

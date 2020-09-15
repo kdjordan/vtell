@@ -28,6 +28,11 @@ export default {
             modalType: ''
         }
     },
+    methods: {
+        closeModal() {
+            console.log('clicked')
+        }
+    },
     created() {
         bus.$on('launchMssg', (data) => {
             if(data == 'close') {
