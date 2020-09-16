@@ -63,9 +63,18 @@ export default {
     color: $vwhite2;
     font-size: 24px;
     
+    @media(max-width: 960px) {
+        margin: 0 1rem;
+    }
 
     &--img {
         width: 25%;
+    }
+
+    &--title {
+        @media(max-width: 700px) {
+            font-size: 3vw;
+        }
     }
 
     &--btn {

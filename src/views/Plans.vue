@@ -7,7 +7,7 @@
             <p>V-Tell is a rapidly growing telecommunication company acting as an International Mobile Operator, devoted to provide services and innovative technology to customers across the globe. One V-Tell SIM card allows the subscriber to get unlimited amount of phone numbers with no roaming internet and mobile services.</p>
             <button class="plans__btn mt-2 mb-2"  @click.prevent="toggleButton()" >{{buttonMssg}}&nbsp;&nbsp;&nbsp;&nbsp;<span style="padding-bottom: 8px;">{{buttonMssgExt}}</span></button>
 
-            <div v-if="buttonActive">
+            <div v-if="buttonActive" class="toggle-content">
                 <div class="plans__title">V-TELL PRICES, PACKAGES, BUNDLES, DEALS</div>
                 <p class="mb-1">There are four Package Deals (the amount of data and minutes differs).</p>  
                 <p class="mb-1">V-1, V-2, V-3, V-Max offered to our Subscribers. Each of them includes the following services:</p> 
@@ -74,7 +74,7 @@
 
                 </div>
                 <button class="btn-pricing">BUY NOW</button>
-                <button class="btn-pricing btn-ghost">READ MORE</button>
+                <router-link :to="`${theCards[indicies.first].route}`"><button class="btn-pricing btn-ghost">READ MORE</button></router-link>
         
             </div>
 
@@ -115,7 +115,7 @@
 
                 </div>
                 <button class="btn-pricing">BUY NOW</button>
-                <button class="btn-pricing btn-ghost">READ MORE</button>
+                <router-link :to="`${theCards[indicies.second].route}`"><button class="btn-pricing btn-ghost">READ MORE</button></router-link>
         
             </div>
 
@@ -156,7 +156,7 @@
 
                 </div>
                 <button class="btn-pricing">BUY NOW</button>
-                <button class="btn-pricing btn-ghost">READ MORE</button>
+                <router-link :to="`${theCards[indicies.third].route}`"><button class="btn-pricing btn-ghost">READ MORE</button></router-link>
         
             </div>
         </div>
@@ -200,7 +200,8 @@ export default {
                     sms: 'UNLIMITED',
                     data: 5,
                     euroPrice: 90,
-                    dollarPrice: 98
+                    dollarPrice: 98,
+                    route: '/plan-v1'
                 },
                 {
                     plan: 'V-2',
@@ -209,7 +210,8 @@ export default {
                     sms: 'UNLIMITED',
                     data: 10,
                     euroPrice: 140,
-                    dollarPrice: 160
+                    dollarPrice: 160,
+                    route: '/plan-v2'
                 },
                 {
                     plan: 'V-3',
@@ -218,7 +220,8 @@ export default {
                     sms: 'UNLIMITED',
                     data: 15,
                     euroPrice: 190,
-                    dollarPrice: 219
+                    dollarPrice: 219,
+                    route: '/plan-v3'
                 },
                 {
                     plan: 'V-MAXX',
@@ -227,7 +230,8 @@ export default {
                     sms: 'UNLIMITED',
                     data: 'UNLIMITED',
                     euroPrice: 500,
-                    dollarPrice: 570
+                    dollarPrice: 570,
+                    route: '/plan-vmax'
                 },
             ]
         }
@@ -333,6 +337,10 @@ p {
     text-align: left;
 }
 
+.toggle-content {
+    width: 100%;
+}
+
 .btn-plans {
     cursor: pointer;
     color: rgba(242, 242, 242, 0.75);
@@ -349,5 +357,6 @@ p {
         border: 1px solid $red;
     }
 }
+
 
 </style>
