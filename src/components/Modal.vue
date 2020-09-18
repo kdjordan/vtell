@@ -36,7 +36,7 @@
             <button class="mssg-modal__bot--button">Submit</button>
         </div>
     </div>
-    <div v-else class="mssg-modal__container">
+    <div v-if="type == 'call'" class="mssg-modal__container">
         <div class="mssg-modal__top mssg-modal__top--callback">
             <div>REQUEST A CALL BACK</div> 
             <img src="../assets/SVG/footer/headphones.svg" alt="phone numbers icon">
@@ -66,6 +66,18 @@
             <button class="mssg-modal__bot--button">Submit</button>
         </div>
     </div>
+    <div v-if="type == 'search'" class="search-modal">
+            <div class="search-modal__top">
+                <div>SEARCH</div>
+                <div @click.prevent="closeModal(0)"></div>&#10005;</div>
+            </div>
+            <div class="search-modal__mid">
+                <input type="text" name="" id="">
+            </div>
+            <div class="search-modal__bot">
+                <button>FIND</button>
+            </div>
+        </div>
 </div>
 </template>
 
@@ -90,6 +102,54 @@ export default {
 
 <style lang="scss">
 @import '../scss/_variables.scss';
+
+.search-modal {
+    display: flex;
+    flex-direction: column;
+    background: #333;
+    z-index: 111;
+    position: absolute;
+    top: 12.5%;
+    left: 12.5%;
+    color: white;
+    width: 75%;
+    padding: 2rem 1rem;
+    filter: opacity(95%);
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 30px;
+        margin-bottom: 2rem;
+
+        & div:nth-child(2) {
+            cursor: pointer;
+        }
+    }
+
+    &__mid {
+        & input {
+            width: 100%;
+            padding: 1rem 0;
+            background-color: rgba(254, 254, 254, 0.5);
+            margin-bottom: 1rem;
+        }
+    }
+    
+    &__bot {
+        display: flex;
+        align-content: flex-start;
+       & button {
+           text-align: left;
+           background: $red;
+           color: white;
+           border: 1px solid transparent;
+           padding: 1rem 2rem;
+       }
+    }
+}
+
 
 .mssg-modal {
     position: fixed;
