@@ -67,17 +67,17 @@
         </div>
     </div>
     <div v-if="type == 'search'" class="search-modal">
-            <div class="search-modal__top">
-                <div>SEARCH</div>
-                <div @click.prevent="closeModal(0)"></div>&#10005;</div>
-            </div>
-            <div class="search-modal__mid">
-                <input type="text" name="" id="">
-            </div>
-            <div class="search-modal__bot">
-                <button>FIND</button>
-            </div>
+        <div class="search-modal__top">
+            <div>SEARCH</div>
+            <div @click.prevent="closeModal(0)">&#10005;</div>
         </div>
+        <div class="search-modal__mid">
+            <input type="text" name="" id="">
+        </div>
+        <div class="search-modal__bot">
+            <button>FIND</button>
+        </div>
+    </div>
 </div>
 </template>
 
