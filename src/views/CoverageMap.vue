@@ -12,11 +12,9 @@
             </div>
            <div class="coverage__top-bar--search" :class="{blueHighlight: mapIndex == 2, redHighlight: mapIndex == 3}"><font-awesome-icon :icon="['fa', 'search']" /></div>
         </div>
-        <div v-if="modalActive" class="country-modal">CONTENT</div>
         <div class="coverage__map-container">
-            <svg @click="mapShift(0)" class="coverage__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.68 78.47">
-                <path d="M0,39.1,22.29.5A1,1,0,0,1,23.65.13l2.53,1.46A1,1,0,0,1,26.55,3L5.61,39.23,26.55,75.51a1,1,0,0,1-.37,1.36l-2.53,1.46A1,1,0,0,1,22.29,78L0,39.36" 
-                fill="#159846" :class="{blueHighlight: mapIndex == 2, redHighlight: mapIndex == 3}"/>
+            <svg @click="mapShift(0)"  class="coverage__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.68 78.47">
+                <path d="M0,39.1,22.29.5A1,1,0,0,1,23.65.13l2.53,1.46A1,1,0,0,1,26.55,3L5.61,39.23,26.55,75.51a1,1,0,0,1-.37,1.36l-2.53,1.46A1,1,0,0,1,22.29,78L0,39.36" :class="{greenHighlight: mapIndex == 1, blueHighlight: mapIndex == 2, redHighlight: mapIndex == 3}"/>
             </svg>
             
             <div class="coverage__map-container--inner">
@@ -24,7 +22,7 @@
             </div>
             <svg @click="mapShift(1)" class="coverage__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.68 78.47">
                 <path d="M26.68,39.1,4.4.5A1,1,0,0,0,3,.13L.5,1.59A1,1,0,0,0,.13,3l21,36.27L.13,75.51A1,1,0,0,0,.5,76.87L3,78.33A1,1,0,0,0,4.4,78L26.68,39.36" 
-                fill="#159846" :class="{blueHighlight: mapIndex == 2, redHighlight: mapIndex == 3}"/>
+                 :class="{greenHighlight: mapIndex == 1, blueHighlight: mapIndex == 2, redHighlight: mapIndex == 3}"/>
             </svg>
        </div>
        <div class="coverage__indicators">
@@ -55,8 +53,7 @@ export default {
     components: {PageDivider, PageCrumbs, Map},
     data() {
         return {
-            mapIndex: 1,
-            modalActive: true
+            mapIndex: 1
         }
     },
     methods: {
@@ -87,23 +84,18 @@ export default {
 @import '../scss/_utilities.scss';
 @import '../scss/_page.scss';
 
-.country-modal {
-    color: white;
-    // padding: 2rem;
-    // position: relative;
-    font-size: 20px;
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    padding: 1.5rem 10rem;
-    background: rgba(0, 152, 70, .8);
-}
 
 .coverage {
     &__arrow {
-        fill: #ffffff !important;
+        cursor: pointer;
+        transform: scale(1);
+        transition: all .4s;
         width: 1rem;
+
+        &:hover {
+                filter: opacity(50%);
+                transform: scale(1.2);
+            }
     }
 
     &__top-bar {
@@ -127,15 +119,6 @@ export default {
         display: flex;
         align-items: center;
         justify-content: space-between;
-
-        & .coverage__arrow {
-            cursor: pointer;
-            transition: all .4s;
-            
-            &:hover {
-                filter: opacity(50%);
-            }
-        }
     }
     &__indicators {
         display: flex;
@@ -192,6 +175,11 @@ export default {
         height: 25px !important;
         width: 25px !important;
     }
+}
+
+.greenHighlight {
+    fill: rgb(0, 152, 70);
+    color:  rgb(0, 152, 70) !important;
 }
 
 .blueHighlight {
