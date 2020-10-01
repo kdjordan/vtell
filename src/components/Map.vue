@@ -422,7 +422,7 @@ export default {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 20px;
-    top: 50%;
+    top: 590px;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 35%;
@@ -430,6 +430,11 @@ export default {
     padding: 1.5rem 3.5rem;
     background: rgb(81, 81, 80);
     box-shadow: 10px 10px 51px 10px rgba(0,0,0,0.8);
+
+    @media(max-width:870px) {
+        top: 490px;
+        font-size: 12px;
+    }
 }
 
 .svg-container {

@@ -110,8 +110,12 @@ export default {
         &--indicator {
             color: rgb(0, 152, 70);
             font-size: 22px;
+            text-align: left; 
+
             @media(max-width: 900px) {
                 font-size: 16px;
+                width: 80%;
+                margin-bottom: 1rem;
             }
         }
 
