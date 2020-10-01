@@ -6,7 +6,7 @@
     </transition>
     <Footer />
     <transition name="fade" mode="out-in">
-        <MssgModal v-if="mssgModal" :type="modalType" />
+        <Modal v-if="mssgModal" :type="modalType" />
     </transition>
   </div>
 </template>
@@ -14,13 +14,13 @@
 <script>
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import MssgModal from '@/components/MssgModal';
+import Modal from '@/components/Modal';
 import { bus } from './main';
 export default {
     components: {
         Header,
         Footer,
-        MssgModal
+        Modal
     },
     data() {
         return {
