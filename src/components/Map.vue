@@ -1,8 +1,10 @@
 <template>
 <div @click.stop="toggleModal(0)">
-    <div v-if="modalActive" class="country-modal" :class="{greenBack: mapIndex == 1 && countryActive, blueBack: mapIndex == 2 && countryActive, redBack: mapIndex == 3 && countryActive}" @click.stop="toggleModal(0)">{{countryName}}</div>
-    <svg width="805" height="400">
-        <g transform="scale(0.7272727272727273) translate(78.43750000000001, 0)">
+    <transition name="fade">
+        <div v-if="modalActive" class="country-modal" :class="{greenBack: mapIndex == 1 && countryActive, blueBack: mapIndex == 2 && countryActive, redBack: mapIndex == 3 && countryActive}" @click.stop="toggleModal(0)">{{countryName}}</div>
+    </transition>
+    <div class="svg-container">
+    <svg  viewBox="0 0 1000 600" >
         <!-- indonesia -->
         <path d="M781.68,324.4l-2.31,8.68l-12.53,4.23l-3.75-4.4l-1.82,0.5l3.4,13.12l5.09,0.57l6.79,2.57v2.57l3.11-0.57l4.53-6.27v-5.13l2.55-5.13l2.83,0.57l-3.4-7.13l-0.52-4.59L781.68,324.4L781.68,324.4M722.48,317.57l-0.28,2.28l6.79,11.41h1.98l14.15,23.67l5.66,0.57l2.83-8.27l-4.53-2.85l-0.85-4.56L722.48,317.57L722.48,317.57M789.53,349.11l2.26,2.77l-1.47,4.16v0.79h3.34l1.18-10.4l1.08,0.3l1.96,9.5l1.87,0.5l1.77-4.06l-1.77-6.14l-1.47-2.67l4.62-3.37l-1.08-1.49l-4.42,2.87h-1.18l-2.16-3.17l0.69-1.39l3.64-1.78l5.5,1.68l1.67-0.1l4.13-3.86l-1.67-1.68l-3.83,2.97h-2.46l-3.73-1.78l-2.65,0.1l-2.95,4.75l-1.87,8.22L789.53,349.11L789.53,349.11M814.19,330.5l-1.87,4.55l2.95,3.86h0.98l1.28-2.57l0.69-0.89l-1.28-1.39l-1.87-0.69L814.19,330.5L814.19,330.5M819.99,345.45l-4.03,0.89l-1.18,1.29l0.98,1.68l2.65-0.99l1.67-0.99l2.46,1.98l1.08-0.89l-1.96-2.38L819.99,345.45L819.99,345.45M753.17,358.32l-2.75,1.88l0.59,1.58l8.75,1.98l4.42,0.79l1.87,1.98l5.01,0.4l2.36,1.98l2.16-0.5l1.97-1.78l-3.64-1.68l-3.14-2.67l-8.16-1.98L753.17,358.32L753.17,358.32M781.77,366.93l-2.16,1.19l1.28,1.39l3.14-1.19L781.77,366.93L781.77,366.93M785.5,366.04l0.39,1.88l2.26,0.59l0.88-1.09l-0.98-1.49L785.5,366.04L785.5,366.04M790.91,370.99l-2.75,0.4l2.46,2.08h1.96L790.91,370.99L790.91,370.99M791.69,367.72l-0.59,1.19l4.42,0.69l3.44-1.98l-1.96-0.59l-3.14,0.89l-1.18-0.99L791.69,367.72L791.69,367.72M831.93,339.34l-4.17,0.47l-2.68,1.96l1.11,2.24l4.54,0.84v0.84l-2.87,2.33l1.39,4.85l1.39,0.09l1.2-4.76h2.22l0.93,4.66l10.83,8.96l0.28,7l3.7,4.01l1.67-0.09l0.37-24.72l-6.29-4.38l-5.93,4.01l-2.13,1.31l-3.52-2.24l-0.09-7.09L831.93,339.34L831.93,339.34z" stroke="#1a1a18" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="1" fill="#515150"  id="jqvmap1_id" class="jqvmap-region" :class="{redActive: mapIndex == 3}" @click.stop="goCountryModal('Indonesia', [3])">
         </path>
@@ -368,8 +370,9 @@
         <path d="M510.92,208.01l-3.37,1.11l0.16,2.86l0.79,1.01l4-1.86L510.92,208.01L510.92,208.01z" stroke="#1a1a18" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="1" fill="#515150"  id="jqvmap1_mk" class="jqvmap-region" :class="{redActive: mapIndex == 3}" @click.stop="goCountryModal('North Macendonia', [3])"></path>
         <!-- greece -->
         <path d="M506.71,217.6l-0.11,1.33l4.63,2.33l2.21,0.85l-1.16,1.22l-2.58,0.26l-0.37,1.17l0.89,2.01l2.89,1.54l1.26,0.11l0.16-3.45l1.89-2.28l-5.16-6.1l0.68-2.07l1.21-0.05l1.84,1.48l1.16-0.58l0.37-2.07l5.42,0.05l0.21-3.18l-2.26,1.59l-6.63-0.16l-4.31,2.23L506.71,217.6L506.71,217.6M516.76,230.59l1.63,0.05l0.68,1.01h2.37l1.58-0.58l0.53,0.64l-1.05,1.38l-4.63,0.16l-0.84-1.11l-0.89-0.53L516.76,230.59L516.76,230.59z" stroke="#1a1a18" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="1" fill="#515150"  id="jqvmap1_gr" class="jqvmap-region" :class="{greenActive: mapIndex == 1, blueActive: mapIndex == 2, redActive: mapIndex == 3}" @click.stop="goCountryModal('Greece', [1,2,3])"></path>
-    </g>
+    
     </svg>
+    </div>
 </div>
 </template>
 <script>
@@ -379,14 +382,11 @@ export default {
         return {
             modalActive: false,
             countryName: '',
-            counrtyActive: true
+            counrtyActive: false
         }
     },
     methods: {
         goCountryModal(country, arr) {
-            console.log(arr)
-            console.log(this.mapIndex)
-            console.log(arr.includes(Number(this.mapIndex)))
             if(arr.includes(Number(this.mapIndex))) {
                 this.countryActive = true;
             } else {
@@ -398,13 +398,16 @@ export default {
                 this.modalActive = true;
                 this.countryName = country;
             }
-            // console.log(ev.target.className, country)
         },
         toggleModal(ev) {
             if(ev == 0) {
                 this.modalActive = false;
             }
-            // console.log(ev, "toggleModal")
+        }
+    },
+    watch: {
+        mapIndex: function() {
+            this.modalActive = false;
         }
     }
 
@@ -419,13 +422,27 @@ export default {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 20px;
-    top: 500px;
-    left: 35%;
-    width: 30%;
-    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35%;
+    min-width: 210px;
     padding: 1.5rem 3.5rem;
     background: rgb(81, 81, 80);
     box-shadow: 10px 10px 51px 10px rgba(0,0,0,0.8);
+}
+
+.svg-container {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+
+    & svg {
+        width: 60vw;
+        max-width: 830px;
+        height: auto;
+    }
+    
 }
 
 .jqvmap-region {
@@ -465,6 +482,13 @@ export default {
     background: rgb(230, 57, 55);
     box-shadow: 10px 10px 51px 10px rgba(0,0,0,0.8);
 }
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 1s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
 
 </style>
 

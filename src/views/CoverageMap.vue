@@ -103,27 +103,38 @@ export default {
         justify-content: space-between;
         align-items: center;
         margin-bottom: 2rem;
+        @media(max-width: 900px) {
+            margin: 0 2rem;
+        }
 
         &--indicator {
             color: rgb(0, 152, 70);
             font-size: 22px;
+            @media(max-width: 900px) {
+                font-size: 16px;
+            }
         }
 
         &--search {
             color: rgb(0, 152, 70);
             font-size: 25px;
+            @media(max-width: 900px) {
+                font-size: 16px;
+            }
         }
     }
 
     &__map-container {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
+        width: 100%;
     }
     &__indicators {
         display: flex;
         justify-content: center;
         align-items: center;
+        margin: 0 1rem;
 
         & span {
             cursor: pointer;
@@ -138,6 +149,10 @@ export default {
 
     &__countries {
         margin-bottom: 2rem;
+        @media(max-width: 900px) {
+            margin-left: 2rem;
+            margin-right: 2rem;
+        }
         & p {
             color: white;
             font-size: 16px;
